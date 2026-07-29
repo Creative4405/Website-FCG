@@ -4429,6 +4429,195 @@
         max-width: 82px;
       }
     }
+
+    body.is-authenticated:not(.admin-module-focused) #view-admin > .admin-control-panel,
+    body.is-authenticated:not(.admin-module-focused) #view-admin > .admin-workspace-switcher,
+    body.is-authenticated:not(.admin-module-focused) #view-admin > .admin-tools-grid,
+    body.is-authenticated:not(.admin-module-focused) #view-admin > .admin-resource-grid {
+      display: none !important;
+    }
+
+    body.is-authenticated.admin-module-focused #view-admin > .admin-command-dashboard,
+    body.is-authenticated.admin-module-focused #view-admin > .admin-control-panel,
+    body.is-authenticated.admin-module-focused #view-admin > .admin-workspace-switcher {
+      display: none !important;
+    }
+
+    body.is-authenticated.admin-module-focused #view-admin > .admin-tools-grid,
+    body.is-authenticated.admin-module-focused #view-admin > .admin-resource-grid {
+      grid-template-columns: minmax(0, 1fr) !important;
+      gap: 1rem;
+    }
+
+    body.is-authenticated.admin-module-focused #view-admin > .admin-resource-grid {
+      order: 1;
+    }
+
+    body.is-authenticated.admin-module-focused #view-admin > .admin-tools-grid {
+      order: 2;
+    }
+
+    body.is-authenticated.admin-module-focused #view-admin .admin-list-card {
+      order: 1;
+    }
+
+    body.is-authenticated.admin-module-focused #view-admin .admin-form-card {
+      order: 2;
+    }
+
+    body.is-authenticated.admin-module-focused #view-admin .admin-form-card .form-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-items: start;
+    }
+
+    body.is-authenticated.admin-module-focused #view-admin .admin-form-card .field:has(textarea),
+    body.is-authenticated.admin-module-focused #view-admin .admin-form-card .form-actions,
+    body.is-authenticated.admin-module-focused #view-admin .admin-form-card .check-field {
+      grid-column: 1 / -1;
+    }
+
+    html[data-theme="light"] body.is-authenticated {
+      color: #10283d !important;
+      background:
+        linear-gradient(rgba(17, 107, 168, .05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(17, 107, 168, .05) 1px, transparent 1px),
+        linear-gradient(135deg, #f7fbfe 0%, #eef6fb 100%) !important;
+      background-size: 72px 72px, 72px 72px, auto !important;
+    }
+
+    html[data-theme="light"] body.is-authenticated .sidebar,
+    html[data-theme="light"] body.is-authenticated .portal-header,
+    html[data-theme="light"] body.is-authenticated .dashboard-kpi,
+    html[data-theme="light"] body.is-authenticated .dashboard-section,
+    html[data-theme="light"] body.is-authenticated .card,
+    html[data-theme="light"] body.is-authenticated .admin-form-card,
+    html[data-theme="light"] body.is-authenticated .admin-list-card,
+    html[data-theme="light"] body.is-authenticated .data-row,
+    html[data-theme="light"] body.is-authenticated .ticket-item,
+    html[data-theme="light"] body.is-authenticated .download-card,
+    html[data-theme="light"] body.is-authenticated .client-row,
+    html[data-theme="light"] body.is-authenticated .admin-resource-row,
+    html[data-theme="light"] body.is-authenticated .payment-entry,
+    html[data-theme="light"] body.is-authenticated .premium-list-row,
+    html[data-theme="light"] body.is-authenticated .support-metric,
+    html[data-theme="light"] body.is-authenticated .revenue-card,
+    html[data-theme="light"] body.is-authenticated .activity-card,
+    html[data-theme="light"] body.is-authenticated .service-card,
+    html[data-theme="light"] body.is-authenticated .quick-action-card {
+      color: #10283d !important;
+      background: rgba(255, 255, 255, .94) !important;
+      border-color: #d8e7f0 !important;
+      box-shadow: 0 18px 42px rgba(27, 75, 112, .09) !important;
+    }
+
+    html[data-theme="light"] body.is-authenticated .sidebar {
+      background: linear-gradient(180deg, #ffffff, #f3f9fc) !important;
+      border-right-color: #cfdfeb !important;
+    }
+
+    html[data-theme="light"] body.is-authenticated .dashboard-kpi strong,
+    html[data-theme="light"] body.is-authenticated .section-head h3,
+    html[data-theme="light"] body.is-authenticated .section-head h4,
+    html[data-theme="light"] body.is-authenticated .admin-form-card h4,
+    html[data-theme="light"] body.is-authenticated .admin-list-card h4,
+    html[data-theme="light"] body.is-authenticated .client-row strong,
+    html[data-theme="light"] body.is-authenticated .admin-resource-row strong,
+    html[data-theme="light"] body.is-authenticated .data-row strong,
+    html[data-theme="light"] body.is-authenticated .activity-item strong,
+    html[data-theme="light"] body.is-authenticated .premium-list-row strong,
+    html[data-theme="light"] body.is-authenticated .quick-action-card strong,
+    html[data-theme="light"] body.is-authenticated .portal-title-block h2,
+    html[data-theme="light"] body.is-authenticated .side-profile-copy strong,
+    html[data-theme="light"] body.is-authenticated .user-menu-meta strong {
+      color: #10283d !important;
+    }
+
+    html[data-theme="light"] body.is-authenticated .dashboard-kpi span:not(.kpi-icon),
+    html[data-theme="light"] body.is-authenticated .dashboard-kpi small,
+    html[data-theme="light"] body.is-authenticated .section-head p,
+    html[data-theme="light"] body.is-authenticated .admin-form-card p,
+    html[data-theme="light"] body.is-authenticated .admin-list-card p,
+    html[data-theme="light"] body.is-authenticated .client-row span,
+    html[data-theme="light"] body.is-authenticated .admin-resource-row span,
+    html[data-theme="light"] body.is-authenticated .data-row span,
+    html[data-theme="light"] body.is-authenticated .premium-list-row span,
+    html[data-theme="light"] body.is-authenticated .activity-item span,
+    html[data-theme="light"] body.is-authenticated .portal-title-block p,
+    html[data-theme="light"] body.is-authenticated .side-profile-copy span {
+      color: #577086 !important;
+    }
+
+    html[data-theme="light"] body.is-authenticated input,
+    html[data-theme="light"] body.is-authenticated select,
+    html[data-theme="light"] body.is-authenticated textarea,
+    html[data-theme="light"] body.is-authenticated .portal-search {
+      color: #10283d !important;
+      background: #f8fbfd !important;
+      border-color: #cfe0ea !important;
+    }
+
+    html[data-theme="light"] body.is-authenticated input::placeholder,
+    html[data-theme="light"] body.is-authenticated textarea::placeholder,
+    html[data-theme="light"] body.is-authenticated .portal-search input::placeholder {
+      color: #7c8f9d !important;
+    }
+
+    html[data-theme="light"] body.is-authenticated .nav-tab {
+      color: #1b3d56 !important;
+    }
+
+    html[data-theme="light"] body.is-authenticated .nav-tab.active,
+    html[data-theme="light"] body.is-authenticated .nav-tab:hover {
+      color: #ffffff !important;
+    }
+
+    html[data-theme="light"] body.is-authenticated .premium-empty {
+      color: #577086 !important;
+      background: #f8fbfd !important;
+      border-color: #cfe0ea !important;
+    }
+
+    html[data-theme="light"] body.is-authenticated .footer-note,
+    html[data-theme="light"] body.is-authenticated .portal-legal-links,
+    html[data-theme="light"] body.is-authenticated .portal-legal-links a,
+    html[data-theme="light"] body.is-authenticated .portal-department-links,
+    html[data-theme="light"] body.is-authenticated .portal-department-links a {
+      color: #4c667a !important;
+    }
+
+    html[data-theme="light"] body.is-authenticated .portal-department-links {
+      border-top-color: #d8e7f0 !important;
+    }
+
+    html[data-theme="light"] body.is-authenticated .portal-department-links span {
+      color: #10283d !important;
+    }
+
+    html[data-theme="light"] body.is-authenticated .sidebar-logout {
+      color: #9a2e2e !important;
+      background: #fff5f5 !important;
+      border-color: #f2caca !important;
+    }
+
+    html[data-theme="light"] body.is-authenticated .sidebar-collapse-control {
+      color: #1b3d56 !important;
+      background: #f8fbfd !important;
+      border-color: #cfe0ea !important;
+    }
+
+    body.is-authenticated .user-menu-meta strong,
+    body.is-authenticated .user-menu-meta small {
+      max-width: 104px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 760px) {
+      body.is-authenticated.admin-module-focused #view-admin .admin-form-card .form-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
   </style>
 </head>
 <body>
@@ -6351,6 +6540,23 @@
       /* FCG_ADMIN_VIEW_COPY_END */
     };
 
+    const adminModuleCopy = {
+      clients: ['Clients', 'Create, update, and manage approved portal client accounts.'],
+      guests: ['Quote Requests', 'Manage guest leads, quote requests, and portal access conversions.'],
+      projects: ['Projects', 'Publish client-visible project updates, milestones, and delivery records.'],
+      sales: ['Quotations', 'Create quotations, send documents, and manage approval status.'],
+      billing: ['Billing', 'Create invoices, record payments, and review account balances.'],
+      payments: ['Payments', 'Record and review client payments in the billing workspace.'],
+      financial: ['Statements', 'Manage pro-forma invoices, credit notes, and client statements.'],
+      support: ['Support Tickets', 'Review, update, and resolve client support requests.'],
+      communication: ['Notifications', 'Send client notifications and manage message templates.'],
+      activity: ['Activity', 'Review portal activity, document access, and delivery logs.'],
+      services: ['Managed Services', 'Manage subscriptions, service packages, and renewal records.'],
+      documents: ['Documents', 'Upload, assign, and manage secure client documents.'],
+      hosting: ['Hosting', 'Manage hosting, domain, email, and technical job records.'],
+      settings: ['Settings', 'Update portal settings, templates, reports, and backup access.']
+    };
+
     applyTheme(document.documentElement.getAttribute('data-theme') || 'dark', false);
     const todayValue = new Date().toISOString().slice(0, 10);
     document.getElementById('payment-date').value = todayValue;
@@ -7601,7 +7807,7 @@
     }
 
     function adminWorkspaceModule(module) {
-      return module === 'payments' ? 'billing' : module;
+      return module;
     }
 
     function switchView(view, adminModule = '') {
@@ -7616,9 +7822,10 @@
         tab.classList.toggle('active', sameView && sameModule);
       });
       document.querySelectorAll('.view').forEach((panel) => panel.classList.toggle('active', panel.id === `view-${view}`));
-      const copy = viewCopy[view] || viewCopy.dashboard;
+      const copy = view === 'admin' && adminModule && adminModuleCopy[adminModule] ? adminModuleCopy[adminModule] : (viewCopy[view] || viewCopy.dashboard);
       viewTitle.textContent = copy[0];
       viewSubtitle.textContent = copy[1];
+      body.classList.toggle('admin-module-focused', view === 'admin' && Boolean(adminModule));
       if (portalSearch) {
         portalSearch.value = '';
         filterActiveView();
@@ -7626,6 +7833,8 @@
       if (view === 'admin') {
         if (adminModule && window.fcgSetAdminModule) window.fcgSetAdminModule(adminWorkspaceModule(adminModule));
         refreshAdmin();
+      } else {
+        body.classList.remove('admin-module-focused');
       }
     }
 
@@ -7961,8 +8170,8 @@
         ['statements of account', 'financial'],
         ['invoice', 'billing'],
         ['invoices', 'billing'],
-        ['record payment', 'billing'],
-        ['payments to review', 'billing'],
+        ['record payment', 'payments'],
+        ['payments to review', 'payments'],
         ['invoice ageing', 'billing'],
         ['client notification', 'communication'],
         ['notification history', 'communication'],
@@ -8007,7 +8216,9 @@
 
       const setModule = (module, persist = true) => {
         const available = adminModuleButtons.some((button) => button.dataset.adminModuleButton === module);
-        const activeModule = available ? module : 'clients';
+        const hasMatchingCards = toolCards.some((card) => card.getAttribute('data-admin-module') === module)
+          || recordCards.some((card) => card.getAttribute('data-admin-record-module') === module);
+        const activeModule = available || hasMatchingCards ? module : 'clients';
         adminModuleButtons.forEach((button) => {
           const isActive = button.dataset.adminModuleButton === activeModule;
           button.classList.toggle('active', isActive);
