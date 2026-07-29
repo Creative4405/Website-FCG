@@ -73,6 +73,16 @@ function fcg_first_file($relative)
     return null;
 }
 
+function fcg_template_file($relative)
+{
+    foreach ([__DIR__ . '/../fcgportal/' . $relative, __DIR__ . '/../../../../fcgportal/' . $relative, '/home/futurec2/fcgportal/' . $relative] as $path) {
+        if (is_file($path)) {
+            return $path;
+        }
+    }
+    return null;
+}
+
 function fcg_json($payload, $status = 200)
 {
     if (is_array($payload) && !isset($payload['csrf_token']) && function_exists('fcg_user') && fcg_user()) {
@@ -5952,7 +5962,7 @@ if ($requestPath !== '/' && $requestPath !== '/index.php' && $requestPath !== '/
     fcg_json(['error' => 'Not found'], 404);
 }
 
-$template = fcg_first_file('templates/portal.html');
+$template = fcg_template_file('templates/portal.html');
 header('Content-Type: text/html; charset=utf-8');
 header('Cache-Control: no-store');
 $sessionUser = fcg_user();
