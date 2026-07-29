@@ -4613,8 +4613,324 @@
       white-space: nowrap;
     }
 
+    body.is-authenticated .overview-command-card {
+      position: relative;
+      overflow: hidden;
+      padding: 1.08rem;
+      background:
+        radial-gradient(circle at 12% 8%, rgba(40, 195, 244, .16), transparent 34%),
+        radial-gradient(circle at 88% 4%, rgba(99, 53, 232, .13), transparent 30%),
+        linear-gradient(145deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .025)),
+        var(--dash-panel) !important;
+    }
+
+    body.is-authenticated .overview-command-card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .overview-pulse-strip {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: .75rem;
+      margin: .25rem 0 1rem;
+    }
+
+    .overview-pulse-card {
+      position: relative;
+      min-height: 94px;
+      display: grid;
+      align-content: space-between;
+      gap: .35rem;
+      padding: .84rem;
+      overflow: hidden;
+      border: 1px solid rgba(139, 203, 235, .18);
+      border-radius: 8px;
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, .075), rgba(255, 255, 255, .025)),
+        rgba(5, 24, 40, .58);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .06), 0 16px 34px rgba(0, 0, 0, .14);
+    }
+
+    .overview-pulse-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 4px;
+      background: var(--pulse-color, #28c3f4);
+    }
+
+    .overview-pulse-card::after {
+      content: "";
+      position: absolute;
+      right: -22px;
+      top: -30px;
+      width: 94px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: color-mix(in srgb, var(--pulse-color, #28c3f4) 24%, transparent);
+      filter: blur(2px);
+    }
+
+    .overview-pulse-card span,
+    .revenue-insight span {
+      color: var(--dash-muted);
+      font-size: .66rem;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .overview-pulse-card strong {
+      color: var(--dash-text);
+      font-size: clamp(1.4rem, 2.1vw, 1.9rem);
+      line-height: 1;
+    }
+
+    .overview-pulse-card small {
+      color: var(--dash-muted);
+      font-size: .72rem;
+    }
+
+    .pulse-blue { --pulse-color: #168cff; }
+    .pulse-green { --pulse-color: #46c83d; }
+    .pulse-purple { --pulse-color: #8b43ff; }
+    .pulse-orange { --pulse-color: #ff9f19; }
+
+    body.is-authenticated .revenue-card,
+    body.is-authenticated .activity-card,
+    body.is-authenticated .service-card {
+      background:
+        linear-gradient(145deg, rgba(255, 255, 255, .075), rgba(255, 255, 255, .024)),
+        rgba(6, 28, 47, .68) !important;
+      border-color: rgba(139, 203, 235, .2) !important;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .06), 0 18px 42px rgba(0, 0, 0, .18) !important;
+    }
+
+    .revenue-insight-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: .55rem;
+      margin-bottom: .75rem;
+    }
+
+    .revenue-insight {
+      min-height: 66px;
+      display: grid;
+      align-content: center;
+      gap: .28rem;
+      padding: .68rem;
+      border: 1px solid rgba(139, 203, 235, .14);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .04);
+    }
+
+    .revenue-insight strong {
+      overflow-wrap: anywhere;
+      color: var(--dash-text);
+      font-size: 1rem;
+      line-height: 1.1;
+    }
+
+    body.is-authenticated .revenue-chart {
+      position: relative;
+      min-height: 260px;
+      border: 1px solid rgba(139, 203, 235, .14);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .05);
+    }
+
+    body.is-authenticated .revenue-chart::before {
+      content: "";
+      position: absolute;
+      inset: 18px 18px auto auto;
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(40, 195, 244, .2), transparent 64%);
+      pointer-events: none;
+    }
+
+    body.is-authenticated .activity-card,
+    body.is-authenticated .service-card {
+      display: grid;
+      align-content: start;
+      gap: .75rem;
+    }
+
+    body.is-authenticated .activity-card h4,
+    body.is-authenticated .service-card h4 {
+      margin-bottom: 0;
+    }
+
+    body.is-authenticated .activity-item {
+      min-height: 58px;
+      background: rgba(255, 255, 255, .045);
+      border-color: rgba(139, 203, 235, .16);
+      box-shadow: 0 12px 26px rgba(0, 0, 0, .08);
+    }
+
+    .service-donut-wrap {
+      grid-template-columns: 132px minmax(0, 1fr);
+    }
+
+    .service-donut {
+      width: 132px;
+    }
+
+    .service-scoreline {
+      display: grid;
+      gap: .55rem;
+    }
+
+    .service-score {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: .28rem .65rem;
+      align-items: center;
+      color: var(--dash-muted);
+      font-size: .72rem;
+    }
+
+    .service-score div {
+      min-width: 0;
+      display: grid;
+      gap: .12rem;
+    }
+
+    .service-score span {
+      overflow: hidden;
+      color: var(--dash-text);
+      font-weight: 800;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .service-score em {
+      color: var(--dash-muted);
+      font-style: normal;
+    }
+
+    .service-score strong {
+      color: var(--dash-text);
+      font-size: .78rem;
+    }
+
+    .service-score i {
+      grid-column: 1 / -1;
+      height: 7px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: rgba(139, 203, 235, .14);
+    }
+
+    .service-score i::before {
+      content: "";
+      display: block;
+      width: var(--service-width, 0%);
+      height: 100%;
+      border-radius: inherit;
+      background: var(--service-color, #28c3f4);
+      box-shadow: 0 0 18px color-mix(in srgb, var(--service-color, #28c3f4) 45%, transparent);
+    }
+
+    .service-empty-command {
+      display: grid;
+      gap: .62rem;
+      padding: .8rem;
+      border: 1px dashed rgba(139, 203, 235, .26);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .035);
+    }
+
+    .service-empty-command strong {
+      color: var(--dash-text);
+    }
+
+    .service-empty-command span {
+      color: var(--dash-muted);
+      font-size: .76rem;
+    }
+
+    .service-placeholder-bars {
+      display: grid;
+      gap: .4rem;
+    }
+
+    .service-placeholder-bars i {
+      display: block;
+      height: 8px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(40, 195, 244, .42), rgba(139, 67, 255, .24));
+    }
+
+    .service-placeholder-bars i:nth-child(2) { width: 74%; }
+    .service-placeholder-bars i:nth-child(3) { width: 52%; }
+
+    html[data-theme="light"] body.is-authenticated .overview-command-card {
+      background:
+        radial-gradient(circle at 10% 6%, rgba(21, 140, 255, .14), transparent 34%),
+        radial-gradient(circle at 84% 0%, rgba(40, 195, 244, .13), transparent 30%),
+        linear-gradient(180deg, #ffffff, #f4faff) !important;
+      border-color: #cfe0ea !important;
+    }
+
+    html[data-theme="light"] body.is-authenticated .overview-pulse-card,
+    html[data-theme="light"] body.is-authenticated .revenue-insight,
+    html[data-theme="light"] body.is-authenticated .service-empty-command {
+      color: #10283d !important;
+      background: rgba(255, 255, 255, .86) !important;
+      border-color: #d3e4ee !important;
+      box-shadow: 0 14px 34px rgba(21, 64, 98, .08) !important;
+    }
+
+    html[data-theme="light"] body.is-authenticated .revenue-card,
+    html[data-theme="light"] body.is-authenticated .activity-card,
+    html[data-theme="light"] body.is-authenticated .service-card {
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, .94), rgba(247, 252, 255, .9)) !important;
+      border-color: #d3e4ee !important;
+      box-shadow: 0 18px 42px rgba(21, 64, 98, .09) !important;
+    }
+
+    html[data-theme="light"] body.is-authenticated .revenue-chart {
+      background:
+        linear-gradient(rgba(21, 140, 255, .07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(21, 140, 255, .07) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(40, 195, 244, .14), rgba(255, 255, 255, .44)) !important;
+      background-size: 100% 25%, 25% 100%, auto !important;
+      border-color: #d3e4ee !important;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .86), 0 22px 48px rgba(23, 105, 159, .12) !important;
+    }
+
+    html[data-theme="light"] body.is-authenticated .activity-item {
+      background: #ffffff !important;
+      border-color: #d3e4ee !important;
+      box-shadow: 0 12px 28px rgba(21, 64, 98, .07) !important;
+    }
+
+    html[data-theme="light"] body.is-authenticated .overview-pulse-card span,
+    html[data-theme="light"] body.is-authenticated .overview-pulse-card small,
+    html[data-theme="light"] body.is-authenticated .revenue-insight span,
+    html[data-theme="light"] body.is-authenticated .service-score em {
+      color: #577086 !important;
+    }
+
+    html[data-theme="light"] body.is-authenticated .overview-pulse-card strong,
+    html[data-theme="light"] body.is-authenticated .revenue-insight strong,
+    html[data-theme="light"] body.is-authenticated .service-score span,
+    html[data-theme="light"] body.is-authenticated .service-score strong,
+    html[data-theme="light"] body.is-authenticated .service-empty-command strong {
+      color: #10283d !important;
+    }
+
     @media (max-width: 760px) {
       body.is-authenticated.admin-module-focused #view-admin .admin-form-card .form-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .overview-pulse-strip,
+      .revenue-insight-grid,
+      .service-donut-wrap {
         grid-template-columns: minmax(0, 1fr);
       }
     }
@@ -5315,9 +5631,20 @@
                 <div class="section-head">
                   <div><h3>Overview</h3><p>Key portal metrics and performance overview.</p></div>
                 </div>
+                <div class="overview-pulse-strip" aria-label="Portal operations summary">
+                  <div class="overview-pulse-card pulse-blue"><span>Client Accounts</span><strong id="admin-overview-live-clients">0</strong><small>approved accounts</small></div>
+                  <div class="overview-pulse-card pulse-green"><span>Cash Position</span><strong id="admin-overview-cash-health">R0.00</strong><small>outstanding balance</small></div>
+                  <div class="overview-pulse-card pulse-purple"><span>Open Work</span><strong id="admin-overview-open-work">0</strong><small>projects and tickets</small></div>
+                  <div class="overview-pulse-card pulse-orange"><span>Needs Action</span><strong id="admin-overview-pending-actions">0</strong><small>quotes, invoices, reviews</small></div>
+                </div>
                 <div class="admin-overview-grid">
                   <div class="revenue-card">
                     <div class="section-head compact"><div><h4>Revenue Overview</h4><p id="admin-revenue-caption">Revenue records update as invoices are paid.</p></div><span class="pill">Revenue Overview</span></div>
+                    <div class="revenue-insight-grid">
+                      <div class="revenue-insight"><span>Paid revenue</span><strong id="admin-revenue-paid">R0.00</strong></div>
+                      <div class="revenue-insight"><span>Outstanding</span><strong id="admin-revenue-outstanding">R0.00</strong></div>
+                      <div class="revenue-insight"><span>Documents</span><strong id="admin-revenue-documents">0</strong></div>
+                    </div>
                     <div class="revenue-chart" aria-hidden="true">
                       <svg viewBox="0 0 640 260" preserveAspectRatio="none">
                         <defs><linearGradient id="revenue-fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#28c3f4" stop-opacity=".45"></stop><stop offset="100%" stop-color="#168fca" stop-opacity="0"></stop></linearGradient></defs>
@@ -6435,6 +6762,13 @@
     const adminKpiPendingQuotes = document.getElementById('admin-kpi-pending-quotes');
     const adminKpiQuoteTrend = document.getElementById('admin-kpi-quote-trend');
     const adminRevenueCaption = document.getElementById('admin-revenue-caption');
+    const adminOverviewLiveClients = document.getElementById('admin-overview-live-clients');
+    const adminOverviewCashHealth = document.getElementById('admin-overview-cash-health');
+    const adminOverviewOpenWork = document.getElementById('admin-overview-open-work');
+    const adminOverviewPendingActions = document.getElementById('admin-overview-pending-actions');
+    const adminRevenuePaid = document.getElementById('admin-revenue-paid');
+    const adminRevenueOutstanding = document.getElementById('admin-revenue-outstanding');
+    const adminRevenueDocuments = document.getElementById('admin-revenue-documents');
     const adminActivityFeed = document.getElementById('admin-activity-feed');
     const adminServiceBreakdown = document.getElementById('admin-service-breakdown');
     const adminRecentInvoicesDashboard = document.getElementById('admin-recent-invoices-dashboard');
@@ -8296,9 +8630,20 @@
       setText(adminKpiTicketTrend, highPriority.length ? `${highPriority.length} high priority` : 'Support queue clear');
       setText(adminKpiPendingQuotes, stats.pending_quotations || pendingQuotes.length || 0);
       setText(adminKpiQuoteTrend, guests.filter((guest) => guest.status !== 'Archived').length ? `${guests.filter((guest) => guest.status !== 'Archived').length} guest leads` : 'Awaiting decision');
+      const paidRevenue = stats.total_revenue || moneyText(invoices.filter((invoice) => isPaidStatus(invoice.payment_status)).reduce((sum, invoice) => sum + amountNumber(invoice.total || invoice.amount), 0));
+      const outstanding = stats.outstanding_balance || moneyText(unpaidInvoices.reduce((sum, invoice) => sum + amountNumber(invoice.balance_due || invoice.total), 0));
+      const activeClientCount = stats.active_clients || clients.filter((client) => client.active).length || 0;
+      const openWorkCount = (activeProjects.length || projects.length || 0) + openTickets.length;
+      const pendingActionCount = pendingQuotes.length + unpaidInvoices.length + Number(stats.payment_pending_review || 0);
+      setText(adminOverviewLiveClients, stats.total_clients || clients.length || activeClientCount);
+      setText(adminOverviewCashHealth, outstanding);
+      setText(adminOverviewOpenWork, openWorkCount);
+      setText(adminOverviewPendingActions, pendingActionCount);
+      setText(adminRevenuePaid, paidRevenue);
+      setText(adminRevenueOutstanding, outstanding);
+      setText(adminRevenueDocuments, documents.length);
       if (adminRevenueCaption) {
-        const outstanding = stats.outstanding_balance || moneyText(unpaidInvoices.reduce((sum, invoice) => sum + amountNumber(invoice.balance_due || invoice.total), 0));
-        adminRevenueCaption.textContent = `Revenue ${stats.total_revenue || 'R0.00'} | Outstanding ${outstanding}`;
+        adminRevenueCaption.textContent = `Revenue ${paidRevenue} | Outstanding ${outstanding}`;
       }
 
       if (adminActivityFeed) {
@@ -9567,7 +9912,9 @@
         bucket.count += 1;
       });
       const total = buckets.reduce((sum, bucket) => sum + bucket.count, 0);
-      if (!total) return premiumEmpty('Service performance will appear once services, quotations or invoices are recorded.');
+      if (!total) {
+        return `<div class="service-empty-command"><strong>No service mix yet</strong><span>Quotes, invoices and saved services will build this command view.</span><div class="service-placeholder-bars"><i></i><i></i><i></i></div></div>`;
+      }
       let start = 0;
       const gradientStops = buckets.map((bucket) => {
         const percentage = Math.round((bucket.count / total) * 100);
@@ -9580,7 +9927,11 @@
         const percentage = Math.round((bucket.count / total) * 100);
         return `<div class="service-legend-row"><span class="legend-dot" style="background:${escapeAttribute(bucket.color)}"></span><span>${escapeHtml(bucket.name)}</span><strong>${percentage}%</strong></div>`;
       }).join('');
-      return `<div class="service-donut-wrap"><div class="service-donut" style="background:conic-gradient(${escapeAttribute(gradientStops)})"></div><div class="service-legend">${rows}</div></div>`;
+      const bars = buckets.map((bucket) => {
+        const percentage = Math.round((bucket.count / total) * 100);
+        return `<div class="service-score"><div><span>${escapeHtml(bucket.name)}</span><em>${bucket.count} record${bucket.count === 1 ? '' : 's'}</em></div><strong>${percentage}%</strong><i style="--service-width:${percentage}%; --service-color:${escapeAttribute(bucket.color)}"></i></div>`;
+      }).join('');
+      return `<div class="service-donut-wrap"><div class="service-donut" style="background:conic-gradient(${escapeAttribute(gradientStops)})"></div><div class="service-legend">${rows}</div></div><div class="service-scoreline">${bars}</div>`;
     }
 
     function emptyRow(message) {
