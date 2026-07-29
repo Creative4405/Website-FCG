@@ -4651,7 +4651,7 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2h8l4 4v16H4V2h4Z"></path><path d="M16 2v5h5"></path><path d="M8 12h8"></path><path d="M8 16h8"></path></svg>
               Invoices
             </button>
-            <button class="nav-tab" type="button" data-view="admin" data-admin-nav-module="billing" title="Payments">
+            <button class="nav-tab" type="button" data-view="admin" data-admin-nav-module="payments" title="Payments">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"></rect><path d="M2 10h20"></path><path d="M6 15h4"></path></svg>
               Payments
             </button>
@@ -5148,7 +5148,7 @@
                   <button class="quick-action-card" type="button" data-admin-quick-module="sales"><span class="kpi-icon kpi-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16h16V8z"></path><path d="M14 2v6h6"></path></svg></span><strong>Create Quote</strong><small>Create a new quotation</small></button>
                   <button class="quick-action-card" type="button" data-admin-quick-module="billing"><span class="kpi-icon kpi-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2h8l4 4v16H4V2h4Z"></path></svg></span><strong>Create Invoice</strong><small>Generate a new invoice</small></button>
                   <button class="quick-action-card" type="button" data-admin-quick-module="clients"><span class="kpi-icon kpi-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><path d="M20 8v6M23 11h-6"></path></svg></span><strong>Add Client</strong><small>Add a new client</small></button>
-                  <button class="quick-action-card" type="button" data-admin-quick-module="billing"><span class="kpi-icon kpi-orange"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"></rect><path d="M2 10h20"></path></svg></span><strong>Record Payment</strong><small>Record a client payment</small></button>
+                  <button class="quick-action-card" type="button" data-admin-quick-module="payments"><span class="kpi-icon kpi-orange"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"></rect><path d="M2 10h20"></path></svg></span><strong>Record Payment</strong><small>Record a client payment</small></button>
                   <button class="quick-action-card" type="button" data-admin-quick-module="documents"><span class="kpi-icon kpi-cyan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"></path><path d="m7 8 5-5 5 5"></path><path d="M5 21h14"></path></svg></span><strong>Upload Document</strong><small>Upload document</small></button>
                   <button class="quick-action-card" type="button" data-admin-quick-module="guests"><span class="kpi-icon kpi-pink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"></path></svg></span><strong>View Quote Requests</strong><small>View guest/customer leads</small></button>
                 </div>
@@ -5206,7 +5206,7 @@
               <button class="admin-module-tab" type="button" data-admin-module-button="guests" aria-selected="false">Guests</button>
               <button class="admin-module-tab" type="button" data-admin-module-button="projects" aria-selected="false">Projects</button>
               <button class="admin-module-tab" type="button" data-admin-module-button="sales" aria-selected="false">Quotes</button>
-              <button class="admin-module-tab" type="button" data-admin-module-button="billing" aria-selected="false">Invoices</button>
+              <button class="admin-module-tab" type="button" data-admin-module-button="billing" aria-selected="false">Billing</button>
               <button class="admin-module-tab" type="button" data-admin-module-button="financial" aria-selected="false">Statements</button>
               <button class="admin-module-tab" type="button" data-admin-module-button="support" aria-selected="false">Support</button>
               <button class="admin-module-tab" type="button" data-admin-module-button="communication" aria-selected="false">Comms</button>
@@ -7600,6 +7600,10 @@
       switchView(user.role === 'admin' ? 'admin' : 'dashboard');
     }
 
+    function adminWorkspaceModule(module) {
+      return module === 'payments' ? 'billing' : module;
+    }
+
     function switchView(view, adminModule = '') {
       if (view === 'admin' && currentUser && currentUser.role !== 'admin') view = 'dashboard';
       const targetTab = document.querySelector(`.nav-tab[data-view="${view}"]`);
@@ -7620,7 +7624,7 @@
         filterActiveView();
       }
       if (view === 'admin') {
-        if (adminModule && window.fcgSetAdminModule) window.fcgSetAdminModule(adminModule);
+        if (adminModule && window.fcgSetAdminModule) window.fcgSetAdminModule(adminWorkspaceModule(adminModule));
         refreshAdmin();
       }
     }
