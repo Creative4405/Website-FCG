@@ -1,0 +1,19 @@
+# Local runtime files
+fcgportal/data/login-attempts.json
+fcgportal/data/portal.log
+fcgportal/data/portal.sqlite3
+fcgportal/data/uploads/
+fcgportal/data/payment-proofs/
+fcgportal/data/ticket-attachments/
+fcgportal/data/onboarding/
+fcgportal/data/job-photos/
+
+# Local secrets and machine-specific config
+.env
+.env.*
+!.env.example
+
+# Verification artifacts generated during local QA
+verification/*.png
+verification/*.jpg
+verification/*.webp

@@ -1,0 +1,36 @@
+# Future Creative Group Client Portal backend settings
+#
+# Add these as environment variables in the cPanel Python app settings before
+# launching the portal publicly.
+
+FCG_COOKIE_PATH=/portal
+FCG_SESSION_HOURS=8
+
+# First seeded portal accounts.
+# Change these before production launch.
+FCG_ADMIN_EMAIL=admin@futurecreativegroup.co.za
+FCG_ADMIN_PASSWORD=replace-with-strong-admin-password
+FCG_CLIENT_EMAIL=client@futurecreativegroup.co.za
+FCG_CLIENT_PASSWORD=replace-with-strong-client-password
+
+# Optional email notifications for support tickets.
+# If these are not set, tickets are still saved in SQLite, but email is skipped.
+FCG_NOTIFY_TO=info@futurecreativegroup.co.za
+FCG_NOTIFY_FROM=info@futurecreativegroup.co.za
+FCG_SMTP_HOST=mail.futurecreativegroup.co.za
+FCG_SMTP_PORT=587
+FCG_SMTP_TLS=1
+FCG_SMTP_USER=info@futurecreativegroup.co.za
+FCG_SMTP_PASSWORD=replace-with-mailbox-password
+
+# Optional approved-user OAuth login.
+# Buttons appear only when the matching provider is fully configured.
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+GOOGLE_REDIRECT_URI=https://futurecreativegroup.co.za/portal/auth/google/callback
+
+APPLE_CLIENT_ID=
+APPLE_TEAM_ID=
+APPLE_KEY_ID=
+APPLE_PRIVATE_KEY=
+APPLE_REDIRECT_URI=https://futurecreativegroup.co.za/portal/auth/apple/callback
