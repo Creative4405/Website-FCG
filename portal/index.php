@@ -5744,11 +5744,14 @@ if ($requestPath === '/api/tickets') {
 
 function fcg_login_shell()
 {
+    $oauth = fcg_oauth_public_config();
     $accessMessage = 'Hi Future Creative Group, I need assistance with Client Portal access.';
     $supportUrl = 'https://wa.me/27115680279?text=' . rawurlencode($accessMessage);
-    $googleButton = '<a class="oauth-btn google" href="auth/google/start"><svg class="oauth-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M21.6 12.2c0-.7-.1-1.3-.2-1.9H12v3.6h5.4c-.2 1.2-.9 2.2-1.9 2.9v2.4h3.1c1.8-1.7 3-4.2 3-7Z"></path><path fill="#34A853" d="M12 22c2.7 0 5-0.9 6.6-2.5l-3.1-2.4c-.9.6-2 1-3.5 1-2.7 0-4.9-1.8-5.7-4.2H3.1v2.5C4.7 19.7 8.1 22 12 22Z"></path><path fill="#FBBC05" d="M6.3 13.9c-.2-.6-.3-1.2-.3-1.9s.1-1.3.3-1.9V7.6H3.1C2.4 8.9 2 10.4 2 12s.4 3.1 1.1 4.4l3.2-2.5Z"></path><path fill="#EA4335" d="M12 5.9c1.5 0 2.8.5 3.8 1.5l2.8-2.8C16.9 3 14.7 2 12 2 8.1 2 4.7 4.3 3.1 7.6l3.2 2.5C7.1 7.7 9.3 5.9 12 5.9Z"></path></svg><span>Continue with Google</span></a>';
-    $appleButton = '<a class="oauth-btn apple" href="auth/apple/start"><svg class="oauth-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 12.4c0-2 1.6-3 1.7-3.1-1-.1-2-.6-2.6-1.4-1.1-1.3-2.9-1.2-3.6-.8-.7.3-1.3.8-2.1.8-.8 0-1.6-.5-2.5-.5-1.3 0-2.5.8-3.2 2-1.4 2.5-.4 6.2 1 8.2.7 1 1.5 2.1 2.6 2 1 0 1.4-.7 2.6-.7 1.2 0 1.5.7 2.6.7 1.1 0 1.8-1 2.5-2 .8-1.1 1.1-2.2 1.1-2.3 0 0-2.1-.8-2.1-2.9ZM14.9 5.8c.6-.7 1-1.7.9-2.8-.9.1-1.9.6-2.5 1.3-.6.7-1 1.6-.9 2.6.9.1 1.9-.4 2.5-1.1Z"></path></svg><span>Continue with Apple</span></a>';
-    $oauthSection = '<div class="auth-divider"><span></span><em>or continue with</em><span></span></div><div class="oauth-actions">' . $googleButton . $appleButton . '</div>';
+    $googleButton = $oauth['google'] ? '<a class="oauth-btn google" href="auth/google/start"><svg class="oauth-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M21.6 12.2c0-.7-.1-1.3-.2-1.9H12v3.6h5.4c-.2 1.2-.9 2.2-1.9 2.9v2.4h3.1c1.8-1.7 3-4.2 3-7Z"></path><path fill="#34A853" d="M12 22c2.7 0 5-0.9 6.6-2.5l-3.1-2.4c-.9.6-2 1-3.5 1-2.7 0-4.9-1.8-5.7-4.2H3.1v2.5C4.7 19.7 8.1 22 12 22Z"></path><path fill="#FBBC05" d="M6.3 13.9c-.2-.6-.3-1.2-.3-1.9s.1-1.3.3-1.9V7.6H3.1C2.4 8.9 2 10.4 2 12s.4 3.1 1.1 4.4l3.2-2.5Z"></path><path fill="#EA4335" d="M12 5.9c1.5 0 2.8.5 3.8 1.5l2.8-2.8C16.9 3 14.7 2 12 2 8.1 2 4.7 4.3 3.1 7.6l3.2 2.5C7.1 7.7 9.3 5.9 12 5.9Z"></path></svg><span>Continue with Google</span></a>' : '';
+    $appleButton = $oauth['apple'] ? '<a class="oauth-btn apple" href="auth/apple/start"><svg class="oauth-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 12.4c0-2 1.6-3 1.7-3.1-1-.1-2-.6-2.6-1.4-1.1-1.3-2.9-1.2-3.6-.8-.7.3-1.3.8-2.1.8-.8 0-1.6-.5-2.5-.5-1.3 0-2.5.8-3.2 2-1.4 2.5-.4 6.2 1 8.2.7 1 1.5 2.1 2.6 2 1 0 1.4-.7 2.6-.7 1.2 0 1.5.7 2.6.7 1.1 0 1.8-1 2.5-2 .8-1.1 1.1-2.2 1.1-2.3 0 0-2.1-.8-2.1-2.9ZM14.9 5.8c.6-.7 1-1.7.9-2.8-.9.1-1.9.6-2.5 1.3-.6.7-1 1.6-.9 2.6.9.1 1.9-.4 2.5-1.1Z"></path></svg><span>Continue with Apple</span></a>' : '';
+    $oauthSection = ($googleButton || $appleButton)
+        ? '<div class="auth-divider"><span></span><em>or continue with</em><span></span></div><div class="oauth-actions">' . $googleButton . $appleButton . '</div>'
+        : '';
     $html = <<<'HTML'
 <!DOCTYPE html>
 <html lang="en">
@@ -5761,65 +5764,57 @@ function fcg_login_shell()
   <meta name="color-scheme" content="dark light">
   <link rel="icon" type="image/png" sizes="40x40" href="static/favicon-36x36.png">
   <style>
-    :root{--navy:#061321;--navy2:#0b1d31;--blue:#168fca;--cyan:#28c3f4;--line:rgba(139,203,235,.28);--text:#fff;--muted:#9fb7c7;--panel:rgba(255,255,255,.08);--radius:12px}
-    *{box-sizing:border-box;margin:0;padding:0}html{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);background:#05111f}svg{max-width:100%}
-    body{min-height:100vh;display:grid;place-items:center;padding:24px;background:radial-gradient(circle at 18% 14%,rgba(40,195,244,.22),transparent 32%),linear-gradient(135deg,#04101d,#082238 58%,#051321)}
-    body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:54px 54px;mask-image:linear-gradient(180deg,#000,transparent 82%)}
-    .shell{position:relative;z-index:1;width:min(100%,1080px);display:grid;grid-template-columns:1fr 520px;gap:42px;align-items:center}
-    .brand{display:grid;gap:26px}.brand-top{display:flex;align-items:center;gap:14px}.brand-top img{width:48px;height:48px;object-fit:contain;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.06)}.brand-top strong{display:block;font-size:.95rem;letter-spacing:.06em;text-transform:uppercase}.brand-top span{color:var(--muted);font-size:.74rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
-    h1{font-size:clamp(2.7rem,6vw,5.5rem);line-height:.94;letter-spacing:0;max-width:620px}.brand p{max-width:530px;color:#c6d9e6;line-height:1.8;font-size:1rem}.badge{width:fit-content;color:var(--cyan);background:rgba(40,195,244,.1);border:1px solid rgba(40,195,244,.24);border-radius:999px;padding:.48rem .75rem;font-size:.72rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase}
-    .card{background:linear-gradient(150deg,rgba(255,255,255,.12),rgba(255,255,255,.045)),rgba(4,16,29,.78);border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 30px 90px rgba(0,0,0,.32);backdrop-filter:blur(18px);padding:24px}.card-head{display:flex;justify-content:space-between;gap:18px;margin-bottom:18px}.login-logo{width:54px;height:54px;object-fit:contain;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.06);margin-bottom:14px}.portal-label{display:inline-flex;margin-bottom:8px;color:var(--cyan);font-size:.68rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.card h2{font-size:1.9rem}.card p{color:var(--muted);line-height:1.65;font-size:.9rem}.secure{height:30px;display:inline-flex;align-items:center;border:1px solid rgba(40,195,244,.24);background:rgba(40,195,244,.1);border-radius:999px;color:var(--cyan);padding:0 12px;font-size:.68rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase}
-    form{display:grid;gap:14px}.field{display:grid;gap:7px}label{font-size:.76rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:#dbeef8}input{width:100%;min-height:48px;border:1px solid rgba(151,205,233,.32);border-radius:8px;background:rgba(255,255,255,.09);color:#fff;padding:0 14px;outline:none}input:focus{border-color:var(--cyan);box-shadow:0 0 0 4px rgba(40,195,244,.15);background:rgba(255,255,255,.13)}button,.mini,.oauth-btn{min-height:48px;border:0;border-radius:8px;background:linear-gradient(135deg,#fff,#6de0ff 58%,var(--cyan));color:#03111f;font-weight:900;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;padding:0 14px;transition:transform .2s ease,border-color .2s ease,background .2s ease}button:hover,.mini:hover,.oauth-btn:hover{transform:translateY(-1px)}.auth-divider{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center;margin:16px 0 12px;color:var(--muted);font-size:.72rem;font-weight:900;text-transform:uppercase;letter-spacing:.12em}.auth-divider span{height:1px;background:rgba(151,205,233,.22)}.auth-divider em{font-style:normal}.oauth-actions{display:grid;gap:10px}.oauth-btn{width:100%;gap:10px;color:#f8fbff;background:rgba(255,255,255,.075);border:1px solid rgba(151,205,233,.28)}.oauth-btn.google{background:rgba(255,255,255,.96);color:#1f2937}.oauth-btn.apple{background:#05080c;color:#fff;border-color:rgba(255,255,255,.18)}.oauth-icon{width:20px;height:20px;display:grid;place-items:center;flex:0 0 20px}.google-mark{border-radius:50%;font-weight:900;color:#1a73e8;background:#fff;border:1px solid #d8e2ee}
-    .assist{margin-top:16px;display:grid;gap:10px;padding:14px;border:1px solid rgba(40,195,244,.2);background:rgba(40,195,244,.08);border-radius:8px}.assist-actions,.support-links{display:flex;gap:8px;flex-wrap:wrap}.support-links{margin-top:14px;justify-content:center}.support-links a{color:#cde8f6;font-size:.78rem;font-weight:850}.support-links a:hover{color:var(--cyan)}.assist .mini{min-height:34px;color:#eaf8ff;background:rgba(255,255,255,.08);border:1px solid var(--line)}
-    .error{display:none;margin-top:12px;padding:12px;border-radius:8px;background:rgba(244,113,113,.13);border:1px solid rgba(244,113,113,.3);color:#ffdede;font-size:.86rem;line-height:1.5}.hidden{display:none!important}.foot{margin-top:18px;color:#89a7b9;font-size:.78rem}.legal,.department-links{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px 12px;color:#89a7b9;font-size:.72rem;line-height:1.45}.legal span,.department-links span{flex:1 0 100%;color:#eaf8ff;font-weight:900;letter-spacing:.12em;text-transform:uppercase}.legal a,.department-links a{color:inherit;text-decoration:none;border-bottom:1px solid transparent}.legal a:hover,.department-links a:hover{color:var(--cyan);border-color:currentColor}.department-links{padding-top:12px;border-top:1px solid rgba(139,203,235,.16)}.back-to-top{position:fixed;right:18px;bottom:18px;width:44px;height:44px;min-width:44px;min-height:44px;display:grid;place-items:center;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--cyan));color:#03111f;box-shadow:0 14px 34px rgba(0,0,0,.35);opacity:0;pointer-events:none;transform:translateY(10px);transition:opacity .22s ease,transform .22s ease;z-index:5}.back-to-top.is-visible{opacity:1;pointer-events:auto;transform:translateY(0)}.back-to-top:focus-visible{outline:3px solid #fff;outline-offset:4px}.back-to-top svg{width:18px;height:18px;max-width:18px;max-height:18px;display:block}
-    @media(max-width:880px){body{place-items:start center;padding:18px}.shell{width:100%;grid-template-columns:minmax(0,1fr);gap:24px;overflow:hidden}.brand{gap:16px;min-width:0}.brand p{max-width:100%;line-height:1.65}.brand h1{max-width:100%;font-size:clamp(2rem,10vw,3.25rem);line-height:1.03;overflow-wrap:break-word}.card{width:100%;min-width:0;padding:18px}}
-    @media(max-width:560px){body{padding:14px}.brand h1{font-size:clamp(1.9rem,11vw,2.65rem)}.brand p{font-size:.92rem}.badge{font-size:.64rem}.card-head{display:grid}.secure{width:fit-content}.back-to-top{width:44px;height:44px;min-width:44px;min-height:44px}}
-    @media(prefers-color-scheme:light){.oauth-btn.apple{background:#101820;color:#fff}.oauth-btn.google{background:#fff;color:#1f2937}}
-    @media(prefers-reduced-motion:reduce){.back-to-top{transition:none}}
+    :root{--navy:#03111f;--navy-2:#071a2d;--navy-3:#0d263a;--cyan:#28c3f4;--blue:#168fca;--aqua:#79e6ff;--white:#ffffff;--soft:#dceff8;--muted:#9bb7c8;--line:rgba(139,203,235,.26);--glass:rgba(9,27,43,.72);--glass-strong:rgba(15,38,57,.86);--danger:#ffb4b4;--radius:28px;--radius-sm:16px;--shadow:0 34px 110px rgba(0,0,0,.42)}
+    *{box-sizing:border-box;margin:0;padding:0}html{min-height:100%;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--white);background:var(--navy);scroll-behavior:smooth}body{min-height:100vh;overflow-x:hidden;background:radial-gradient(circle at 72% 36%,rgba(40,195,244,.2),transparent 28%),radial-gradient(circle at 18% 78%,rgba(22,143,202,.18),transparent 30%),linear-gradient(135deg,#03101d 0%,#07192b 48%,#041321 100%)}body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(rgba(151,205,233,.052) 1px,transparent 1px),linear-gradient(90deg,rgba(151,205,233,.052) 1px,transparent 1px);background-size:72px 72px;mask-image:linear-gradient(180deg,#000,transparent 86%);z-index:0}body:after{content:"";position:fixed;inset:-20%;pointer-events:none;background:radial-gradient(circle at 70% 40%,rgba(121,230,255,.14),transparent 18%),radial-gradient(circle at 20% 70%,rgba(22,143,202,.12),transparent 22%);filter:blur(6px);animation:glowShift 16s ease-in-out infinite alternate;z-index:0}a{color:inherit}svg{max-width:100%;display:block}.page{position:relative;z-index:1;min-height:100vh;display:grid;grid-template-rows:1fr auto;padding:42px 28px 22px}.page:before{content:"";position:absolute;left:5vw;bottom:10vh;width:min(420px,48vw);height:min(420px,48vw);border:1px solid rgba(121,230,255,.09);border-radius:50%;background:linear-gradient(135deg,rgba(40,195,244,.08),transparent 48%);mask-image:linear-gradient(140deg,#000,transparent 74%);pointer-events:none}.network{position:fixed;inset:auto auto 7vh 4vw;width:min(520px,46vw);height:auto;color:rgba(121,230,255,.18);pointer-events:none;z-index:0}.shell{width:min(100%,1240px);margin:auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(420px,520px);gap:clamp(34px,6vw,84px);align-items:center}.brand{display:grid;gap:26px;min-width:0}.brand-top{display:flex;align-items:center;gap:16px}.brand-logo{width:62px;height:62px;display:grid;place-items:center;border:1px solid rgba(151,205,233,.26);border-radius:18px;background:rgba(255,255,255,.065);box-shadow:inset 0 1px 0 rgba(255,255,255,.12)}.brand-logo img{width:48px;height:48px;object-fit:contain}.brand-title strong{display:block;font-size:1.02rem;font-weight:900;letter-spacing:.06em;text-transform:uppercase}.brand-title span{display:block;margin-top:.22rem;color:#abc4d4;font-size:.76rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.badge{width:fit-content;display:inline-flex;align-items:center;gap:.5rem;color:var(--aqua);background:rgba(40,195,244,.1);border:1px solid rgba(40,195,244,.3);border-radius:999px;padding:.56rem .86rem;font-size:.72rem;font-weight:950;letter-spacing:.15em;text-transform:uppercase;box-shadow:0 14px 40px rgba(40,195,244,.09)}.badge svg,.feature-icon svg,.security-card svg{width:18px;height:18px}.brand h1{max-width:650px;font-size:clamp(3rem,5.4vw,5.45rem);line-height:.96;letter-spacing:0}.brand h1 span{color:transparent;background:linear-gradient(95deg,#ffffff 0%,#7ee9ff 50%,#28c3f4 100%);-webkit-background-clip:text;background-clip:text}.brand-copy{max-width:600px;color:#c6d9e6;font-size:1.05rem;line-height:1.85}.features{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;max-width:690px}.feature{min-width:0;display:grid;gap:.7rem;padding:15px;border:1px solid rgba(151,205,233,.15);border-radius:18px;background:linear-gradient(145deg,rgba(255,255,255,.085),rgba(255,255,255,.025));backdrop-filter:blur(14px);transition:transform .22s ease,border-color .22s ease,background .22s ease}.feature:hover{transform:translateY(-3px);border-color:rgba(40,195,244,.38);background:linear-gradient(145deg,rgba(40,195,244,.12),rgba(255,255,255,.035))}.feature-icon{width:38px;height:38px;display:grid;place-items:center;color:var(--aqua);border:1px solid rgba(40,195,244,.26);border-radius:14px;background:rgba(40,195,244,.1)}.feature strong{font-size:.92rem}.feature span{color:#a8c1d2;font-size:.78rem;line-height:1.55}.security-card{max-width:610px;display:flex;align-items:center;gap:14px;padding:16px;border:1px solid rgba(121,230,255,.24);border-radius:20px;background:linear-gradient(135deg,rgba(40,195,244,.1),rgba(255,255,255,.035));box-shadow:0 24px 70px rgba(0,0,0,.2)}.security-card .shield{width:44px;height:44px;display:grid;place-items:center;flex:0 0 44px;color:#061321;background:linear-gradient(135deg,#ffffff,#71e4ff);border-radius:16px}.security-card p{color:#d4e8f3;line-height:1.55;font-size:.92rem}.security-card strong{display:block;color:#fff;font-size:.95rem}.card-wrap{position:relative}.card-wrap:before{content:"";position:absolute;inset:7% -7% auto auto;width:76%;height:48%;border-radius:36px;background:rgba(40,195,244,.18);filter:blur(70px);z-index:-1}.card{animation:cardIn .7s ease both;position:relative;overflow:hidden;background:linear-gradient(155deg,rgba(255,255,255,.13),rgba(255,255,255,.045)),var(--glass);border:1px solid rgba(151,205,233,.3);border-radius:var(--radius);box-shadow:var(--shadow);backdrop-filter:blur(22px);padding:32px}.card:before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(145deg,rgba(121,230,255,.5),rgba(255,255,255,.08),rgba(22,143,202,.36));mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask-composite:exclude;pointer-events:none}.card-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px;align-items:start;margin-bottom:24px}.portal-label{display:inline-flex;margin-bottom:10px;color:var(--aqua);font-size:.72rem;font-weight:950;letter-spacing:.17em;text-transform:uppercase}.card h2{font-size:clamp(2rem,3vw,2.75rem);line-height:1.05;letter-spacing:0}.card p{color:#b9d0de;line-height:1.65}.secure{display:grid;gap:2px;min-width:116px;padding:10px 13px;color:#dff8ff;background:rgba(40,195,244,.11);border:1px solid rgba(40,195,244,.3);border-radius:16px;text-align:left}.secure strong{font-size:.74rem;font-weight:950;letter-spacing:.12em;text-transform:uppercase}.secure span{color:#9fc2d3;font-size:.66rem;font-weight:850}form{display:grid;gap:15px}.field{display:grid;gap:8px}label,.option-row,.auth-divider{font-size:.76rem;font-weight:950;letter-spacing:.08em;text-transform:uppercase;color:#e6f6ff}.input-wrap{position:relative}.input-icon{position:absolute;left:15px;top:50%;width:19px;height:19px;color:#8fbbcf;transform:translateY(-50%);pointer-events:none}input{width:100%;min-height:56px;border:1px solid rgba(151,205,233,.32);border-radius:15px;background:rgba(255,255,255,.085);color:#fff;padding:0 48px 0 46px;outline:none;font-size:.95rem;transition:border-color .2s ease,box-shadow .2s ease,background .2s ease}input::placeholder{color:rgba(219,235,245,.48)}input:focus{border-color:rgba(121,230,255,.76);box-shadow:0 0 0 4px rgba(40,195,244,.14),0 0 34px rgba(40,195,244,.12);background:rgba(255,255,255,.12)}.access-toggle{position:absolute;right:10px;top:50%;width:38px;height:38px;min-height:38px;padding:0;display:grid;place-items:center;color:#b7d5e4;background:transparent;border:0;border-radius:12px;transform:translateY(-50%)}.access-toggle:hover{background:rgba(255,255,255,.08);transform:translateY(-50%)}.access-toggle svg{width:19px;height:19px}.option-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:-2px;letter-spacing:0;text-transform:none;font-size:.82rem;font-weight:850;color:#b8d1de}.remember{display:inline-flex;align-items:center;gap:8px}.remember input{appearance:none;width:17px;height:17px;min-height:17px;padding:0;border-radius:5px;background:rgba(255,255,255,.08)}.remember input:checked{background:linear-gradient(135deg,var(--blue),var(--cyan));border-color:var(--cyan);box-shadow:inset 0 0 0 3px #092235}.option-row a,.card-links a,.portal-footer a{color:#cfeeff;text-decoration:none;border-bottom:1px solid transparent}.option-row a:hover,.card-links a:hover,.portal-footer a:hover{color:var(--aqua);border-color:currentColor}.primary-btn,.mini,.oauth-btn{min-height:54px;border:0;border-radius:15px;font-weight:950;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:0 16px;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease,background .22s ease}.primary-btn{width:100%;margin-top:2px;color:#03111f;background:linear-gradient(135deg,#e8fbff,#77e5ff 48%,#28c3f4);box-shadow:0 18px 46px rgba(40,195,244,.22)}.primary-btn:hover{transform:translateY(-2px);box-shadow:0 22px 58px rgba(40,195,244,.34)}.primary-btn:disabled{cursor:wait;opacity:.72;transform:none;box-shadow:none}.primary-btn svg{width:19px;height:19px}.btn-arrow{margin-left:auto}.primary-btn.is-loading .btn-text{opacity:.78}.primary-btn.is-loading .btn-lock{animation:pulseLock 1s ease-in-out infinite}.auth-divider{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:center;margin:20px 0 14px;color:#9fb9c9;font-size:.68rem;letter-spacing:.14em}.auth-divider span{height:1px;background:rgba(151,205,233,.22)}.auth-divider em{font-style:normal;white-space:nowrap}.oauth-actions{display:grid;gap:10px}.oauth-btn{width:100%;border:1px solid rgba(151,205,233,.25)}.oauth-btn:hover{transform:translateY(-2px);box-shadow:0 16px 38px rgba(0,0,0,.18)}.oauth-btn.google{color:#1d2938;background:#fff}.oauth-btn.apple{color:#fff;background:#05080c;border-color:rgba(255,255,255,.18)}.oauth-icon{width:20px;height:20px;flex:0 0 20px}.assist{margin-top:18px;display:grid;gap:12px;padding:16px;border:1px solid rgba(40,195,244,.24);background:rgba(40,195,244,.08);border-radius:18px}.assist strong{font-size:1rem}.assist p{font-size:.88rem;line-height:1.6}.assist-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}.mini{min-height:42px;color:#edfaff;background:rgba(255,255,255,.075);border:1px solid rgba(151,205,233,.24);border-radius:13px;font-size:.83rem}.mini:hover{border-color:rgba(40,195,244,.44);background:rgba(40,195,244,.12);transform:translateY(-1px)}.error{display:none;margin-top:14px;padding:13px 14px;border-radius:15px;background:rgba(244,113,113,.13);border:1px solid rgba(244,113,113,.32);color:#ffdede;font-size:.88rem;line-height:1.5;animation:errorIn .2s ease both}.hidden{display:none!important}.card-links{margin-top:16px;display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;color:#b8d1de;font-size:.82rem;font-weight:850}.portal-footer{position:relative;z-index:1;width:min(100%,1240px);margin:34px auto 0;padding-top:18px;border-top:1px solid rgba(151,205,233,.14);display:flex;align-items:center;justify-content:space-between;gap:18px;color:#9cb9ca;font-size:.78rem}.footer-contact,.footer-links{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.footer-contact strong{color:#dceff8}.back-to-top{position:fixed;right:18px;bottom:18px;width:44px;height:44px;min-width:44px;min-height:44px;display:grid;place-items:center;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--cyan));color:#03111f;box-shadow:0 14px 34px rgba(0,0,0,.35);opacity:0;pointer-events:none;transform:translateY(10px);transition:opacity .22s ease,transform .22s ease;z-index:5}.back-to-top.is-visible{opacity:1;pointer-events:auto;transform:translateY(0)}.back-to-top svg{width:18px;height:18px}@keyframes cardIn{from{opacity:0;transform:translateY(18px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}@keyframes glowShift{from{transform:translate3d(-1%,1%,0) scale(1)}to{transform:translate3d(1.5%,-1%,0) scale(1.035)}}@keyframes errorIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}@keyframes pulseLock{50%{transform:scale(.9);opacity:.72}}
+    @media(max-width:1080px){.page{padding:28px 20px 18px}.shell{grid-template-columns:1fr;max-width:720px}.brand{gap:20px}.brand h1{font-size:clamp(2.65rem,8vw,4.6rem)}.features{grid-template-columns:1fr}.security-card{max-width:100%}.card-wrap:before{inset:auto 4% 18% auto}.portal-footer{display:grid;justify-items:center;text-align:center}.footer-contact,.footer-links{justify-content:center}.network{width:58vw;opacity:.65}}
+    @media(max-width:620px){.page{padding:18px 14px 16px}.shell{gap:22px}.brand{gap:16px}.brand-top{gap:12px}.brand-logo{width:52px;height:52px;border-radius:15px}.brand-logo img{width:40px;height:40px}.brand-title strong{font-size:.88rem}.brand-title span{font-size:.66rem}.badge{font-size:.64rem;padding:.48rem .68rem}.brand h1{font-size:clamp(2.25rem,12vw,3.3rem);line-height:1.02}.brand-copy{font-size:.94rem;line-height:1.65}.features,.security-card{display:none}.card{padding:22px;border-radius:22px}.card-head{grid-template-columns:1fr}.secure{width:fit-content}.card h2{font-size:2rem}input{min-height:54px}.option-row{align-items:flex-start;flex-direction:column}.assist-actions{grid-template-columns:1fr}.card-links{justify-content:flex-start}.portal-footer{margin-top:26px;font-size:.74rem}.network{display:none}}
+    html[data-theme="light"]{--navy:#edf6fb;--white:#0d263a;--soft:#143249;--muted:#617a8c;--line:rgba(22,143,202,.22);--glass:rgba(255,255,255,.78);--glass-strong:rgba(255,255,255,.9);--shadow:0 28px 82px rgba(24,71,103,.14)}html[data-theme="light"] body{background:radial-gradient(circle at 72% 36%,rgba(40,195,244,.18),transparent 28%),linear-gradient(135deg,#f7fbfe 0%,#eaf4fa 58%,#dfeef6 100%)}html[data-theme="light"] body:before{background-image:linear-gradient(rgba(17,105,155,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(17,105,155,.06) 1px,transparent 1px)}html[data-theme="light"] .brand-copy,html[data-theme="light"] .card p,html[data-theme="light"] .feature span,html[data-theme="light"] .security-card p,html[data-theme="light"] .option-row,html[data-theme="light"] .card-links,html[data-theme="light"] .portal-footer{color:#496a7f}html[data-theme="light"] .feature,html[data-theme="light"] .card,html[data-theme="light"] .security-card{background:linear-gradient(145deg,rgba(255,255,255,.86),rgba(255,255,255,.56));border-color:rgba(22,143,202,.18)}html[data-theme="light"] .card{background:linear-gradient(155deg,rgba(255,255,255,.92),rgba(255,255,255,.7)),var(--glass)}html[data-theme="light"] input{color:#123047;background:rgba(255,255,255,.75);border-color:rgba(22,143,202,.24)}html[data-theme="light"] input::placeholder{color:#7a8f9d}html[data-theme="light"] .input-icon{color:#668598}html[data-theme="light"] .oauth-btn.apple{background:#101820;color:#fff}html[data-theme="light"] .oauth-btn.google{background:#fff;color:#1d2938}html[data-theme="light"] .mini{color:#11314a;background:rgba(255,255,255,.68)}html[data-theme="light"] .secure{color:#0d344e;background:rgba(40,195,244,.12)}html[data-theme="light"] .secure span{color:#557386}html[data-theme="light"] .footer-contact strong{color:#123047}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
   </style>
 </head>
 <body>
   <div id="top"></div>
+  <svg class="network" viewBox="0 0 520 420" fill="none" aria-hidden="true">
+    <path d="M34 331C91 230 166 253 229 166C292 78 380 96 486 36" stroke="currentColor" stroke-width="1"></path>
+    <path d="M64 371C142 311 170 279 228 278C322 277 343 183 470 142" stroke="currentColor" stroke-width="1"></path>
+    <circle cx="34" cy="331" r="4" fill="currentColor"></circle><circle cx="229" cy="166" r="4" fill="currentColor"></circle><circle cx="486" cy="36" r="4" fill="currentColor"></circle><circle cx="228" cy="278" r="4" fill="currentColor"></circle><circle cx="470" cy="142" r="4" fill="currentColor"></circle>
+  </svg>
+  <div class="page">
   <main class="shell">
     <section class="brand" aria-label="Future Creative Group secure portal">
-      <div class="brand-top"><img src="static/logo.png" alt="Future Creative Group"><div><strong>Future Creative Group</strong><span>Client Portal</span></div></div>
-      <span class="badge">Secure client access</span>
-      <h1>Client projects, support and documents in one secure hub.</h1>
-      <p>Sign in to access your quotations, invoices, payment records, project updates, support tickets and assigned business documents.</p>
+      <div class="brand-top"><span class="brand-logo"><img src="static/logo.png" alt="Future Creative Group"></span><div class="brand-title"><strong>Future Creative Group</strong><span>IT • Security • Digital Solutions</span></div></div>
+      <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"></path><path d="m9 12 2 2 4-5"></path></svg>Secure Client Access</span>
+      <h1>Your secure client <span>workspace.</span></h1>
+      <p class="brand-copy">Access your quotations, invoices, project updates, support tickets, payment records and business documents in one protected portal.</p>
+      <div class="features" aria-label="Portal highlights">
+        <article class="feature"><span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19V5"></path><path d="M4 19h16"></path><path d="m7 15 4-4 3 3 5-7"></path></svg></span><strong>Project Updates</strong><span>Real-time progress and milestone tracking</span></article>
+        <article class="feature"><span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7Z"></path><path d="M14 2v5h5"></path><path d="M8 13h8"></path><path d="M8 17h5"></path></svg></span><strong>Quotes &amp; Invoices</strong><span>View, download and manage all your documents</span></article>
+        <article class="feature"><span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path><path d="M12 14v2"></path></svg></span><strong>Secure Documents</strong><span>Encrypted, private and accessible anytime</span></article>
+      </div>
+      <div class="security-card"><span class="shield"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V5l8-3 8 3Z"></path><path d="m9 12 2 2 4-5"></path></svg></span><p><strong>Secure access for approved Future Creative Group clients only.</strong>Protected. Private. Professional.</p></div>
     </section>
+    <div class="card-wrap">
     <section class="card" aria-labelledby="login-title">
-      <div class="card-head"><div><img class="login-logo" src="static/logo.png" alt="Future Creative Group"><span class="portal-label">Client Portal</span><h2 id="login-title">Welcome Back</h2><p>Sign in to continue to your secure Future Creative Group client workspace.</p></div><span class="secure">Secure</span></div>
+      <div class="card-head"><div><span class="portal-label">Client Portal</span><h2 id="login-title">Welcome Back</h2><p>Sign in to continue to your secure client workspace.</p></div><span class="secure"><strong>Secure</strong><span>Encrypted Access</span></span></div>
       <form id="login-form">
-        <div class="field"><label for="email">Email address</label><input id="email" type="email" autocomplete="email" placeholder="client@example.com" required></div>
-        <div class="field"><label for="access-code">Access code</label><input id="access-code" type="password" autocomplete="current-password" placeholder="Enter access code" required></div>
-        <div class="field hidden" id="two-factor-field"><label for="two-factor-code">Administrator verification code</label><input id="two-factor-code" type="text" inputmode="numeric" maxlength="6" autocomplete="one-time-code"></div>
-        <button type="submit">Sign In</button>
+        <div class="field"><label for="email">Email Address</label><span class="input-wrap"><svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 7-8.97 5.7a2 2 0 0 1-2.06 0L2 7"></path><rect x="2" y="4" width="20" height="16" rx="2"></rect></svg><input id="email" type="email" autocomplete="email" placeholder="client@example.com" required></span></div>
+        <div class="field"><label for="access-code">Access Code</label><span class="input-wrap"><svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="9" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg><input id="access-code" type="password" autocomplete="current-password" placeholder="Enter your access code" required><button class="access-toggle" id="access-toggle" type="button" aria-label="Show access code" title="Show access code"><svg class="eye-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"></path><circle cx="12" cy="12" r="3"></circle></svg></button></span></div>
+        <div class="field hidden" id="two-factor-field"><label for="two-factor-code">Administrator verification code</label><span class="input-wrap"><svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"></path><path d="M12 8v4"></path><path d="M12 16h.01"></path></svg><input id="two-factor-code" type="text" inputmode="numeric" maxlength="6" autocomplete="one-time-code"></span></div>
+        <div class="option-row"><label class="remember" for="remember-email"><input id="remember-email" type="checkbox">Remember me</label><a href="{{FCG_SUPPORT_URL}}" target="_blank" rel="noopener">Forgot access code?</a></div>
+        <button class="primary-btn" id="sign-in-button" type="submit"><svg class="btn-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg><span class="btn-text">Sign In</span><svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></button>
       </form>
       {{FCG_OAUTH_SECTION}}
-      <div class="assist"><strong>Need access?</strong><p>Portal access is only available to active Future Creative Group clients. Please request access from our team.</p><div class="assist-actions"><a class="mini" href="{{FCG_SUPPORT_URL}}" target="_blank" rel="noopener">Request Portal Access</a><a class="mini" href="{{FCG_SUPPORT_URL}}" target="_blank" rel="noopener">WhatsApp Support</a></div></div>
+      <div class="assist"><strong>Need portal access?</strong><p>Portal access is available to active Future Creative Group clients. Request assistance if you need login details, account activation or access code support.</p><div class="assist-actions"><a class="mini" href="{{FCG_SUPPORT_URL}}" target="_blank" rel="noopener">Request Portal Access</a><a class="mini" href="{{FCG_SUPPORT_URL}}" target="_blank" rel="noopener">WhatsApp Support</a></div></div>
       <div class="error" id="login-error"></div>
-      <div class="support-links"><a href="{{FCG_SUPPORT_URL}}" target="_blank" rel="noopener">Forgot access code?</a><a href="{{FCG_SUPPORT_URL}}" target="_blank" rel="noopener">Need portal access?</a><a href="/">Back to Website</a></div>
-      <p class="foot">This secure portal is not indexed by search engines. Admin and client workspaces load only after authenticated server-side access.</p>
-      <nav class="legal" aria-label="Legal and compliance links">
-        <span>Legal &amp; Compliance</span>
-        <a href="/privacy/">Privacy &amp; POPIA</a>
-        <a href="/paia/">PAIA Manual</a>
-        <a href="/website-terms/">Website Terms</a>
-        <a href="/service-terms/">Service Terms</a>
-        <a href="/warranty-returns/">Warranty &amp; Returns</a>
-        <a href="/portal-acceptable-use/">Portal Acceptable Use</a>
-        <a href="/cookie-policy/">Cookie Policy</a>
-      </nav>
-      <nav class="department-links" aria-label="Department contact links">
-        <span>Contact</span>
-        <a href="tel:+27115680279">011 568 0279</a>
-        <a href="mailto:info@futurecreativegroup.co.za">General: info@futurecreativegroup.co.za</a>
-        <a href="mailto:sales@futurecreativegroup.co.za">Sales: sales@futurecreativegroup.co.za</a>
-        <a href="mailto:support@futurecreativegroup.co.za">Support: support@futurecreativegroup.co.za</a>
-        <a href="/contact/#departments">View All Departments</a>
-      </nav>
+      <div class="card-links"><a href="{{FCG_SUPPORT_URL}}" target="_blank" rel="noopener">Forgot access code?</a><a href="/">Back to Website</a></div>
     </section>
+    </div>
   </main>
+  <footer class="portal-footer">
+    <div class="footer-contact"><strong>Future Creative Group</strong><a href="tel:+27115680279">011 568 0279</a><a href="mailto:info@futurecreativegroup.co.za">info@futurecreativegroup.co.za</a></div>
+    <nav class="footer-links" aria-label="Legal links"><a href="/privacy/">Privacy &amp; POPIA</a><a href="/paia/">PAIA Manual</a><a href="/website-terms/">Website Terms</a><a href="/service-terms/">Service Terms</a><a href="/warranty-returns/">Warranty &amp; Returns</a><a href="/cookie-policy/">Cookie Policy</a></nav>
+  </footer>
+  </div>
   <a class="back-to-top" href="#top" aria-label="Back to top" title="Back to top">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"></path><path d="M5 12l7-7 7 7"></path></svg>
   </a>
@@ -5831,18 +5826,18 @@ function fcg_login_shell()
       document.title = 'FCG Cloud Client Portal';
       const icon = document.querySelector('link[rel="icon"]');
       if (icon) icon.href = 'static/fcg-cloud-favicon.png';
-      const logo = document.querySelector('.brand-top img');
+      const logo = document.querySelector('.brand-logo img');
       if (logo) { logo.src = 'static/fcg-cloud-logo.png'; logo.alt = 'FCG Cloud'; }
-      const name = document.querySelector('.brand-top strong');
-      const type = document.querySelector('.brand-top div span');
+      const name = document.querySelector('.brand-title strong');
+      const type = document.querySelector('.brand-title span');
       const badge = document.querySelector('.badge');
       const heading = document.querySelector('h1');
-      const intro = document.querySelector('.brand p');
+      const intro = document.querySelector('.brand-copy');
       const cardIntro = document.querySelector('.card-head p');
       if (name) name.textContent = 'FCG Cloud';
-      if (type) type.textContent = 'Cloud Portal';
+      if (type) type.textContent = 'Hosting • Domains • Business Email';
       if (badge) badge.textContent = 'Secure cloud access';
-      if (heading) heading.textContent = 'Hosting, billing and support in one secure workspace.';
+      if (heading) heading.innerHTML = 'Hosting, billing and support in one secure <span>workspace.</span>';
       if (intro) intro.textContent = 'Manage your FCG Cloud hosting, business email, domains, invoices, renewals and support requests.';
       if (cardIntro) cardIntro.textContent = 'Enter the secure access details issued for your FCG Cloud account.';
       const portalLabel = document.querySelector('.portal-label');
@@ -5857,6 +5852,26 @@ function fcg_login_shell()
     const errorBox = document.getElementById('login-error');
     const twoFactorField = document.getElementById('two-factor-field');
     const twoFactorCode = document.getElementById('two-factor-code');
+    const emailField = document.getElementById('email');
+    const accessCode = document.getElementById('access-code');
+    const accessToggle = document.getElementById('access-toggle');
+    const rememberEmail = document.getElementById('remember-email');
+    const signInButton = document.getElementById('sign-in-button');
+    try {
+      const savedEmail = localStorage.getItem('fcg_portal_email');
+      if (savedEmail && emailField && rememberEmail) {
+        emailField.value = savedEmail;
+        rememberEmail.checked = true;
+      }
+    } catch (error) {}
+    if (accessToggle && accessCode) {
+      accessToggle.addEventListener('click', () => {
+        const showing = accessCode.type === 'text';
+        accessCode.type = showing ? 'password' : 'text';
+        accessToggle.setAttribute('aria-label', showing ? 'Show access code' : 'Hide access code');
+        accessToggle.title = showing ? 'Show access code' : 'Hide access code';
+      });
+    }
     const authError = new URLSearchParams(window.location.search).get('auth_error');
     if (authError) {
       errorBox.textContent = authError;
@@ -5866,11 +5881,19 @@ function fcg_login_shell()
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
       errorBox.style.display = 'none';
+      if (signInButton) {
+        signInButton.disabled = true;
+        signInButton.classList.add('is-loading');
+      }
       const body = {
-        email: document.getElementById('email').value.trim().toLowerCase(),
-        password: document.getElementById('access-code').value,
+        email: emailField.value.trim().toLowerCase(),
+        password: accessCode.value,
         two_factor_code: twoFactorCode.value.trim()
       };
+      try {
+        if (rememberEmail && rememberEmail.checked) localStorage.setItem('fcg_portal_email', body.email);
+        if (rememberEmail && !rememberEmail.checked) localStorage.removeItem('fcg_portal_email');
+      } catch (error) {}
       try {
         const response = await fetch('api/login', {
           method: 'POST',
@@ -5885,6 +5908,10 @@ function fcg_login_shell()
           twoFactorCode.focus();
           errorBox.textContent = data.message || 'Enter the administrator verification code.';
           errorBox.style.display = 'block';
+          if (signInButton) {
+            signInButton.disabled = false;
+            signInButton.classList.remove('is-loading');
+          }
           return;
         }
         if (!response.ok) throw new Error(data.error || 'Invalid portal login details.');
@@ -5892,6 +5919,10 @@ function fcg_login_shell()
       } catch (error) {
         errorBox.textContent = error.message || 'Invalid portal login details. Please try again.';
         errorBox.style.display = 'block';
+        if (signInButton) {
+          signInButton.disabled = false;
+          signInButton.classList.remove('is-loading');
+        }
       }
     });
     (function(){
