@@ -1,0 +1,2 @@
+# No external Python packages required.
+# The production portal backend uses only the Python standard library.

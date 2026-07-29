@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success | Future Creative Group</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent: #3a8ea8;
+            --accent-light: #5ab0cb;
+            --whatsapp: #25D366;
+            --bg: #050505;
+            --card: rgba(15, 15, 15, 0.6);
+            --border: rgba(255, 255, 255, 0.06);
+            --text: #ffffff;
+            --text-muted: #888888;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        /* Ultra Modern Mesh Background */
+        .mesh-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: 
+                radial-gradient(at 0% 0%, rgba(58, 142, 168, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(30, 64, 175, 0.1) 0px, transparent 50%),
+                radial-gradient(at 50% 50%, rgba(5, 5, 5, 1) 0px, transparent 100%);
+        }
+
+        .grid-overlay {
+            position: fixed;
+            inset: 0;
+            background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), 
+                              linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: -1;
+            mask-image: radial-gradient(circle at center, black, transparent 80%);
+        }
+
+        /* Container */
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 480px;
+            width: 90%;
+            padding: 3.5rem 2.5rem;
+            background: var(--card);
+            backdrop-filter: blur(30px);
+            border: 1px solid var(--border);
+            border-radius: 40px;
+            text-align: center;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.8);
+            animation: reveal 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        @keyframes reveal {
+            from { opacity: 0; transform: translateY(20px) scale(0.98); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        /* Logo */
+        .logo {
+            margin-bottom: 2.5rem;
+        }
+        .logo img {
+            height: 80px;
+            opacity: 0.9;
+        }
+
+        /* Success Ring */
+        .success-ring {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 1.5rem;
+            background: rgba(58, 142, 168, 0.1);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(58, 142, 168, 0.2);
+            position: relative;
+        }
+
+        .success-ring::after {
+            content: '';
+            position: absolute;
+            inset: -8px;
+            border-radius: 24px;
+            border: 1px solid rgba(58, 142, 168, 0.05);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(1.2); opacity: 0; }
+        }
+
+        /* Typography */
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(180deg, #fff 0%, #aaa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .ref-box {
+            display: inline-block;
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+        }
+
+        .ref-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+            margin-bottom: 2px;
+        }
+
+        .ref-number {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            color: var(--accent-light);
+            font-size: 1.1rem;
+        }
+
+        p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        /* Action Buttons */
+        .actions {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 16px;
+            border-radius: 18px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--text);
+            color: var(--bg);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(255,255,255,0.1);
+            background: #f0f0f0;
+        }
+
+        .btn-whatsapp {
+            background: rgba(37, 211, 102, 0.1);
+            color: var(--whatsapp);
+            border: 1px solid rgba(37, 211, 102, 0.2);
+        }
+
+        .btn-whatsapp:hover {
+            background: rgba(37, 211, 102, 0.15);
+            transform: translateY(-2px);
+        }
+
+        svg {
+            max-width: 100%;
+        }
+
+        .btn-whatsapp svg {
+            fill: currentColor;
+            width: 20px;
+            height: 20px;
+            max-width: 20px;
+            max-height: 20px;
+            display: block;
+            flex: 0 0 20px;
+        }
+
+        /* Countdown Timer */
+        .redirect-info {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .timer-circle {
+            width: 24px;
+            height: 24px;
+            position: relative;
+        }
+
+        .timer-svg {
+            transform: rotate(-90deg);
+        }
+
+        .timer-bg {
+            fill: none;
+            stroke: rgba(255, 255, 255, 0.1);
+            stroke-width: 2;
+        }
+
+        .timer-progress {
+            fill: none;
+            stroke: var(--accent);
+            stroke-width: 2;
+            stroke-dasharray: 63;
+            stroke-dashoffset: 0;
+            transition: stroke-dashoffset 1s linear;
+        }
+
+        #countdown-number {
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px 16px;
+        }
+
+        .footer-title {
+            flex: 1 0 100%;
+            color: var(--text);
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .footer-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.75rem;
+            transition: color 0.2s;
+        }
+
+        .footer-link:hover {
+            color: var(--text);
+        }
+
+        .department-footer {
+            margin-top: 1.25rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid var(--border);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px 14px;
+        }
+
+        .back-to-top {
+            position: fixed;
+            right: 1rem;
+            bottom: 1rem;
+            z-index: 5;
+            width: 44px;
+            height: 44px;
+            min-width: 44px;
+            min-height: 44px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            color: #fff;
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 14px 36px rgba(0, 0, 0, 0.38);
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(10px);
+            transition: opacity 0.22s ease, transform 0.22s ease;
+            text-decoration: none;
+        }
+
+        .back-to-top.is-visible {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+
+        .back-to-top:focus-visible {
+            outline: 3px solid #fff;
+            outline-offset: 4px;
+        }
+
+        .back-to-top svg {
+            width: 18px;
+            height: 18px;
+            max-width: 18px;
+            max-height: 18px;
+            display: block;
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .container {
+                padding: 2.5rem 1.5rem;
+                margin: 1.5rem 0;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            .back-to-top {
+                width: 44px;
+                height: 44px;
+                min-width: 44px;
+                min-height: 44px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .back-to-top {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="top"></div>
+
+    <div class="mesh-bg"></div>
+    <div class="grid-overlay"></div>
+
+    <div class="container">
+        <div class="logo">
+            <img src="./logo.png" alt="Future Creative Group">
+        </div>
+
+        <div class="success-ring">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+        </div>
+
+        <h1>Message Sent</h1>
+        
+        <!-- Reference Number -->
+        <div class="ref-box">
+            <div class="ref-label">Reference Number</div>
+            <div class="ref-number" id="ref-id">FCG-829104</div>
+        </div>
+
+        <p>We've received your request. A specialist will be in touch shortly to discuss your vision.</p>
+
+        <div class="actions">
+            <a href="https://futurecreativegroup.co.za" class="btn btn-primary">
+                Back to Website
+            </a>
+            
+            <a href="https://wa.me/message/H6WAVI5AGCTGO1" class="btn btn-whatsapp" target="_blank">
+                <svg viewBox="0 0 24 24">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.937 3.659 1.431 5.63 1.432h.006c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+                Chat on WhatsApp
+            </a>
+        </div>
+
+        <!-- Countdown Redirect -->
+        <div class="redirect-info">
+            <div class="timer-circle">
+                <svg class="timer-svg" width="24" height="24">
+                    <circle class="timer-bg" cx="12" cy="12" r="10" />
+                    <circle class="timer-progress" id="timer-bar" cx="12" cy="12" r="10" />
+                </svg>
+            </div>
+            Redirecting in <span id="countdown-number">20</span>s
+        </div>
+
+        <div class="footer">
+            <span class="footer-title">Legal &amp; Compliance</span>
+            <a href="/privacy/" class="footer-link">Privacy &amp; POPIA</a>
+            <a href="/paia/" class="footer-link">PAIA Manual</a>
+            <a href="/website-terms/" class="footer-link">Website Terms</a>
+            <a href="/service-terms/" class="footer-link">Service Terms</a>
+            <a href="/warranty-returns/" class="footer-link">Warranty &amp; Returns</a>
+            <a href="/portal-acceptable-use/" class="footer-link">Portal Acceptable Use</a>
+            <a href="/cookie-policy/" class="footer-link">Cookie Policy</a>
+        </div>
+        <div class="department-footer">
+            <span class="footer-title">Contact</span>
+            <a href="tel:+27115680279" class="footer-link">011 568 0279</a>
+            <a href="mailto:info@futurecreativegroup.co.za" class="footer-link">General: info@futurecreativegroup.co.za</a>
+            <a href="mailto:sales@futurecreativegroup.co.za" class="footer-link">Sales: sales@futurecreativegroup.co.za</a>
+            <a href="mailto:support@futurecreativegroup.co.za" class="footer-link">Support: support@futurecreativegroup.co.za</a>
+            <a href="/contact/#departments" class="footer-link">View All Departments</a>
+        </div>
+    </div>
+
+    <script>
+        // Generate a random reference number
+        const generateRef = () => {
+            const chars = '0123456789';
+            let result = 'FCG-';
+            for (let i = 0; i < 6; i++) {
+                result += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            document.getElementById('ref-id').innerText = result;
+        }
+        generateRef();
+
+        // Countdown and Redirect Logic
+        let timeLeft = 20;
+        const countdownElement = document.getElementById('countdown-number');
+        const timerBar = document.getElementById('timer-bar');
+        const totalDash = 63; // 2 * PI * R (R=10)
+
+        const timer = setInterval(() => {
+            timeLeft--;
+            countdownElement.innerText = timeLeft;
+            
+            // Update progress bar
+            const offset = totalDash - (timeLeft / 20) * totalDash;
+            timerBar.style.strokeDashoffset = offset;
+
+            if (timeLeft <= 0) {
+                clearInterval(timer);
+                window.location.href = "https://futurecreativegroup.co.za";
+            }
+        }, 1000);
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const backToTopButton = document.querySelector('.back-to-top');
+            if (!backToTopButton) return;
+            const syncBackToTop = () => backToTopButton.classList.toggle('is-visible', window.scrollY > 600);
+            window.addEventListener('scroll', syncBackToTop, { passive: true });
+            backToTopButton.addEventListener('click', (event) => {
+                if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+                event.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+            syncBackToTop();
+        });
+    </script>
+
+<a class="back-to-top" href="#top" aria-label="Back to top" title="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"></path><path d="M5 12l7-7 7 7"></path></svg>
+</a>
+</body>
+</html>

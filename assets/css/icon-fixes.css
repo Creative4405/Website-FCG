@@ -1,0 +1,75 @@
+svg.social-icon,
+.social-links svg,
+.site-footer-socials svg{
+  width:20px!important;
+  height:20px!important;
+  max-width:20px!important;
+  max-height:20px!important;
+  display:block!important;
+  flex:0 0 20px!important;
+}
+
+.social-link,
+.site-footer-socials a{
+  width:40px!important;
+  height:40px!important;
+  min-width:40px!important;
+  min-height:40px!important;
+  flex:0 0 40px!important;
+}
+
+svg.contact-icon,
+.contact-icon-wrap svg,
+.contact-summary-icon svg{
+  width:24px!important;
+  height:24px!important;
+  max-width:24px!important;
+  max-height:24px!important;
+  display:block!important;
+  flex:0 0 24px!important;
+}
+
+svg.ui-icon{
+  width:20px!important;
+  height:20px!important;
+  max-width:20px!important;
+  max-height:20px!important;
+  display:block!important;
+  flex:0 0 20px!important;
+}
+
+.department-icon svg{
+  width:22px!important;
+  height:22px!important;
+  max-width:22px!important;
+  max-height:22px!important;
+  display:block!important;
+  flex:0 0 22px!important;
+}
+
+.back-to-top svg{
+  width:18px!important;
+  height:18px!important;
+  max-width:18px!important;
+  max-height:18px!important;
+  display:block!important;
+  flex:0 0 18px!important;
+}
+
+#wa-fab,
+#wafab{
+  width:48px!important;
+  height:48px!important;
+  min-width:48px!important;
+  min-height:48px!important;
+}
+
+#wa-fab svg,
+#wafab svg{
+  width:22px!important;
+  height:22px!important;
+  max-width:22px!important;
+  max-height:22px!important;
+  display:block!important;
+  flex:0 0 22px!important;
+}

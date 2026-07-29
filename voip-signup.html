@@ -1,0 +1,1580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VoIP Business Signup | Future Creative Group</title>
+<meta name="description" content="Request professional VoIP lines, SIP trunks, hosted switchboard, toll-free numbers and number porting through Future Creative Group. VoIP pricing shown excl. VAT.">
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://www.futurecreativegroup.co.za/voip-signup.html">
+<link rel="icon" type="image/png" sizes="40x40" href="/favicon-36x36.png">
+<link rel="shortcut icon" type="image/png" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
+<style>
+/* ══════════════ TOKENS ══════════════ */
+:root {
+  --T:#2a7fa5; --TL:#3fa8d0; --TD:#1a5f7a;
+  --B1:rgba(42,127,165,.2); --B2:rgba(42,127,165,.42);
+  --bg:#090e18; --bg2:#0d1522; --sf:#111d2e; --sf2:#172033;
+  --tx:#c5d8ea; --mu:#6b8aa8; --wh:#ffffff;
+  --rs:6px; --rm:12px; --rl:20px;
+  --ea:cubic-bezier(.25,.46,.45,.94); --du:.3s;
+  --gr:#22c55e; --am:#f59e0b; --rd:#ef4444;
+}
+html.light {
+  --T:#1a6d91; --TL:#1f8ab5; --TD:#145470;
+  --B1:rgba(26,109,145,.2); --B2:rgba(26,109,145,.4);
+  --bg:#f0f4f8; --bg2:#e4edf5; --sf:#fff; --sf2:#f7fafd;
+  --tx:#1e3045; --mu:#4d6b85; --wh:#0d1e2e;
+}
+/* ══════════════ RESET ══════════════ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Manrope',sans-serif;background:linear-gradient(180deg,#070c15 0%,var(--bg) 38%,#0b1321 100%);color:var(--tx);
+  line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  transition:background .35s,color .35s}
+html.light body{background:linear-gradient(180deg,#f6f9fc 0%,var(--bg) 42%,#eaf2f8 100%)}
+img{display:block;max-width:100%}
+svg{max-width:100%}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{font-family:inherit;border:none;cursor:pointer;background:none}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--bg2)}
+::-webkit-scrollbar-thumb{background:var(--TD);border-radius:3px}
+
+/* ══════════════ NAV ══════════════ */
+#nav{
+  position:fixed;inset:0 0 auto 0;z-index:1000;
+  height:74px;display:flex;align-items:center;
+  justify-content:space-between;padding:0 5%;
+  background:linear-gradient(180deg,rgba(8,13,22,.9),rgba(9,14,24,.72));
+  backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);
+  border-bottom:1px solid var(--B1);
+  box-shadow:0 10px 34px rgba(0,0,0,.18);
+  transition:height var(--du),background var(--du),box-shadow var(--du);
+}
+html.light #nav{background:rgba(240,244,248,.9)}
+#nav.sh{height:62px;background:rgba(9,14,24,.97);box-shadow:0 14px 38px rgba(0,0,0,.28)}
+html.light #nav.sh{background:rgba(240,244,248,.98)}
+.nl img{height:80px;width:auto;transition:height var(--du)}
+#nav.sh .nl img{height:60px}
+.nd{display:flex;align-items:center;gap:clamp(1rem,1.7vw,2rem)}
+.nd a{font-size:.82rem;font-weight:700;color:var(--mu);
+  letter-spacing:.02em;position:relative;transition:color var(--du)}
+.nd a::after{content:'';position:absolute;left:0;bottom:-3px;
+  width:0;height:1.5px;background:var(--TL);
+  transition:width var(--du) var(--ea)}
+.nd a:hover{color:var(--wh)}
+.nd a:hover::after{width:100%}
+.nr{display:flex;align-items:center;gap:.65rem}
+/* theme toggle */
+#tt{width:40px;height:40px;border-radius:var(--rs);
+  border:1.5px solid var(--B2);background:var(--sf);
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;transition:all var(--du);position:relative;overflow:hidden}
+#tt:hover{border-color:var(--TL);background:rgba(42,127,165,.12)}
+#tt .im,#tt .is{position:absolute;width:17px;height:17px;
+  transition:opacity .3s,transform .4s var(--ea);color:var(--mu)}
+#tt .im{opacity:1;transform:none}
+#tt .is{opacity:0;transform:rotate(90deg) scale(.6)}
+html.light #tt .im{opacity:0;transform:rotate(-90deg) scale(.6)}
+html.light #tt .is{opacity:1;transform:none}
+/* back button */
+.bb{display:inline-flex;align-items:center;justify-content:center;gap:.45rem;
+  min-height:40px;font-size:.8rem;font-weight:800;color:#fff;
+  border:1px solid rgba(255,255,255,.18);border-radius:8px;
+  padding:.56rem 1rem;transition:all var(--du);
+  background:linear-gradient(135deg,var(--TD),var(--T) 52%,var(--TL));
+  box-shadow:0 8px 24px rgba(42,127,165,.28),inset 0 1px 0 rgba(255,255,255,.18)}
+.bb:hover{color:#fff;border-color:var(--TL);transform:translateY(-2px);box-shadow:0 12px 30px rgba(42,127,165,.38)}
+.bb svg{width:14px;height:14px}
+.bb span{display:inline}
+/* hamburger */
+.hbg{display:none;width:42px;height:42px;flex-direction:column;
+  align-items:center;justify-content:center;gap:5px;
+  border-radius:var(--rs);border:1.5px solid var(--B2);
+  background:var(--sf);cursor:pointer;transition:border-color var(--du)}
+.hbg:hover{border-color:var(--TL)}
+.hbg span{width:17px;height:2px;background:var(--wh);border-radius:1px;
+  display:block;transition:all var(--du) var(--ea)}
+.hbg.op span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hbg.op span:nth-child(2){opacity:0;transform:scaleX(0)}
+.hbg.op span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+/* drawer */
+#dr{display:none;position:fixed;top:74px;left:0;right:0;z-index:999;
+  background:rgba(9,14,24,.98);backdrop-filter:blur(22px);
+  padding:1.5rem 5%;border-bottom:1px solid var(--B1);
+  flex-direction:column}
+html.light #dr{background:rgba(240,244,248,.98)}
+#dr.op{display:flex}
+#dr a{padding:.85rem 0;color:var(--tx);font-weight:600;font-size:.95rem;
+  border-bottom:1px solid rgba(255,255,255,.05);transition:color var(--du)}
+#dr a:last-child{border:none;margin-top:.75rem;
+  background:var(--T);color:#fff !important;
+  text-align:center;padding:.85rem !important;
+  border-radius:var(--rs);font-weight:700}
+
+/* ══════════════ HERO ══════════════ */
+.hero{padding:calc(74px + 4rem) 5% 0;text-align:center;
+  position:relative;overflow:hidden;
+  background:linear-gradient(180deg,rgba(9,14,24,.98) 0%,var(--bg) 100%)}
+.hero::before{content:'';position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse 70% 55% at 50% 0%,
+    rgba(42,127,165,.14) 0%,transparent 70%)}
+.hgrid{position:absolute;inset:0;pointer-events:none;
+  background-image:
+    linear-gradient(rgba(42,127,165,.055) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(42,127,165,.055) 1px,transparent 1px);
+  background-size:56px 56px;
+  mask-image:radial-gradient(ellipse 90% 80% at 50% 0%,
+    black 20%,transparent 100%)}
+.ey{display:inline-flex;align-items:center;gap:.6rem;
+  background:rgba(42,127,165,.12);border:1px solid rgba(42,127,165,.3);
+  padding:.35rem 1rem;border-radius:100px;
+  font-size:.72rem;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--TL);
+  margin-bottom:1.25rem;position:relative;z-index:1}
+.dot{width:6px;height:6px;border-radius:50%;
+  background:var(--TL);animation:bk 2s infinite}
+@keyframes bk{0%,100%{opacity:1}50%{opacity:.3}}
+.ht{font-family:'Playfair Display',serif;
+  font-size:clamp(2rem,4vw,3.2rem);font-weight:800;
+  color:var(--wh);line-height:1.1;margin-bottom:.75rem;
+  position:relative;z-index:1}
+.ht em{font-style:italic;color:var(--TL)}
+.hs{color:var(--mu);font-size:.95rem;max-width:520px;
+  margin:0 auto 2.5rem;line-height:1.75;position:relative;z-index:1}
+
+/* ══════════════ STEPPER ══════════════ */
+.stp{max-width:780px;margin:0 auto;padding:0 5% 2.5rem;
+  position:relative;z-index:1}
+.str{display:flex;align-items:flex-start;justify-content:space-between;
+  position:relative}
+.str::before{content:'';position:absolute;top:18px;left:0;right:0;
+  height:2px;background:var(--B1);z-index:0}
+.stb{position:absolute;top:18px;left:0;height:2px;
+  background:linear-gradient(90deg,var(--T),var(--TL));
+  z-index:1;transition:width .55s var(--ea)}
+.sp{display:flex;flex-direction:column;align-items:center;gap:.5rem;
+  position:relative;z-index:2;flex:1}
+.spd{width:36px;height:36px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:.76rem;font-weight:800;
+  border:2px solid var(--B1);background:var(--bg);
+  color:var(--mu);transition:all .35s var(--ea)}
+.sp.dn .spd{background:var(--T);border-color:var(--T);color:#fff}
+.sp.ac .spd{background:var(--sf);border-color:var(--TL);
+  color:var(--TL);box-shadow:0 0 0 6px rgba(42,127,165,.15)}
+.spl{font-size:.62rem;font-weight:700;color:var(--mu);
+  text-transform:uppercase;letter-spacing:.07em;
+  text-align:center;transition:color .3s;line-height:1.3;max-width:70px}
+.sp.ac .spl{color:var(--TL)}
+.sp.dn .spl{color:var(--T)}
+
+/* ══════════════ FORM WRAP ══════════════ */
+.fw{max-width:1180px;margin:0 auto;padding:0 5% 6rem}
+.pn{display:none;animation:pi .4s var(--ea) both}
+.pn.ac{display:block}
+@keyframes pi{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+
+/* Card */
+.cd{background:linear-gradient(180deg,rgba(17,29,46,.96),var(--sf));
+  border:1px solid var(--B1);
+  border-radius:var(--rl);overflow:hidden;margin-top:1.5rem;
+  transition:box-shadow var(--du);box-shadow:0 24px 64px rgba(0,0,0,.28)}
+html.light .cd{box-shadow:0 2px 14px rgba(26,109,145,.08)}
+.cdh{padding:2rem 2.25rem 1.5rem;border-bottom:1px solid var(--B1);
+  background:linear-gradient(135deg,rgba(42,127,165,.1) 0%,transparent 60%)}
+.sno{font-size:.68rem;font-weight:800;text-transform:uppercase;
+  letter-spacing:.12em;color:var(--TL);margin-bottom:.5rem;
+  display:flex;align-items:center;gap:.5rem}
+.sno::before{content:'';width:16px;height:2px;
+  background:linear-gradient(90deg,var(--T),var(--TL));border-radius:1px}
+.cdh h2{font-family:'Playfair Display',serif;
+  font-size:clamp(1.35rem,2.5vw,1.85rem);font-weight:800;
+  color:var(--wh);line-height:1.2;margin-bottom:.4rem}
+.cdh p{font-size:.86rem;color:var(--mu);line-height:1.65;max-width:620px}
+.cdb{padding:2rem 2.25rem}
+
+/* ══════════════ PACKAGES ══════════════ */
+.pst{font-size:.7rem;font-weight:800;text-transform:uppercase;
+  letter-spacing:.1em;color:var(--TL);margin:2rem 0 .9rem;
+  display:flex;align-items:center;gap:.6rem}
+.pst:first-child{margin-top:0}
+.pst::before{content:'';width:20px;height:2px;
+  background:linear-gradient(90deg,var(--T),var(--TL));border-radius:1px}
+.an{font-size:.75rem;color:var(--mu);
+  background:rgba(42,127,165,.06);border:1px solid var(--B1);
+  border-radius:var(--rs);padding:.75rem 1rem;margin-top:1rem;line-height:1.65}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:.25rem}
+.g2{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-bottom:.25rem}
+.pk{border:2px solid var(--B1);border-radius:var(--rm);
+  padding:1.4rem;cursor:pointer;position:relative;overflow:hidden;
+  transition:all var(--du) var(--ea);display:flex;flex-direction:column;
+  background:var(--sf2)}
+.pk::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--T),var(--TL));
+  transform:scaleX(0);transform-origin:left;transition:transform var(--du)}
+.pk:hover{border-color:var(--B2);transform:translateY(-3px);
+  box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.pk:hover::after{transform:scaleX(1)}
+.pk.sl{border-color:var(--TL);box-shadow:0 0 0 3px rgba(42,127,165,.18),0 8px 24px rgba(0,0,0,.2)}
+.pk.sl::after{transform:scaleX(1)}
+.pk input[type=radio]{position:absolute;opacity:0;pointer-events:none}
+.pkc{position:absolute;top:.85rem;right:.85rem;width:22px;height:22px;
+  border-radius:50%;border:2px solid var(--B1);background:var(--bg);
+  display:flex;align-items:center;justify-content:center;transition:all .25s}
+.pk.sl .pkc{background:var(--T);border-color:var(--T)}
+.pkc svg{width:11px;height:11px;color:#fff;opacity:0;transition:opacity .2s}
+.pk.sl .pkc svg{opacity:1}
+.pkb{position:absolute;top:0;left:50%;transform:translateX(-50%);
+  background:linear-gradient(90deg,var(--T),var(--TL));color:#fff;
+  font-size:.6rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+  padding:.22rem .85rem;border-radius:0 0 8px 8px;white-space:nowrap}
+.hb{padding-top:2rem}
+.pki{font-size:1.6rem;margin-bottom:.55rem}
+.pkn{font-weight:800;font-size:.9rem;color:var(--wh);margin-bottom:.2rem}
+.pkp{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:800;
+  color:var(--TL);line-height:1;margin-bottom:.2rem}
+.pkp small{font-size:.7rem;font-family:'Manrope',sans-serif;
+  color:var(--mu);font-weight:600}
+.pkd{font-size:.74rem;color:var(--mu);line-height:1.5;margin-bottom:.75rem}
+.pkf{display:flex;flex-direction:column;gap:.3rem;margin-top:auto}
+.pkf li{display:flex;align-items:flex-start;gap:.45rem;
+  font-size:.74rem;color:var(--tx);line-height:1.45}
+.pkf li::before{content:'✓';color:var(--TL);font-weight:800;
+  font-size:.67rem;flex-shrink:0;margin-top:1px}
+
+/* Recommended devices */
+.device-enquiry{margin-top:2rem;background:rgba(42,127,165,.06);
+  border:1px solid var(--B1);border-radius:var(--rm);padding:1.25rem}
+.device-enquiry-head{display:flex;align-items:flex-end;justify-content:space-between;
+  gap:1rem;margin-bottom:1rem}
+.device-enquiry-head h3{font-family:'Playfair Display',serif;
+  font-size:1.25rem;color:var(--wh);line-height:1.2}
+.device-enquiry-head p{font-size:.78rem;color:var(--mu);
+  line-height:1.55;max-width:560px}
+.device-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.85rem}
+.device-card{position:relative;display:flex;flex-direction:column;gap:.65rem;
+  background:var(--sf2);border:1.5px solid var(--B1);border-radius:var(--rm);
+  padding:.8rem;cursor:pointer;transition:all var(--du) var(--ea);min-height:100%}
+.device-card:hover{border-color:var(--B2);transform:translateY(-2px);
+  box-shadow:0 10px 24px rgba(0,0,0,.2)}
+.device-card.sel{border-color:var(--TL);box-shadow:0 0 0 3px rgba(42,127,165,.16)}
+.device-card input{position:absolute;opacity:0;pointer-events:none}
+.device-media{height:92px;border-radius:var(--rs);
+  background:linear-gradient(135deg,rgba(42,127,165,.08),rgba(42,127,165,.02));
+  display:flex;align-items:center;justify-content:center;padding:.35rem}
+.device-media img{max-height:82px;width:100%;object-fit:contain}
+.device-name{font-size:.76rem;font-weight:800;color:var(--wh);line-height:1.35}
+.device-price{font-size:.82rem;font-weight:900;color:var(--TL)}
+.device-add{margin-top:auto;display:flex;align-items:center;justify-content:center;
+  min-height:34px;border-radius:8px;border:1px solid var(--B2);
+  font-size:.7rem;font-weight:900;color:var(--TL);transition:all var(--du)}
+.device-card.sel .device-add{background:linear-gradient(135deg,var(--TD),var(--T));
+  color:#fff;border-color:transparent}
+.device-note{margin-top:.85rem;font-size:.72rem;color:var(--mu);line-height:1.55}
+
+/* ══════════════ FIELDS ══════════════ */
+.fg{display:flex;flex-direction:column;gap:1.2rem}
+.fg2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.fi{display:flex;flex-direction:column;gap:.4rem}
+.fi label{font-size:.7rem;font-weight:700;text-transform:uppercase;
+  letter-spacing:.09em;color:var(--TL)}
+.fi input,.fi select,.fi textarea{
+  background:var(--sf2);border:1.5px solid var(--B1);
+  border-radius:var(--rs);padding:.82rem 1rem;
+  color:var(--wh);font-family:'Manrope',sans-serif;font-size:.88rem;
+  outline:none;transition:border-color var(--du),box-shadow var(--du);
+  -webkit-appearance:none;width:100%}
+html.light .fi input,html.light .fi select,html.light .fi textarea{
+  background:#f7fafd;border-color:rgba(26,109,145,.22);color:#1e3045}
+html.light .fi input::placeholder,html.light .fi textarea::placeholder{color:#7a9ab5}
+html.light .fi select{color:#1e3045}
+html.light .fi select option{background:#fff;color:#1e3045}
+.fi input:focus,.fi select:focus,.fi textarea:focus{
+  border-color:var(--TL);box-shadow:0 0 0 3px rgba(42,127,165,.1)}
+.fi input::placeholder,.fi textarea::placeholder{color:var(--mu)}
+.fi input.er,.fi select.er{border-color:var(--rd) !important}
+.fi select{cursor:pointer;color:var(--wh)}
+.fi select option{background:var(--sf2)}
+.fi textarea{min-height:90px;resize:vertical;line-height:1.6}
+.ferr{font-size:.72rem;color:var(--rd);margin-top:.25rem;display:none}
+.ferr.sh{display:block}
+.req{color:var(--rd)}
+.rb{display:inline-flex;align-items:center;background:rgba(245,158,11,.12);
+  border:1px solid rgba(245,158,11,.25);color:var(--am);
+  font-size:.64rem;font-weight:800;letter-spacing:.07em;
+  padding:.15rem .5rem;border-radius:4px;margin-left:.4rem}
+.ob{background:rgba(42,127,165,.1);border:1px solid var(--B1);
+  color:var(--TL);font-size:.64rem;font-weight:800;letter-spacing:.07em;
+  padding:.15rem .5rem;border-radius:4px;margin-left:.4rem;
+  display:inline-flex;align-items:center}
+
+/* Toggle group */
+.tg{display:flex;gap:.6rem;flex-wrap:wrap}
+.to{display:flex;align-items:center;gap:.5rem;flex:1;min-width:130px;
+  background:var(--sf2);border:1.5px solid var(--B1);
+  border-radius:var(--rs);padding:.72rem 1rem;cursor:pointer;
+  font-size:.84rem;font-weight:600;color:var(--tx);transition:all var(--du)}
+html.light .to{background:var(--sf2)}
+.to:hover{border-color:var(--B2)}
+.to.sl{border-color:var(--TL);color:var(--TL);background:rgba(42,127,165,.08)}
+.to input{display:none}
+
+/* Chip group */
+.cg{display:flex;gap:.5rem;flex-wrap:wrap}
+.ch{display:inline-flex;align-items:center;gap:.4rem;
+  background:var(--sf2);border:1.5px solid var(--B1);
+  border-radius:100px;padding:.4rem .85rem;cursor:pointer;
+  font-size:.78rem;font-weight:600;color:var(--mu);transition:all var(--du)}
+.ch:hover{border-color:var(--B2)}
+.ch.sl{border-color:var(--TL);color:var(--TL);background:rgba(42,127,165,.1)}
+.ch input{display:none}
+
+/* ══════════════ UPLOADS ══════════════ */
+.ups{display:flex;flex-direction:column;gap:1rem}
+.uz{border:2px dashed var(--B1);border-radius:var(--rm);
+  padding:1.6rem;text-align:center;cursor:pointer;
+  transition:all var(--du);position:relative}
+.uz:hover,.uz.dg{border-color:var(--TL);background:rgba(42,127,165,.05)}
+.uz.ok{border-color:var(--gr);border-style:solid;background:rgba(34,197,94,.04)}
+.uz input[type=file]{position:absolute;inset:0;opacity:0;
+  cursor:pointer;width:100%;height:100%}
+.uzi{width:42px;height:42px;border-radius:10px;
+  background:rgba(42,127,165,.12);border:1px solid var(--B1);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.1rem;margin:0 auto .7rem;transition:background var(--du)}
+.uz:hover .uzi,.uz.dg .uzi{background:rgba(42,127,165,.22)}
+.uz.ok .uzi{background:rgba(34,197,94,.15);border-color:rgba(34,197,94,.3)}
+.uzt{font-size:.86rem;font-weight:700;color:var(--wh);margin-bottom:.25rem}
+.uzs{font-size:.74rem;color:var(--mu);line-height:1.5}
+.uzok{display:none;margin-top:.65rem;align-items:center;
+  justify-content:center;gap:.4rem;
+  font-size:.78rem;font-weight:700;color:var(--gr)}
+.uzok.sh{display:flex}
+
+/* ══════════════ PAYMENT ══════════════ */
+.br{display:flex;gap:.75rem;margin-bottom:1.5rem}
+.bl{flex:1;display:flex;align-items:center;justify-content:center;gap:.5rem;
+  border:1.5px solid var(--B1);border-radius:var(--rs);
+  padding:.75rem;cursor:pointer;font-weight:700;font-size:.85rem;
+  color:var(--mu);transition:all var(--du);background:var(--sf2)}
+.bl.sl{border-color:var(--TL);color:var(--TL);background:rgba(42,127,165,.08)}
+.bl input{display:none}
+.sv{background:rgba(34,197,94,.12);color:var(--gr);
+  font-size:.64rem;font-weight:800;letter-spacing:.08em;
+  padding:.14rem .5rem;border-radius:4px}
+.pg2{display:grid;grid-template-columns:repeat(2,1fr);gap:.85rem}
+.pa{border:2px solid var(--B1);border-radius:var(--rm);
+  padding:1.35rem;cursor:pointer;transition:all var(--du);
+  display:flex;flex-direction:column;gap:.4rem;
+  position:relative;background:var(--sf2)}
+.pa:hover{border-color:var(--B2);transform:translateY(-2px)}
+.pa.sl{border-color:var(--TL);background:rgba(42,127,165,.06)}
+.pa input{display:none}
+.pai{font-size:1.5rem}
+.pan{font-weight:800;font-size:.9rem;color:var(--wh)}
+.pad{font-size:.76rem;color:var(--mu);line-height:1.5}
+.pac{position:absolute;bottom:.85rem;right:.85rem;
+  width:20px;height:20px;border-radius:50%;
+  border:2px solid var(--B1);background:var(--bg);
+  transition:all .25s;display:flex;align-items:center;justify-content:center}
+.pa.sl .pac{background:var(--T);border-color:var(--T)}
+.pac::after{content:'✓';font-size:.6rem;font-weight:900;
+  color:#fff;opacity:0;transition:opacity .2s}
+.pa.sl .pac::after{opacity:1}
+.dbc{background:var(--sf2);border:1px solid var(--B1);
+  border-radius:var(--rm);padding:1.5rem;margin-top:1.5rem}
+.dbc h4{font-size:.78rem;font-weight:800;text-transform:uppercase;
+  letter-spacing:.09em;color:var(--TL);margin-bottom:1rem;
+  display:flex;align-items:center;gap:.5rem}
+.dbc h4::before{content:'';width:14px;height:2px;background:var(--TL);border-radius:1px}
+.bg2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.bts{display:flex;gap:.5rem;flex-wrap:wrap}
+.bt{display:flex;align-items:center;gap:.4rem;
+  border:1.5px solid var(--B1);border-radius:var(--rs);
+  padding:.55rem .9rem;cursor:pointer;font-size:.82rem;
+  font-weight:600;color:var(--mu);transition:all var(--du);background:var(--sf)}
+.bt:hover{border-color:var(--B2)}
+.bt.sl{border-color:var(--TL);color:var(--TL);background:rgba(42,127,165,.08)}
+.bt input{display:none}
+
+/* Notice box */
+.nc{background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.22);
+  border-radius:var(--rs);padding:1rem 1.1rem;
+  display:flex;align-items:flex-start;gap:.75rem;margin-top:.75rem}
+.nc p{font-size:.8rem;color:var(--am);line-height:1.6}
+
+/* ══════════════ REVIEW ══════════════ */
+.rv{display:flex;flex-direction:column;gap:1rem}
+.rpkg{background:linear-gradient(135deg,rgba(42,127,165,.16) 0%,rgba(42,127,165,.04) 100%);
+  border:1px solid var(--B2);border-radius:var(--rm);
+  padding:1.35rem;display:flex;align-items:center;gap:1.1rem;margin-bottom:.25rem}
+.rpkg-ico{font-size:1.9rem}
+.rpkg-n{font-size:.96rem;font-weight:800;color:var(--wh);margin-bottom:.2rem}
+.rpkg-d{font-size:.78rem;color:var(--mu)}
+.rpkg-p{margin-left:auto;text-align:right;flex-shrink:0}
+.rpkg-p .pr{font-family:'Playfair Display',serif;
+  font-size:1.5rem;font-weight:800;color:var(--TL);line-height:1}
+.rpkg-p small{font-size:.72rem;color:var(--mu)}
+.rb2{background:var(--sf2);border:1px solid var(--B1);
+  border-radius:var(--rm);overflow:hidden}
+.rb2h{display:flex;align-items:center;justify-content:space-between;
+  padding:.8rem 1.25rem;border-bottom:1px solid var(--B1);
+  background:rgba(42,127,165,.06)}
+.rb2h h4{font-size:.72rem;font-weight:800;text-transform:uppercase;
+  letter-spacing:.09em;color:var(--TL);
+  display:flex;align-items:center;gap:.45rem}
+.rb2h h4::before{content:'';width:12px;height:2px;background:var(--TL);border-radius:1px}
+.eb{font-size:.72rem;color:var(--TL);font-weight:600;
+  cursor:pointer;transition:color var(--du)}
+.eb:hover{color:var(--T)}
+.rrows{padding:.85rem 1.25rem;display:flex;flex-direction:column;gap:.5rem}
+.rrow{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem}
+.rk{font-size:.78rem;color:var(--mu);white-space:nowrap;flex-shrink:0}
+.rv2{font-size:.8rem;color:var(--wh);font-weight:600;
+  text-align:right;word-break:break-word}
+.tn{font-size:.77rem;color:var(--mu);text-align:center;
+  margin-top:1rem;line-height:1.65}
+.tn a{color:var(--TL)}
+
+/* ══════════════ BUTTONS ══════════════ */
+.btn{display:inline-flex;align-items:center;gap:.5rem;
+  padding:.82rem 1.85rem;border-radius:var(--rs);
+  font-size:.88rem;font-weight:700;letter-spacing:.03em;
+  transition:all var(--du) var(--ea);cursor:pointer;
+  font-family:'Manrope',sans-serif}
+.btn-f{background:linear-gradient(135deg,var(--TD),var(--T) 52%,var(--TL));color:#fff;
+  box-shadow:0 10px 30px rgba(42,127,165,.34),inset 0 1px 0 rgba(255,255,255,.2);border:none}
+.btn-f:hover{background:linear-gradient(135deg,var(--T),var(--TL) 62%,#69cff2);transform:translateY(-2px);
+  box-shadow:0 16px 38px rgba(42,127,165,.48),0 0 0 4px rgba(63,168,208,.12)}
+.btn-f:disabled{opacity:.5;cursor:not-allowed;transform:none;box-shadow:none}
+.btn-o{background:transparent;color:var(--wh);
+  border:1.5px solid rgba(255,255,255,.2)}
+.btn-o:hover{border-color:var(--TL);color:var(--TL);transform:translateY(-2px)}
+html.light .btn-o{color:var(--wh);border-color:rgba(0,0,0,.2)}
+html.light .btn-o:hover{color:var(--TL);border-color:var(--TL)}
+.btn svg{width:15px;height:15px;flex-shrink:0}
+.btn-fl{width:100%;justify-content:center;padding:.95rem 2rem;font-size:.94rem}
+.fn{display:flex;align-items:center;justify-content:space-between;
+  margin-top:2rem;gap:1rem}
+
+/* ══════════════ TOAST ══════════════ */
+#toast{
+  position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(120px);
+  z-index:2000;padding:.85rem 1.5rem;border-radius:var(--rm);
+  font-size:.88rem;font-weight:700;
+  display:flex;align-items:center;gap:.65rem;
+  transition:transform .4s var(--ea),opacity .4s;
+  opacity:0;pointer-events:none;white-space:nowrap;
+  box-shadow:0 8px 32px rgba(0,0,0,.35);
+}
+#toast.sh{transform:translateX(-50%) translateY(0);opacity:1}
+#toast.ok{background:#1a4d2a;border:1px solid rgba(34,197,94,.3);color:var(--gr)}
+#toast.er{background:#4d1a1a;border:1px solid rgba(239,68,68,.3);color:var(--rd)}
+
+/* ══════════════ SUCCESS ══════════════ */
+#suc{display:none;max-width:620px;margin:0 auto;
+  padding:calc(70px + 3rem) 5% 5rem;text-align:center}
+.suci{width:84px;height:84px;border-radius:50%;
+  background:linear-gradient(135deg,var(--T),var(--TL));
+  display:flex;align-items:center;justify-content:center;
+  font-size:2.4rem;margin:0 auto 2rem;
+  box-shadow:0 0 0 16px rgba(42,127,165,.12);
+  animation:sp .55s .1s var(--ea) both}
+@keyframes sp{from{opacity:0;transform:scale(.5)}to{opacity:1;transform:scale(1)}}
+#suc h2{font-family:'Playfair Display',serif;
+  font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;
+  color:var(--wh);margin-bottom:1rem}
+#suc p{color:var(--mu);line-height:1.8;margin-bottom:1.5rem;font-size:.94rem}
+.sref{background:var(--sf);border:1px solid var(--B1);
+  border-radius:var(--rm);padding:1.1rem 1.25rem;
+  margin-bottom:1.5rem;text-align:left;font-size:.83rem;color:var(--tx)}
+.sref strong{color:var(--wh)}
+.ssteps{background:var(--sf);border:1px solid var(--B1);
+  border-radius:var(--rm);padding:1.35rem;
+  margin-bottom:2rem;text-align:left}
+.ssteps h4{font-size:.74rem;font-weight:800;text-transform:uppercase;
+  letter-spacing:.09em;color:var(--TL);margin-bottom:.85rem}
+.sstep{display:flex;align-items:flex-start;gap:.75rem;
+  font-size:.84rem;color:var(--tx);line-height:1.6;margin-bottom:.65rem}
+.sstep:last-child{margin-bottom:0}
+.ssnum{width:22px;height:22px;border-radius:50%;
+  background:var(--T);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-size:.65rem;font-weight:800;flex-shrink:0;margin-top:1px}
+.sbtns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+
+/* ══════════════ ERROR STATE ══════════════ */
+#errstate{display:none;max-width:540px;margin:0 auto;
+  padding:calc(70px + 3rem) 5% 5rem;text-align:center}
+.erri{width:72px;height:72px;border-radius:50%;
+  background:rgba(239,68,68,.15);border:2px solid rgba(239,68,68,.3);
+  display:flex;align-items:center;justify-content:center;
+  font-size:2rem;margin:0 auto 2rem}
+#errstate h2{font-family:'Playfair Display',serif;
+  font-size:1.8rem;font-weight:800;color:var(--wh);margin-bottom:1rem}
+#errstate p{color:var(--mu);line-height:1.8;margin-bottom:2rem;font-size:.9rem}
+
+/* ══════════════ FOOTER ══════════════ */
+footer{background:var(--bg2);border-top:1px solid var(--B1);padding:3rem 5%}
+.fi2{max-width:1180px;margin:0 auto;
+  display:flex;flex-direction:column;align-items:center;gap:1.75rem}
+.flog img{height:40px;width:auto}
+.ftag{font-size:.82rem;color:var(--mu);text-align:center;
+  max-width:480px;line-height:1.65}
+.fsoc{display:flex;align-items:center;gap:.75rem}
+.fsl{width:42px;height:42px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  border:1.5px solid var(--B1);background:var(--sf);
+  color:var(--mu);transition:all var(--du) var(--ea)}
+.fsl svg{width:18px;height:18px;transition:transform var(--du)}
+.fsl:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,.25)}
+.fsl:hover svg{transform:scale(1.1)}
+.fsl.fb:hover{background:#1877f2;border-color:#1877f2;color:#fff}
+.fsl.ig:hover{background:linear-gradient(135deg,#f58529,#dd2a7b,#8134af);
+  border-color:#dd2a7b;color:#fff}
+.fsl.xx:hover{background:#14171a;border-color:#14171a;color:#fff}
+.fsl.wa:hover{background:#25d366;border-color:#25d366;color:#fff}
+.fnav{display:flex;gap:2rem;flex-wrap:wrap;justify-content:center}
+.fnav a{font-size:.8rem;color:var(--mu);transition:color var(--du)}
+.fnav a:hover{color:var(--TL)}
+.fcp{font-size:.75rem;color:var(--mu);text-align:center}
+.fcp a{color:var(--TL)}
+
+/* ══════════════ WA FAB ══════════════ */
+#wafab{position:fixed;bottom:1.75rem;right:1.75rem;z-index:998;
+  width:48px;height:48px;border-radius:50%;background:#25d366;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 24px rgba(37,211,102,.45);text-decoration:none;
+  transition:all .25s var(--ea);animation:fi 1s 2s both}
+#wafab:hover{transform:scale(1.1);box-shadow:0 12px 32px rgba(37,211,102,.55)}
+#wafab svg{width:22px;height:22px;max-width:22px;max-height:22px;color:#fff;display:block;flex:0 0 22px}
+.wt{position:absolute;right:66px;top:50%;transform:translateY(-50%);
+  background:#25d366;color:#fff;padding:.38rem .88rem;
+  border-radius:8px;font-size:.76rem;font-weight:700;white-space:nowrap;
+  opacity:0;pointer-events:none;transition:opacity .2s;
+  box-shadow:0 4px 12px rgba(0,0,0,.2)}
+.wt::after{content:'';position:absolute;left:100%;top:50%;
+  transform:translateY(-50%);border:6px solid transparent;
+  border-left-color:#25d366}
+#wafab:hover .wt{opacity:1}
+@keyframes fi{from{opacity:0;transform:scale(0)}
+  60%{transform:scale(1.12)}to{opacity:1;transform:scale(1)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ══════════════ RESPONSIVE ══════════════ */
+@media(max-width:860px){
+  .g3{grid-template-columns:repeat(2,1fr)}
+  .device-grid{grid-template-columns:repeat(2,1fr)}
+  .bg2{grid-template-columns:1fr}
+  .pg2{grid-template-columns:1fr}
+  .fg2{grid-template-columns:1fr}
+  .rpkg{flex-direction:column;align-items:flex-start}
+  .rpkg-p{margin-left:0;text-align:left}
+  .nd,.bb span{display:none}
+  .hbg{display:flex}
+}
+@media(max-width:640px){
+  .g3,.g2{grid-template-columns:1fr}
+  .device-grid{grid-template-columns:1fr}
+  .device-enquiry-head{display:block}
+  .device-enquiry-head p{margin-top:.4rem}
+  .spl{display:none}
+  .cdb{padding:1.5rem}
+  .cdh{padding:1.5rem}
+  .fn{flex-direction:column}
+  .fn .btn{width:100%;justify-content:center}
+  .br{flex-direction:column}
+  .sbtns{flex-direction:column}
+  .sbtns .btn{justify-content:center}
+  .fnav{gap:1.25rem}
+}
+</style>
+<link rel="stylesheet" href="/assets/site-polish.css?v=20260722-footer-final">
+<link rel="stylesheet" href="/assets/css/icon-fixes.css?v=20260715-3">
+</head>
+<body>
+<div id="top"></div>
+
+<!-- ═══ NAV ═══ -->
+<nav id="nav">
+  <a href="/" class="nav-logo" aria-label="Future Creative Group home"><img src="/logo.png" alt="Future Creative Group Pty Ltd logo" width="500" height="500" fetchpriority="high" decoding="async"></a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/#services">Services</a></li>
+    <li class="pkg-nav">
+      <a href="/packages.html" class="pkg-trigger" aria-haspopup="true">Packages <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a>
+      <div class="pkg-mega" aria-label="Business technology package categories">
+        <a href="/packages/website-design.html"><span class="pkg-mi">🌐</span><span><span class="pkg-mt">Website Packages</span><span class="pkg-md">Professional websites and e-commerce builds.</span></span></a>
+        <a href="/packages/website-redesign.html"><span class="pkg-mi">✨</span><span><span class="pkg-mt">Website Redesign</span><span class="pkg-md">Refresh outdated websites into premium pages.</span></span></a>
+        <a href="https://fcgcloud.co.za/hosting" target="_blank" rel="noopener"><span class="pkg-mi">🖥️</span><span><span class="pkg-mt">Website Hosting by FCG Cloud</span><span class="pkg-md">Hosting, DNS and SSL services from FCG Cloud.</span></span></a>
+        <a href="https://fcgcloud.co.za/email-hosting" target="_blank" rel="noopener"><span class="pkg-mi">✉️</span><span><span class="pkg-mt">Business Email Hosting by FCG Cloud</span><span class="pkg-md">Professional mailboxes for your domain.</span></span></a>
+        <a href="/packages/voip-packages.html"><span class="pkg-mi">📞</span><span><span class="pkg-mt">VoIP &amp; Landline Packages</span><span class="pkg-md">Business lines, SIP trunks and Cloud PBX.</span></span></a>
+        <a href="/phone-catalogue/"><span class="pkg-mi">☎️</span><span><span class="pkg-mt">Fanvil VoIP Devices</span><span class="pkg-md">Desk phones, DECT devices and accessories.</span></span></a>
+        <a href="/packages/cctv-packages.html"><span class="pkg-mi">🎥</span><span><span class="pkg-mt">CCTV Packages</span><span class="pkg-md">Installation, maintenance and solar cameras.</span></span></a>
+        <a href="/packages/access-control-intercom.html"><span class="pkg-mi">🔐</span><span><span class="pkg-mt">Access Control &amp; Intercom</span><span class="pkg-md">Smart entry management for premises.</span></span></a>
+        <a href="/packages/networking-wifi.html"><span class="pkg-mi">📶</span><span><span class="pkg-mt">Networking &amp; Wi-Fi</span><span class="pkg-md">Connectivity, cabling and coverage planning.</span></span></a>
+        <a href="/packages/it-support.html"><span class="pkg-mi">💻</span><span><span class="pkg-mt">IT Support</span><span class="pkg-md">Remote and on-site business technology help.</span></span></a>
+        <a href="/packages/digital-marketing.html"><span class="pkg-mi">📣</span><span><span class="pkg-mt">Digital Marketing</span><span class="pkg-md">Social content, ads and lead generation.</span></span></a>
+        <a href="/packages/graphic-design.html"><span class="pkg-mi">🎨</span><span><span class="pkg-mt">Graphic Design</span><span class="pkg-md">Brand visuals, profiles, flyers and templates.</span></span></a>
+      </div>
+    </li>
+    <li><a href="/#projects">Work</a></li>
+    <li><a href="/phone-catalogue/">Phone Catalogue</a></li>
+    <li><a href="/portal/">Client Portal</a></li>
+    <li><a href="/#contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button id="theme-toggle" aria-label="Toggle theme"><svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button>
+    <a href="/#contact" class="btn btn-fill">Request Quote</a>
+  </div>
+  <button class="hbg" id="hbg" aria-label="Menu" aria-controls="drawer" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+<div id="drawer">
+  <a href="/">Home</a>
+  <a href="/#services">Services</a>
+  <details class="drawer-packages">
+    <summary>Packages</summary>
+    <div class="drawer-package-grid">
+      <a href="/packages.html">All Packages</a>
+      <a href="/packages/website-design.html">Website Packages</a>
+      <a href="/packages/website-redesign.html">Website Redesign</a>
+      <a href="https://fcgcloud.co.za/hosting" target="_blank" rel="noopener">Website Hosting by FCG Cloud</a>
+      <a href="https://fcgcloud.co.za/email-hosting" target="_blank" rel="noopener">Business Email by FCG Cloud</a>
+      <a href="/packages/voip-packages.html">VoIP &amp; Landline Packages</a>
+      <a href="/phone-catalogue/">Fanvil VoIP Devices</a>
+      <a href="/packages/cctv-packages.html">CCTV Packages</a>
+      <a href="/packages/access-control-intercom.html">Access Control &amp; Intercom</a>
+      <a href="/packages/networking-wifi.html">Networking &amp; Wi-Fi</a>
+      <a href="/packages/it-support.html">IT Support</a>
+      <a href="/packages/digital-marketing.html">Digital Marketing</a>
+      <a href="/packages/graphic-design.html">Graphic Design</a>
+    </div>
+  </details>
+  <a href="/#projects">Work</a>
+  <a href="/phone-catalogue/">Phone Catalogue</a>
+  <a href="/portal/" class="d-portal">Client Portal</a>
+  <a href="/#contact">Contact</a>
+  <a href="/#contact" class="d-cta">Request Quote</a>
+</div>
+
+<!-- ═══ HERO ═══ --><!-- ═══ HERO ═══ -->
+<div class="hero" id="hero">
+  <div class="hgrid"></div>
+  <div class="ey"><span class="dot"></span>Business VoIP Signup</div>
+  <h1 class="ht">Get Your Business<br><em>Connected Today</em></h1>
+  <p class="hs">Complete the 6 steps below to request your professional VoIP service. Final activation is subject to service requirements, approval and availability.</p>
+  <div class="stp">
+    <div class="str" id="str">
+      <div class="sp ac" data-s="1"><div class="spd">1</div><div class="spl">Package</div></div>
+      <div class="sp" data-s="2"><div class="spd">2</div><div class="spl">Business</div></div>
+      <div class="sp" data-s="3"><div class="spd">3</div><div class="spl">Config</div></div>
+      <div class="sp" data-s="4"><div class="spd">4</div><div class="spl">Docs</div></div>
+      <div class="sp" data-s="5"><div class="spd">5</div><div class="spl">Payment</div></div>
+      <div class="sp" data-s="6"><div class="spd">6</div><div class="spl">Review</div></div>
+    </div>
+    <div class="stb" id="stb"></div>
+  </div>
+</div>
+
+<!-- ═══ FORM WRAP ═══ -->
+<div class="fw" id="fw">
+
+<!-- STEP 1 -->
+<div class="pn ac" id="s1">
+<div class="cd">
+  <div class="cdh">
+    <div class="sno">Step 1 of 6</div>
+    <h2>Select Your VoIP Package</h2>
+    <p>Choose the plan that best fits your business. All VoIP prices below are shown excl. VAT unless stated otherwise, with final activation subject to approval, availability and service terms.</p>
+  </div>
+  <div class="cdb">
+    <div class="pst">📞 VoIP Lines — Single User / Small Team</div>
+    <div class="g3">
+      <label class="pk" onclick="selPkg(this,'VoIP Line – Usage Based','📞','From R52.00<small> / month excl. VAT</small>')">
+        <input type="radio" name="pkg" value="VoIP Line – Usage Based - From R52.00 / month excl. VAT">
+        <div class="pkc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></div>
+        <div class="pki">📞</div><div class="pkn">VoIP Line – Usage Based</div>
+        <div class="pkp">From R52.00<small> / month excl. VAT</small></div>
+        <div class="pkd">Business VoIP line over internet. Calls billed separately on usage-based rates.</div>
+        <ul class="pkf"><li>1 device registration</li><li>Business VoIP line over internet</li><li>Geographic or non-geographic number option</li><li>Keep existing number through porting</li><li>Free mobile softphone</li><li>Call forwarding, voicemail and fax to email</li><li>Month-to-month contract</li><li>Installation fee: FREE</li><li>Calls billed separately on usage-based rates</li></ul>
+      </label>
+      <label class="pk hb" onclick="selPkg(this,'Unlimited VoIP Line Lite','📱','R160.00<small> / month excl. VAT</small>')">
+        <div class="pkb">Most Popular</div>
+        <input type="radio" name="pkg" value="Unlimited VoIP Line Lite - R160.00 / month excl. VAT">
+        <div class="pkc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></div>
+        <div class="pki">📱</div><div class="pkn">Unlimited VoIP Line Lite</div>
+        <div class="pkp">R160.00<small> / month excl. VAT</small></div>
+        <div class="pkd">Best suited for home users or small users.</div>
+        <ul class="pkf"><li>Unlimited calls to SA local, national and mobile numbers</li><li>1 outbound call</li><li>2 inbound calls</li><li>1 device registration</li><li>Free mobile softphone</li><li>Month-to-month contract</li><li>No setup fee</li><li>Fair usage policy applies</li></ul>
+      </label>
+      <label class="pk" onclick="selPkg(this,'Unlimited VoIP Line Premium','🌐','R300.00<small> / month excl. VAT</small>')">
+        <input type="radio" name="pkg" value="Unlimited VoIP Line Premium - R300.00 / month excl. VAT">
+        <div class="pkc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></div>
+        <div class="pki">🌐</div><div class="pkn">Unlimited VoIP Line Premium</div>
+        <div class="pkp">R300.00<small> / month excl. VAT</small></div>
+        <div class="pkd">Best suited for home and small business users.</div>
+        <ul class="pkf"><li>Unlimited calls to SA local, national and mobile numbers</li><li>Selected popular international destinations</li><li>2 outbound calls</li><li>4 inbound calls</li><li>Up to 3 device registrations</li><li>Free mobile softphone</li><li>Month-to-month contract</li><li>No setup fee</li><li>Fair usage policy applies</li></ul>
+      </label>
+    </div>
+    <div class="pst">🔗 VoIP SIP Trunks — Multi-Channel Business</div>
+    <div class="g3">
+      <label class="pk" onclick="selPkg(this,'VoIP SIP Trunk – Usage Based','🔗','From R100.00<small> / month excl. VAT</small>')">
+        <input type="radio" name="pkg" value="VoIP SIP Trunk – Usage Based - From R100.00 / month excl. VAT">
+        <div class="pkc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></div>
+        <div class="pki">🔗</div><div class="pkn">VoIP SIP Trunk – Usage Based</div>
+        <div class="pkp">From R100.00<small> / month excl. VAT</small></div>
+        <div class="pkd">For businesses with PBX or hosted switchboard. Calls billed separately.</div>
+        <ul class="pkf"><li>4 channels included</li><li>R25.00 excl. VAT per extra channel</li><li>Suitable for businesses with PBX or hosted switchboard</li><li>Link one or multiple numbers</li><li>Direct dial-in support</li><li>Call forwarding and voicemail</li><li>Free fax to email</li><li>Month-to-month contract</li><li>Installation fee: FREE</li><li>Calls billed separately on usage-based rates</li></ul>
+      </label>
+      <label class="pk" onclick="selPkg(this,'Unlimited VoIP SIP Trunk 4 Channel','📡','R1,000.00<small> / month excl. VAT</small>')">
+        <input type="radio" name="pkg" value="Unlimited VoIP SIP Trunk 4 Channel - R1,000.00 / month excl. VAT">
+        <div class="pkc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></div>
+        <div class="pki">📡</div><div class="pkn">Unlimited VoIP SIP Trunk 4 Channel</div>
+        <div class="pkp">R1,000.00<small> / month excl. VAT</small></div>
+        <div class="pkd">Unlimited SIP trunk for business calling.</div>
+        <ul class="pkf"><li>Unlimited calls to SA local, national and mobile numbers</li><li>Selected popular international destinations</li><li>4 concurrent outbound calls</li><li>8 inbound calls</li><li>Suitable for businesses</li><li>Works with Hosted Switchboard or compatible VoIP PBX</li><li>Month-to-month contract</li><li>Fair usage policy applies</li></ul>
+      </label>
+      <label class="pk" onclick="selPkg(this,'Unlimited VoIP SIP Trunk 8 Channels','🏬','R2,500.00<small> / month excl. VAT</small>')">
+        <input type="radio" name="pkg" value="Unlimited VoIP SIP Trunk 8 Channels - R2,500.00 / month excl. VAT">
+        <div class="pkc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></div>
+        <div class="pki">🏬</div><div class="pkn">Unlimited VoIP SIP Trunk 8 Channels</div>
+        <div class="pkp">R2,500.00<small> / month excl. VAT</small></div>
+        <div class="pkd">For growing businesses needing more concurrency.</div>
+        <ul class="pkf"><li>Unlimited calls to SA local, national and mobile numbers</li><li>Selected popular international destinations</li><li>8 concurrent outbound calls</li><li>16 inbound calls</li><li>Suitable for growing businesses</li><li>Works with Hosted Switchboard or compatible VoIP PBX</li><li>Month-to-month contract</li><li>Fair usage policy applies</li></ul>
+      </label>
+    </div>
+    <div class="g3">
+      <label class="pk" onclick="selPkg(this,'Unlimited VoIP SIP Trunk 16 Channels','🏢','R5,000.00<small> / month excl. VAT</small>')">
+        <input type="radio" name="pkg" value="Unlimited VoIP SIP Trunk 16 Channels - R5,000.00 / month excl. VAT">
+        <div class="pkc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></div>
+        <div class="pki">🏢</div><div class="pkn">Unlimited VoIP SIP Trunk 16 Channels</div>
+        <div class="pkp">R5,000.00<small> / month excl. VAT</small></div>
+        <div class="pkd">For larger businesses with higher call capacity.</div>
+        <ul class="pkf"><li>Unlimited calls to SA local, national and mobile numbers</li><li>Selected popular international destinations</li><li>16 concurrent outbound calls</li><li>32 inbound calls</li><li>Suitable for larger businesses</li><li>Works with Hosted Switchboard or compatible VoIP PBX</li><li>Month-to-month contract</li><li>Fair usage policy applies</li></ul>
+      </label>
+    </div>
+    <div class="pst">🏢 Hosted Switchboard (Cloud PBX)</div>
+    <div class="g3">
+      <label class="pk hb" onclick="selPkg(this,'Hosted Switchboard / Cloud PBX','☎️','R260.00<small> / month excl. VAT per 10 extensions</small>')">
+        <div class="pkb">Best Value</div>
+        <input type="radio" name="pkg" value="Hosted Switchboard / Cloud PBX - R260.00 / month excl. VAT per 10 extensions">
+        <div class="pkc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></div>
+        <div class="pki">☎️</div><div class="pkn">Hosted Switchboard / Cloud PBX</div>
+        <div class="pkp">R260.00<small> / month excl. VAT per 10 extensions</small></div>
+        <div class="pkd">Requires a VoIP SIP Trunk, charged separately.</div>
+        <ul class="pkf"><li>Cloud-based business phone system</li><li>10 extensions included per billing block</li><li>Call routing, IVR menus, ring groups and call queues</li><li>Voicemail per extension</li><li>Browser-based softphone</li><li>Mobile softphone per extension</li><li>Internal call transfers</li><li>Works with SIP phones and softphones</li><li>Remote and online support included</li><li>Installation fee: FREE</li><li>Month-to-month contract</li></ul>
+      </label>
+      <label class="pk" onclick="selPkg(this,'Toll-Free Number','📢','R150.00<small> / month excl. VAT</small>')">
+        <input type="radio" name="pkg" value="Toll-Free Number - R150.00 / month excl. VAT">
+        <div class="pkc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></div>
+        <div class="pki">📢</div><div class="pkn">Toll-Free Number</div>
+        <div class="pkp">R150.00<small> / month excl. VAT</small></div>
+        <div class="pkd">0800 number. Requires a VoIP SIP Trunk or Hosted Switchboard.</div>
+        <ul class="pkf"><li>0800 toll-free telephone number</li><li>Customer calls the business for free</li><li>Fixed numbers: R0.34 excl. VAT per minute</li><li>Mobile numbers: R0.60 excl. VAT per minute</li><li>International received calls: R0.34 excl. VAT per minute</li><li>Calls billed per second from the first second</li></ul>
+      </label>
+      <label class="pk" onclick="selPkg(this,'Number Porting','🔁','R160.00<small> once-off excl. VAT per number</small>')">
+        <input type="radio" name="pkg" value="Number Porting - R160.00 once-off excl. VAT per number">
+        <div class="pkc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></div>
+        <div class="pki">🔁</div><div class="pkn">Number Porting</div>
+        <div class="pkp">R160.00<small> once-off excl. VAT per number</small></div>
+        <div class="pkd">Keep your existing landline or business number.</div>
+        <ul class="pkf"><li>Individual number porting: R160.00 once-off excl. VAT per number</li><li>Managed Port: R40.00 excl. VAT per number plus R660.00 excl. VAT base charge</li><li>Port existing number to the VoIP service</li><li>Link ported number to VoIP Line, SIP Trunk, or Hosted Switchboard</li><li>Non-disruptive porting process</li><li>Subject to approval and requirements</li></ul>
+      </label>
+    </div>
+    <div class="an">
+      <strong>Important pricing note:</strong> All VoIP prices exclude VAT unless stated otherwise. Final pricing is subject to approval, availability, fair usage policy, and service terms. Hardware, internet connectivity, onsite installation, call recording, extra numbers, extra channels, and custom setup requirements are quoted separately.
+    </div>
+    <div class="device-enquiry" id="deviceEnquiry">
+      <div class="device-enquiry-head">
+        <div>
+          <div class="pst" style="margin:0 0 .35rem">Recommended Devices</div>
+          <h3>Recommended VoIP Phones</h3>
+        </div>
+        <p>Choose any phones you are interested in. Device pricing includes VAT. Final quotation may include delivery, installation and setup.</p>
+      </div>
+      <div class="device-grid">
+        <label class="device-card">
+          <input type="checkbox" value="Fanvil 2SIP Entry Level WiFi 4 VoIP Phone with PSU — R950.00 incl. VAT" onchange="toggleDevice(this)">
+          <div class="device-media"><img src="/assets/fanvil-products/2sip-wifi-4-phone/angle-1.png" alt="Fanvil 2SIP Entry Level WiFi 4 VoIP Phone with PSU" width="900" height="869" loading="lazy" decoding="async"></div>
+          <div class="device-name">Fanvil 2SIP Entry Level WiFi 4 VoIP Phone with PSU</div>
+          <div class="device-price">R950.00 incl. VAT</div>
+          <span class="device-add">Add to enquiry</span>
+        </label>
+        <label class="device-card">
+          <input type="checkbox" value="Fanvil 2SIP Gigabit Entry Level PoE VoIP Phone — R850.00 incl. VAT" onchange="toggleDevice(this)">
+          <div class="device-media"><img src="/assets/fanvil-products/2sip-gigabit-poe-r850/angle-1.png" alt="Fanvil 2SIP Gigabit Entry Level PoE VoIP Phone" width="900" height="869" loading="lazy" decoding="async"></div>
+          <div class="device-name">Fanvil 2SIP Gigabit Entry Level PoE VoIP Phone</div>
+          <div class="device-price">R850.00 incl. VAT</div>
+          <span class="device-add">Add to enquiry</span>
+        </label>
+        <label class="device-card">
+          <input type="checkbox" value="Fanvil 12SIP Colour Screen PoE WiFi 6 VoIP Phone — R1,600.00 incl. VAT" onchange="toggleDevice(this)">
+          <div class="device-media"><img src="/assets/fanvil-products/12sip-colour-screen-wifi6/angle-1.png" alt="Fanvil 12SIP Colour Screen PoE WiFi 6 VoIP Phone" width="900" height="869" loading="lazy" decoding="async"></div>
+          <div class="device-name">Fanvil 12SIP Colour Screen PoE WiFi 6 VoIP Phone</div>
+          <div class="device-price">R1,600.00 incl. VAT</div>
+          <span class="device-add">Add to enquiry</span>
+        </label>
+        <label class="device-card">
+          <input type="checkbox" value="Fanvil 4SIP PoE DECT IP Phone & Base Station — R2,850.00 incl. VAT" onchange="toggleDevice(this)">
+          <div class="device-media"><img src="/assets/fanvil-products/4sip-dect-base-station/angle-1.png" alt="Fanvil 4SIP PoE DECT IP Phone and Base Station" width="900" height="869" loading="lazy" decoding="async"></div>
+          <div class="device-name">Fanvil 4SIP PoE DECT IP Phone &amp; Base Station</div>
+          <div class="device-price">R2,850.00 incl. VAT</div>
+          <span class="device-add">Add to enquiry</span>
+        </label>
+      </div>
+      <div class="device-note">Device pricing includes VAT. Final quotation may include delivery, installation and setup.</div>
+    </div>
+    <div class="fn">
+      <span id="s1h" style="font-size:.8rem;color:var(--mu)">Select a package above to continue</span>
+      <button class="btn btn-f" onclick="nextStep()" id="s1b" disabled>Continue <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- STEP 2 -->
+<div class="pn" id="s2">
+<div class="cd">
+  <div class="cdh">
+    <div class="sno">Step 2 of 6</div>
+    <h2>Business Details</h2>
+    <p>Your information is used to create your account and configure your service. All details are handled securely and confidentially.</p>
+  </div>
+  <div class="cdb">
+    <div class="fg">
+      <div class="fg2">
+        <div class="fi"><label>Company / Trading Name <span class="req">*</span></label><input type="text" id="cN" placeholder="e.g. Ndlovu Holdings (Pty) Ltd"><div class="ferr" id="e-cN">Please enter your company name</div></div>
+        <div class="fi"><label>Registration Number</label><input type="text" id="rN" placeholder="e.g. 2022/422933/07"></div>
+      </div>
+      <div class="fg2">
+        <div class="fi"><label>Contact Person <span class="req">*</span></label><input type="text" id="ctN" placeholder="Full Name"><div class="ferr" id="e-ctN">Please enter contact person name</div></div>
+        <div class="fi"><label>Job Title / Role</label><input type="text" id="jT" placeholder="Director / Owner / Manager"></div>
+      </div>
+      <div class="fg2">
+        <div class="fi"><label>Email Address <span class="req">*</span></label><input type="email" id="em" placeholder="info@yourbusiness.co.za"><div class="ferr" id="e-em">Please enter a valid email address</div></div>
+        <div class="fi"><label>Phone / WhatsApp <span class="req">*</span></label><input type="tel" id="ph" placeholder="+27 xx xxx xxxx"><div class="ferr" id="e-ph">Please enter your phone number</div></div>
+      </div>
+      <div class="fi"><label>Physical Business Address <span class="req">*</span></label><input type="text" id="ad" placeholder="Street, Suburb, City, Province, Postal Code"><div class="ferr" id="e-ad">Please enter your business address</div></div>
+      <div class="fg2">
+        <div class="fi"><label>Business Type <span class="req">*</span></label>
+          <select id="bT"><option value="">Select…</option><option>Sole Proprietor / Individual</option><option>Close Corporation (CC)</option><option>Private Company (Pty Ltd)</option><option>Public Company (Ltd)</option><option>Non-Profit Organisation (NPO)</option><option>Partnership</option><option>Government / Municipality</option><option>Other</option></select>
+          <div class="ferr" id="e-bT">Please select your business type</div>
+        </div>
+        <div class="fi"><label>Industry</label>
+          <select id="ind"><option value="">Select…</option><option>Healthcare</option><option>Finance & Accounting</option><option>Retail</option><option>Manufacturing</option><option>Construction</option><option>Technology & IT</option><option>Education</option><option>Legal</option><option>Real Estate & Property</option><option>Transport & Logistics</option><option>Non-Profit</option><option>Government</option><option>Other</option></select>
+        </div>
+      </div>
+      <div class="fg2">
+        <div class="fi"><label>VAT Number (if applicable)</label><input type="text" id="vN" placeholder="4012345678"></div>
+        <div class="fi"><label>SA ID / Passport Number <span class="req">*</span></label><input type="text" id="idN" placeholder="SA ID number or passport number"><div class="ferr" id="e-idN">Please enter your ID or passport number</div></div>
+      </div>
+    </div>
+    <div class="fn">
+      <button class="btn btn-o" onclick="prevStep()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg> Back</button>
+      <button class="btn btn-f" onclick="valS2()">Continue <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- STEP 3 -->
+<div class="pn" id="s3">
+<div class="cd">
+  <div class="cdh">
+    <div class="sno">Step 3 of 6</div>
+    <h2>Service Configuration</h2>
+    <p>Tell us how you'd like your VoIP service set up. Our team uses this to configure your account correctly from day one.</p>
+  </div>
+  <div class="cdb">
+    <div class="fg">
+      <div class="fi"><label>Number of Extensions / Users</label>
+        <select id="ext"><option value="1">1 Extension (Single User)</option><option value="2-5">2 – 5 Extensions</option><option value="6-10">6 – 10 Extensions (1 × PBX block)</option><option value="11-20">11 – 20 Extensions (2 × blocks)</option><option value="21-30">21 – 30 Extensions (3 × blocks)</option><option value="31-50">31 – 50 Extensions</option><option value="50+">50+ Extensions (Enterprise)</option></select>
+      </div>
+      <div class="fi"><label>Number Preference <span class="req">*</span></label>
+        <div class="tg">
+          <label class="to" onclick="togSel(this,'nP','New SA Number')"><input type="radio" name="nP" value="New SA Number">📲 New SA Number</label>
+          <label class="to" onclick="togSel(this,'nP','Port Existing Number')"><input type="radio" name="nP" value="Port Existing Number">🔁 Port Existing Number</label>
+          <label class="to" onclick="togSel(this,'nP','0800 Toll-Free')"><input type="radio" name="nP" value="0800 Toll-Free Number">📢 0800 Toll-Free</label>
+        </div>
+      </div>
+      <div class="fi" id="pF" style="display:none">
+        <label>Existing Number(s) to Port</label>
+        <input type="text" id="pN" placeholder="+27 xx xxx xxxx">
+        <div class="ferr" style="display:block;color:var(--am);background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.22);border-radius:var(--rs);padding:.6rem .85rem;margin-top:.5rem">
+          ⚠️ A Porting Mandate (in your contract) must be signed before porting begins. Individual number porting is R160.00 once-off excl. VAT per number. Porting is subject to provider approval and requirements.
+        </div>
+      </div>
+      <div class="fi"><label>Preferred Number Area Code</label>
+        <select id="aC"><option value="Any">Any available number</option><option value="011">011 — Johannesburg</option><option value="012">012 — Pretoria</option><option value="021">021 — Cape Town</option><option value="031">031 — Durban</option><option value="041">041 — Port Elizabeth</option><option value="051">051 — Bloemfontein</option><option value="087">087 — Non-Geographic (National)</option><option value="086">086 — Non-Geographic</option></select>
+      </div>
+      <div class="fi"><label>Add-On Features Required</label>
+        <div class="cg">
+          <label class="ch" onclick="togChip(this,'Call Recording')"><input type="checkbox"> 🎙️ Call Recording</label>
+          <label class="ch" onclick="togChip(this,'IVR Auto-Attendant')"><input type="checkbox"> 📋 IVR / Auto-Attendant</label>
+          <label class="ch" onclick="togChip(this,'Call Queue')"><input type="checkbox"> ⏳ Call Queue</label>
+          <label class="ch" onclick="togChip(this,'Voicemail to Email')"><input type="checkbox"> 📧 Voicemail to Email</label>
+          <label class="ch" onclick="togChip(this,'Mobile Softphone App')"><input type="checkbox"> 📱 Mobile Softphone</label>
+          <label class="ch" onclick="togChip(this,'Fax to Email')"><input type="checkbox"> 📠 Fax to Email</label>
+          <label class="ch" onclick="togChip(this,'Call Analytics')"><input type="checkbox"> 📊 Call Analytics</label>
+          <label class="ch" onclick="togChip(this,'IP Desk Phone(s)')"><input type="checkbox"> ☎️ IP Desk Phone(s)</label>
+        </div>
+      </div>
+      <div class="fi"><label>Special Requirements / Notes</label>
+        <textarea id="cn" placeholder="Any specific setup, branch requirements, integration needs, or questions for our team…"></textarea>
+      </div>
+    </div>
+    <div class="fn">
+      <button class="btn btn-o" onclick="prevStep()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg> Back</button>
+      <button class="btn btn-f" onclick="nextStep()">Continue <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- STEP 4 -->
+<div class="pn" id="s4">
+<div class="cd">
+  <div class="cdh">
+    <div class="sno">Step 4 of 6</div>
+    <h2>Upload Supporting Documents</h2>
+    <p>South African RICA/FICA regulations require identity and address verification. Documents must be clear — no information cut off when scanning. Drag & drop or click to upload.</p>
+  </div>
+  <div class="cdb">
+    <div class="ups">
+      <div class="uz" id="z1" ondragover="dov(event,this)" ondragleave="dlv(this)" ondrop="drp(event,this,'f1','o1','z1')">
+        <input type="file" id="f1" name="ID Document" form="voipSubmitForm" accept=".pdf,.jpg,.jpeg,.png" onchange="fsel(this,'z1','o1')">
+        <div class="uzi">🪪</div>
+        <div class="uzt">SA ID / Passport Copy <span class="rb">Required — RICA</span></div>
+        <div class="uzs">Green barcoded ID, smart ID card or passport. Certified copy preferred.<br>PDF, JPG or PNG · Max 5MB</div>
+        <div class="uzok" id="o1">✅ <span></span></div>
+      </div>
+      <div class="uz" id="z2" ondragover="dov(event,this)" ondragleave="dlv(this)" ondrop="drp(event,this,'f2','o2','z2')">
+        <input type="file" id="f2" name="Proof of Address" form="voipSubmitForm" accept=".pdf,.jpg,.jpeg,.png" onchange="fsel(this,'z2','o2')">
+        <div class="uzi">🏠</div>
+        <div class="uzt">Proof of Address <span class="rb">Required — RICA</span></div>
+        <div class="uzs">Utility bill, bank statement or lease — not older than 3 months. Must show your name and physical address.<br>PDF, JPG or PNG · Max 5MB</div>
+        <div class="uzok" id="o2">✅ <span></span></div>
+      </div>
+      <div class="uz" id="z3" ondragover="dov(event,this)" ondragleave="dlv(this)" ondrop="drp(event,this,'f3','o3','z3')">
+        <input type="file" id="f3" name="Company Registration" form="voipSubmitForm" accept=".pdf,.jpg,.jpeg,.png" onchange="fsel(this,'z3','o3')">
+        <div class="uzi">📋</div>
+        <div class="uzt">Company Registration Document <span class="ob">Required for Companies</span></div>
+        <div class="uzs">CIPC certificate, CK document or MOI. Not required for sole proprietors.<br>PDF preferred · Max 5MB</div>
+        <div class="uzok" id="o3">✅ <span></span></div>
+      </div>
+    </div>
+    <div class="nc" style="margin-top:1.5rem">
+      <span style="font-size:1.1rem;flex-shrink:0">📄</span>
+      <p>After submission and pre-approval, a <strong>service contract will be emailed to you</strong> for signature before activation. If porting a number, a <strong>Porting Mandate</strong> section must also be signed.</p>
+    </div>
+    <div class="fn">
+      <button class="btn btn-o" onclick="prevStep()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg> Back</button>
+      <button class="btn btn-f" onclick="nextStep()">Continue <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- STEP 5 -->
+<div class="pn" id="s5">
+<div class="cd">
+  <div class="cdh">
+    <div class="sno">Step 5 of 6</div>
+    <h2>Billing &amp; Payment</h2>
+    <p>Choose your billing cycle and preferred payment method. A signed Debit Order Mandate will be included in your service contract if you choose debit order.</p>
+  </div>
+  <div class="cdb">
+    <div class="fi" style="margin-bottom:1.5rem"><label>Billing Cycle</label>
+      <div class="br">
+        <label class="bl sl" onclick="selBl(this,'Monthly')"><input type="radio" name="bi" value="Monthly" checked>📅 Monthly Billing</label>
+        <label class="bl" onclick="selBl(this,'Annual / prepaid request')"><input type="radio" name="bi" value="Annual / prepaid request">📆 Annual / Prepaid Request</label>
+      </div>
+    </div>
+    <div class="fi" style="margin-bottom:1.1rem"><label>Payment Method <span class="req">*</span></label><div class="ferr" id="e-pay">Please select a payment method</div></div>
+    <div class="pg2">
+      <label class="pa" onclick="selPa(this,'Debit Order')"><input type="radio" name="pay" value="Debit Order"><div class="pai">🏦</div><div class="pan">Debit Order</div><div class="pad">Automatic monthly debit. Requires signed Debit Order Mandate in contract.</div><div class="pac"></div></label>
+      <label class="pa" onclick="selPa(this,'EFT Bank Transfer')"><input type="radio" name="pay" value="EFT"><div class="pai">💸</div><div class="pan">EFT Bank Transfer</div><div class="pad">Manual EFT each month via pro forma invoice. Prepaid clients pay in advance.</div><div class="pac"></div></label>
+      <label class="pa" onclick="selPa(this,'Credit / Debit Card')"><input type="radio" name="pay" value="Card"><div class="pai">💳</div><div class="pan">Credit / Debit Card</div><div class="pad">Visa or Mastercard. Secure 3D Secure processing. Card details collected post-approval.</div><div class="pac"></div></label>
+      <label class="pa" onclick="selPa(this,'PayFast / Ozow')"><input type="radio" name="pay" value="PayFast"><div class="pai">⚡</div><div class="pan">PayFast / Ozow</div><div class="pad">Instant EFT or card payment. Payment link sent after application approval.</div><div class="pac"></div></label>
+    </div>
+    <div class="dbc" id="dbs" style="display:none">
+      <h4>Debit Order Banking Details</h4>
+      <div class="fg">
+        <div class="fi"><label>Account Holder Name <span class="req">*</span></label><input type="text" id="dN" placeholder="Full name as it appears on bank account"></div>
+        <div class="bg2">
+          <div class="fi"><label>Bank Name <span class="req">*</span></label>
+            <select id="bk"><option value="">Select bank…</option><option>ABSA</option><option>FNB</option><option>Standard Bank</option><option>Nedbank</option><option>Capitec</option><option>African Bank</option><option>Discovery Bank</option><option>TymeBank</option><option>Other</option></select>
+          </div>
+          <div class="fi"><label>Account Number <span class="req">*</span></label><input type="text" id="aN" placeholder="Bank account number"></div>
+        </div>
+        <div class="bg2">
+          <div class="fi"><label>Branch Code</label><input type="text" id="brc" placeholder="e.g. 250655"></div>
+          <div class="fi"><label>Account Type <span class="req">*</span></label>
+            <div class="bts">
+              <label class="bt" onclick="togBt(this)"><input type="radio" name="aT" value="Cheque/Current"> Cheque / Current</label>
+              <label class="bt" onclick="togBt(this)"><input type="radio" name="aT" value="Savings"> Savings</label>
+            </div>
+          </div>
+        </div>
+        <div style="background:rgba(42,127,165,.06);border:1px solid var(--B1);border-radius:var(--rs);padding:.75rem 1rem;font-size:.78rem;color:var(--mu);line-height:1.65">
+          ℹ️ A formal <strong style="color:var(--wh)">Debit Order Mandate</strong> will be included in the service contract emailed to you. Both must be signed before debit orders are processed.
+        </div>
+      </div>
+    </div>
+    <div class="fn">
+      <button class="btn btn-o" onclick="prevStep()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg> Back</button>
+      <button class="btn btn-f" onclick="valS5()">Review Application <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- STEP 6 -->
+<div class="pn" id="s6">
+<div class="cd">
+  <div class="cdh">
+    <div class="sno">Step 6 of 6</div>
+    <h2>Review &amp; Submit Application</h2>
+    <p>Please check all details below. After submission our team will review your documents and confirm the next step. Final activation is subject to service requirements, approval and availability.</p>
+  </div>
+  <div class="cdb">
+    <div class="rv" id="rv"></div>
+    <div style="margin-top:1.75rem">
+      <button class="btn btn-f btn-fl" onclick="doSubmit()" id="sub">
+        Submit Application
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg>
+      </button>
+      <p class="tn">By submitting you confirm the information is accurate and agree to our <a href="/service-terms/">Terms of Service</a> and <a href="/privacy/">Privacy Policy</a>. A service contract will be emailed to you for signature before activation. Final activation is subject to service requirements and approval.</p>
+    </div>
+    <div class="fn" style="margin-top:1rem">
+      <button class="btn btn-o" onclick="prevStep()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg> Edit Details</button>
+    </div>
+  </div>
+</div>
+</div>
+
+</div><!-- /fw -->
+
+<form id="voipSubmitForm" action="https://formsubmit.co/sales@futurecreativegroup.co.za" method="POST" enctype="multipart/form-data" style="display:none"></form>
+
+<!-- ═══ SUCCESS ═══ -->
+<div id="suc">
+  <div class="suci">✅</div>
+  <h2>Application Submitted!</h2>
+  <p>Thank you for choosing Future Creative Group for your business VoIP solution. Your application has been received and our team is already reviewing it.</p>
+  <div class="sref">
+    <strong>Reference No:</strong> <span id="ref"></span><br>
+    <strong>Submitted to:</strong> sales@futurecreativegroup.co.za<br>
+    <strong>Expected response:</strong> Within 24 business hours
+  </div>
+  <div class="ssteps">
+    <h4>What Happens Next</h4>
+    <div class="sstep"><div class="ssnum">1</div><span>Our team reviews your application and uploaded documents — usually within a few hours</span></div>
+    <div class="sstep"><div class="ssnum">2</div><span>A service contract is emailed to you — sign and initial each page and return it</span></div>
+    <div class="sstep"><div class="ssnum">3</div><span>If porting a number, the Porting Mandate in the contract must also be signed</span></div>
+    <div class="sstep"><div class="ssnum">4</div><span>Once signed contract is received, activation proceeds subject to service requirements, approval and availability</span></div>
+    <div class="sstep"><div class="ssnum">5</div><span>You receive login credentials, softphone setup guide, and your dedicated support contact</span></div>
+  </div>
+  <div class="sbtns">
+    <a href="https://futurecreativegroup.co.za" class="btn btn-f">Back to Website</a>
+    <a href="https://wa.me/27638095519?text=Hi%20Future%20Creative%20Group%2C%20I%20would%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="btn" style="background:#25d366;color:#fff;border:none;box-shadow:0 4px 18px rgba(37,211,102,.35)">
+      <svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp Us
+    </a>
+  </div>
+</div>
+
+<!-- ═══ ERROR STATE ═══ -->
+<div id="errstate">
+  <div class="erri">⚠️</div>
+  <h2>Submission Issue</h2>
+  <p>We encountered a problem sending your application. Please don't worry — your data has not been lost. You can try again below, or reach us directly via WhatsApp or email.</p>
+  <div class="sbtns">
+    <button class="btn btn-f" onclick="resetErr()">Try Again</button>
+    <a href="https://wa.me/27638095519?text=Hi%20Future%20Creative%20Group%2C%20I%20would%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="btn" style="background:#25d366;color:#fff;border:none">💬 WhatsApp Us</a>
+    <a href="mailto:support@futurecreativegroup.co.za" class="btn btn-o">✉️ Email Support</a>
+  </div>
+</div>
+
+<!-- ═══ TOAST ═══ -->
+<div id="toast"></div>
+
+<!-- ═══ FOOTER ═══ -->
+<!-- FOOTER CTA -->
+<section class="footer-technology-cta" aria-labelledby="footer-technology-cta-title">
+  <div class="footer-technology-cta__inner">
+    <div class="footer-technology-cta__copy">
+      <span class="footer-technology-cta__label">Technology Partner</span>
+      <h2 id="footer-technology-cta-title">Ready to Upgrade Your Business Technology?</h2>
+      <p>Partner with Future Creative Group for reliable IT, security, communication and digital solutions.</p>
+    </div>
+    <div class="footer-technology-cta__actions" aria-label="Footer call to action">
+      <a class="footer-technology-cta__button footer-technology-cta__button--primary" href="/#contact">Request a Free Quote</a>
+      <a class="footer-technology-cta__button footer-technology-cta__button--secondary" href="/contact/">Contact Our Team</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="site-footer-grid">
+    <div class="site-footer-brand">
+      <a href="/" aria-label="Future Creative Group home"><img src="/logo.png" alt="Future Creative Group Pty Ltd logo" width="500" height="500" loading="lazy" decoding="async"></a>
+      <strong>FUTURE CREATIVE GROUP PTY LTD</strong>
+      <p>IT &bull; Security &bull; Digital Solutions for South African businesses, with hosting, business email, domains and cloud services powered by FCG Cloud.</p>
+      <p class="site-footer-trust">B-BBEE Level 1 &bull; Nationwide Support &bull; South African Owned</p>
+      <div class="site-footer-socials social-links" aria-label="Social media links">
+        <a class="social-link" href="https://www.facebook.com/CreativeeTech01" target="_blank" rel="noopener noreferrer" aria-label="Follow Future Creative Group on Facebook"><svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8h2V5h-2c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h2.5l.5-3h-3V9c0-.6.4-1 1-1z"/></svg></a>
+        <a class="social-link" href="https://www.instagram.com/future_creative_group" target="_blank" rel="noopener noreferrer" aria-label="Follow Future Creative Group on Instagram"><svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></a>
+        <a class="social-link" href="https://x.com/creativee_intel" target="_blank" rel="noopener noreferrer" aria-label="Follow Future Creative Group on X"><svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" aria-hidden="true"><path d="M4 4l16 16"/><path d="M20 4L4 20"/></svg></a>
+        <a class="social-link" href="https://www.tiktok.com/@future.creative.group" target="_blank" rel="noopener noreferrer" aria-label="Follow Future Creative Group on TikTok"><svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+      </div>
+    </div>
+    <nav class="site-footer-col" aria-label="Quick links">
+      <strong>Quick Links</strong>
+      <a href="/">Home</a>
+      <a href="/#services">Services</a>
+      <a href="/packages.html">Packages</a>
+      <a href="/#projects">Work</a>
+      <a href="/contact/">Contact</a>
+      <a href="/portal/">Client Portal</a>
+    </nav>
+    <nav class="site-footer-col" aria-label="Services">
+      <strong>Services</strong>
+      <a href="/packages/cctv-packages.html">CCTV &amp; Security</a>
+      <a href="/packages/it-support.html">IT &amp; Networking</a>
+      <a href="/packages/voip-packages.html">VoIP</a>
+      <a href="/packages/website-design.html">Website Development</a>
+      <a href="/packages/digital-marketing.html">Digital Marketing</a>
+      <a href="https://fcgcloud.co.za/" target="_blank" rel="noopener">FCG Cloud</a>
+    </nav>
+    <div class="site-footer-col site-footer-contact" aria-label="Contact details">
+      <strong>Contact</strong>
+      <a href="tel:+27115680279">011 568 0279</a>
+      <a href="mailto:info@futurecreativegroup.co.za">info@futurecreativegroup.co.za</a>
+      <a href="mailto:sales@futurecreativegroup.co.za">sales@futurecreativegroup.co.za</a>
+      <a href="mailto:support@futurecreativegroup.co.za">support@futurecreativegroup.co.za</a>
+      <span class="footer-business-hours">Monday&ndash;Friday: 08:00&ndash;17:00</span>
+      <a class="footer-view-all" href="/contact/#departments">View All Departments</a>
+    </div>
+    <nav class="site-footer-col" aria-label="Legal">
+      <strong>Legal &amp; Compliance</strong>
+      <a href="/privacy/">Privacy &amp; POPIA</a>
+      <a href="/paia/">PAIA Manual</a>
+      <a href="/website-terms/">Website Terms</a>
+      <a href="/service-terms/">Service Terms</a>
+      <a href="/warranty-returns/">Warranty &amp; Returns</a>
+      <a href="/portal-acceptable-use/">Portal Acceptable Use</a>
+      <a href="/cookie-policy/">Cookie Policy</a>
+    </nav>
+    <div class="site-footer-copy">
+      <span>&copy; <span id="year">2026</span> Future Creative Group Pty Ltd. All Rights Reserved.</span>
+      <span>Registration No. 2022/422933/07</span>
+      <span>IT &bull; Security &bull; Digital Solutions</span>
+    </div>
+  </div>
+</footer>
+
+<!-- WA FAB -->
+<a class="back-to-top" href="#top" aria-label="Back to top" title="Back to top">
+  <svg class="button-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"></path><path d="M5 12l7-7 7 7"></path></svg>
+</a>
+<a id="wafab" href="https://wa.me/27638095519?text=Hi%20Future%20Creative%20Group%2C%20I%20would%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <span class="wt">Chat with us 💬</span>
+  <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+/* ══════════════════════════════════════════
+   THEME — dark/light toggle with localStorage
+══════════════════════════════════════════ */
+(function(){
+  var h=document.documentElement,KEY='fcg-theme';
+  var saved=localStorage.getItem(KEY);
+  var prefL=window.matchMedia('(prefers-color-scheme: light)').matches;
+  if(saved==='light'||(saved===null&&prefL)) h.classList.add('light');
+  (document.getElementById('theme-toggle')||document.getElementById('tt')).addEventListener('click',function(){
+    h.classList.toggle('light');
+    localStorage.setItem(KEY,h.classList.contains('light')?'light':'dark');
+  });
+})();
+
+/* ══════════════════════════════════════════
+   NAV
+══════════════════════════════════════════ */
+var nav=document.getElementById('nav');
+window.addEventListener('scroll',function(){nav.classList.toggle('sh',scrollY>60);nav.classList.toggle('shrunken',scrollY>60);},{passive:true});
+var hbg=document.getElementById('hbg'),dr=document.getElementById('drawer')||document.getElementById('dr');
+if(hbg&&dr){hbg.addEventListener('click',function(){hbg.classList.toggle('op');hbg.classList.toggle('open');dr.classList.toggle('op');dr.classList.toggle('open');hbg.setAttribute('aria-expanded',dr.classList.contains('open')?'true':'false');});
+dr.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){hbg.classList.remove('op','open');dr.classList.remove('op','open');hbg.setAttribute('aria-expanded','false');});});}
+
+/* ══════════════════════════════════════════
+   STATE
+══════════════════════════════════════════ */
+var S={step:1,total:6,done:false,
+  pkg:'',pkgI:'',pkgP:'',pkgFeatures:[],
+  billing:'Monthly',payment:'',numPref:'',features:[],devices:[]};
+
+/* ══════════════════════════════════════════
+   PROGRESS
+══════════════════════════════════════════ */
+function updProg(){
+  var sps=document.querySelectorAll('.sp');
+  var pct=((S.step-1)/(S.total-1))*100;
+  var b=document.getElementById('stb');
+  if(b) b.style.width=pct+'%';
+  sps.forEach(function(s,i){
+    s.classList.remove('ac','dn');
+    var n=i+1;
+    if(n===S.step) s.classList.add('ac');
+    else if(n<S.step) s.classList.add('dn');
+  });
+}
+function goto(n){
+  document.querySelectorAll('.pn').forEach(function(p){p.classList.remove('ac');});
+  var p=document.getElementById('s'+n);
+  if(p) p.classList.add('ac');
+  S.step=n; updProg();
+  var h=document.getElementById('hero');
+  if(h) window.scrollTo({top:Math.max(0,h.offsetTop-10),behavior:'smooth'});
+}
+function nextStep(){if(S.step<S.total) goto(S.step+1);}
+function prevStep(){if(S.step>1) goto(S.step-1);}
+
+/* ══════════════════════════════════════════
+   STEP 1 — PACKAGES
+══════════════════════════════════════════ */
+function selPkg(el,name,icon,price){
+  document.querySelectorAll('.pk').forEach(function(p){p.classList.remove('sl');});
+  el.classList.add('sl');
+  S.pkg=name; S.pkgI=icon; S.pkgP=price;
+  S.pkgFeatures=[].slice.call(el.querySelectorAll('.pkf li')).map(function(item){return item.textContent.trim();});
+  var b=document.getElementById('s1b');
+  if(b) b.disabled=false;
+  var h=document.getElementById('s1h');
+  if(h){h.textContent='✓ Selected: '+name;h.style.color='var(--gr)';}
+}
+function deviceText(){
+  return S.devices.length?S.devices.join(', '):'None selected';
+}
+function toggleDevice(input){
+  var val=input.value;
+  var card=input.closest('.device-card');
+  var label=card?card.querySelector('.device-add'):null;
+  if(input.checked){
+    if(S.devices.indexOf(val)===-1) S.devices.push(val);
+    if(card) card.classList.add('sel');
+    if(label) label.textContent='Interested';
+    showToast('Device added to enquiry.','ok');
+  }else{
+    S.devices=S.devices.filter(function(d){return d!==val;});
+    if(card) card.classList.remove('sel');
+    if(label) label.textContent='Add to enquiry';
+  }
+}
+
+/* ══════════════════════════════════════════
+   STEP 2 — VALIDATION
+══════════════════════════════════════════ */
+function setErr(id,show){
+  var e=document.getElementById('e-'+id);
+  var i=document.getElementById(id);
+  if(e) e.classList.toggle('sh',show);
+  if(i) i.classList.toggle('er',show);
+}
+function valS2(){
+  var ok=true;
+  [['cN',function(v){return v.trim().length>0;}],
+   ['ctN',function(v){return v.trim().length>0;}],
+   ['em',function(v){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());}],
+   ['ph',function(v){return v.trim().length>=9;}],
+   ['ad',function(v){return v.trim().length>5;}],
+   ['idN',function(v){return v.trim().length>4;}],
+   ['bT',function(v){return v!=='';}]
+  ].forEach(function(f){
+    var el=document.getElementById(f[0]);
+    var v=el?el.value:'';
+    var valid=f[1](v);
+    setErr(f[0],!valid);
+    if(!valid) ok=false;
+  });
+  if(ok) nextStep();
+  else{
+    var fe=document.querySelector('.fi input.er,.fi select.er');
+    if(fe) fe.scrollIntoView({behavior:'smooth',block:'center'});
+  }
+}
+
+/* ══════════════════════════════════════════
+   STEP 3 — TOGGLES & CHIPS
+══════════════════════════════════════════ */
+function togSel(el,grp,val){
+  document.querySelectorAll('.to').forEach(function(t){
+    if(t.querySelector('input[name="'+grp+'"]')) t.classList.remove('sl');
+  });
+  el.classList.add('sl');
+  if(grp==='nP'){
+    S.numPref=val;
+    var pf=document.getElementById('pF');
+    if(pf) pf.style.display=(val==='Port Existing Number')?'block':'none';
+  }
+}
+function togChip(el,val){
+  el.classList.toggle('sl');
+  var i=S.features.indexOf(val);
+  if(i===-1) S.features.push(val);
+  else S.features.splice(i,1);
+}
+
+/* ══════════════════════════════════════════
+   STEP 4 — UPLOADS
+══════════════════════════════════════════ */
+function dov(e,z){e.preventDefault();z.classList.add('dg');}
+function dlv(z){z.classList.remove('dg');}
+function drp(e,z,inpId,okId,zId){
+  e.preventDefault();z.classList.remove('dg');
+  var f=e.dataTransfer.files;
+  if(f.length){
+    try{var dt=new DataTransfer();dt.items.add(f[0]);
+      document.getElementById(inpId).files=dt.files;}catch(x){}
+    markDone(zId,okId,f[0].name);
+  }
+}
+function fsel(inp,zId,okId){
+  if(inp.files&&inp.files[0]) markDone(zId,okId,inp.files[0].name);
+}
+function markDone(zId,okId,name){
+  var z=document.getElementById(zId);
+  var ok=document.getElementById(okId);
+  if(z){z.classList.add('ok');z.classList.remove('dg');}
+  if(ok){ok.classList.add('sh');ok.querySelector('span').textContent=name;}
+}
+
+/* ══════════════════════════════════════════
+   STEP 5 — BILLING & PAYMENT
+══════════════════════════════════════════ */
+function selBl(el,val){
+  document.querySelectorAll('.bl').forEach(function(b){b.classList.remove('sl');});
+  el.classList.add('sl'); S.billing=val;
+}
+function selPa(el,val){
+  document.querySelectorAll('.pa').forEach(function(p){p.classList.remove('sl');});
+  el.classList.add('sl'); S.payment=val;
+  var e=document.getElementById('e-pay');
+  if(e) e.classList.remove('sh');
+  var ds=document.getElementById('dbs');
+  if(ds) ds.style.display=(val==='Debit Order')?'block':'none';
+}
+function togBt(el){
+  document.querySelectorAll('.bt').forEach(function(b){b.classList.remove('sl');});
+  el.classList.add('sl');
+}
+function valS5(){
+  if(!S.payment){
+    var e=document.getElementById('e-pay');
+    if(e) e.classList.add('sh');
+    return;
+  }
+  if(S.payment==='Debit Order'){
+    var dn=gv('dN'),bk=gv('bk'),an=gv('aN');
+    if(!dn||!bk||!an){showToast('Please complete all Debit Order banking details.','er');return;}
+  }
+  buildReview();
+  nextStep();
+}
+
+/* ══════════════════════════════════════════
+   STEP 6 — BUILD REVIEW
+══════════════════════════════════════════ */
+function gv(id){var e=document.getElementById(id);return e?e.value.trim():'';}
+function buildReview(){
+  var h='';
+  // Package hero
+  h+='<div class="rpkg">';
+  h+='<div class="rpkg-ico">'+S.pkgI+'</div>';
+  h+='<div><div class="rpkg-n">'+S.pkg+'</div>';
+  h+='<div class="rpkg-d">Your selected VoIP package</div></div>';
+  h+='<div class="rpkg-p"><div class="pr">'+S.pkgP+'</div></div></div>';
+  // Blocks
+  h+=rblk('Business Information',2,[
+    ['Company',gv('cN')],['Registration No.',gv('rN')||'—'],
+    ['Contact Person',gv('ctN')],['Job Title',gv('jT')||'—'],
+    ['Email',gv('em')],['Phone',gv('ph')],['Address',gv('ad')],
+    ['ID / Passport No.',gv('idN')],['Business Type',gv('bT')],
+    ['Industry',gv('ind')||'—'],['VAT Number',gv('vN')||'—']]);
+  var pkgFeatures=S.pkgFeatures.length?S.pkgFeatures.join(', '):'Not listed';
+  var feats=S.features.length?S.features.join(', '):'None selected';
+  h+=rblk('Service Configuration',3,[
+    ['Selected Package Features',pkgFeatures],
+    ['Extensions',gv('ext')],['Number Preference',S.numPref||'Not specified'],
+    ['Number to Port',gv('pN')||'N/A'],['Area Code',gv('aC')],
+    ['Add-on Features',feats],['Notes',gv('cn')||'None']]);
+  h+=rblk('Recommended Phone Devices',1,[['Selected Devices',deviceText()]]);
+  var docs=[];
+  if(document.getElementById('f1').files.length) docs.push('✅ ID / Passport');
+  if(document.getElementById('f2').files.length) docs.push('✅ Proof of Address');
+  if(document.getElementById('f3').files.length) docs.push('✅ Company Registration');
+  if(!docs.length) docs.push('⚠️ No documents uploaded — can be emailed separately');
+  h+=rblk('Documents',4,[['Uploaded Files',docs.join(' · ')]]);
+  var doI='';
+  if(S.payment==='Debit Order'&&gv('dN')) doI=' — '+gv('bk')+' ···'+gv('aN').slice(-4);
+  h+=rblk('Billing & Payment',5,[['Billing Cycle',S.billing],['Payment Method',S.payment+doI]]);
+  document.getElementById('rv').innerHTML=h;
+}
+function rblk(title,editStep,rows){
+  var h='<div class="rb2"><div class="rb2h">';
+  h+='<h4>'+title+'</h4>';
+  h+='<span class="eb" onclick="goto('+editStep+')">Edit →</span>';
+  h+='</div><div class="rrows">';
+  rows.forEach(function(r){
+    h+='<div class="rrow"><span class="rk">'+r[0]+'</span><span class="rv2">'+(r[1]||'—')+'</span></div>';
+  });
+  h+='</div></div>';
+  return h;
+}
+
+/* ══════════════════════════════════════════
+   TOAST NOTIFICATION
+══════════════════════════════════════════ */
+var toastTimer=null;
+function showToast(msg,type){
+  var t=document.getElementById('toast');
+  clearTimeout(toastTimer);
+  t.textContent=msg;
+  t.className='sh '+(type||'ok');
+  toastTimer=setTimeout(function(){t.className='';t.textContent='';
+    toastTimer=null;},4500);
+}
+
+/* ══════════════════════════════════════════
+   SUBMIT — Hidden standard form post to FormSubmit
+   This is more reliable for file uploads than the AJAX endpoint.
+══════════════════════════════════════════ */
+function doSubmit(){
+  if(S.done) return;
+
+  var btn=document.getElementById('sub');
+  btn.disabled=true;
+  btn.innerHTML='<svg style="animation:spin .8s linear infinite;width:15px;height:15px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg> Submitting…';
+
+  var ref=generateRef();
+  var form=document.getElementById('voipSubmitForm');
+  var nextUrl=location.origin+location.pathname+'?submitted='+encodeURIComponent(ref);
+
+  form.innerHTML='';
+  form.action='https://formsubmit.co/sales@futurecreativegroup.co.za';
+  addHidden(form,'_subject','Sales Department - VoIP Signup Application');
+  addHidden(form,'_template','table');
+  addHidden(form,'_next',nextUrl);
+  addHidden(form,'_replyto',gv('em'));
+  addHidden(form,'_autoresponse','Thank you for contacting Future Creative Group. Your enquiry has been received by the relevant department, and our team will respond as soon as possible.');
+  addHidden(form,'Department Name','Sales Department');
+  addHidden(form,'Department Email','sales@futurecreativegroup.co.za');
+  addHidden(form,'email',gv('em'));
+  addHidden(form,'Selected Package',S.pkg);
+  addHidden(form,'Selected Package Price',S.pkgP.replace(/<[^>]*>/g,' '));
+  addHidden(form,'Selected Package Features',S.pkgFeatures.join(', ')||'Not listed');
+  addHidden(form,'Selected Phone Devices',deviceText());
+  addHidden(form,'Company Name',gv('cN'));
+  addHidden(form,'Contact Person',gv('ctN'));
+  addHidden(form,'Job Title',gv('jT'));
+  addHidden(form,'Email Address',gv('em'));
+  addHidden(form,'Phone / WhatsApp',gv('ph'));
+  addHidden(form,'Physical Address',gv('ad'));
+  addHidden(form,'ID / Passport Number',gv('idN'));
+  addHidden(form,'Business Type',gv('bT'));
+  addHidden(form,'Industry',gv('ind'));
+  addHidden(form,'Registration Number',gv('rN'));
+  addHidden(form,'VAT Number',gv('vN'));
+  addHidden(form,'Extensions / Users',gv('ext'));
+  addHidden(form,'Number Preference',S.numPref||'Not specified');
+  addHidden(form,'Number to Port',gv('pN'));
+  addHidden(form,'Preferred Area Code',gv('aC'));
+  addHidden(form,'Add-on Features',S.features.join(', ')||'None selected');
+  addHidden(form,'Config Notes',gv('cn'));
+  addHidden(form,'Billing Cycle',S.billing);
+  addHidden(form,'Payment Method',S.payment);
+  addHidden(form,'Debit Order Name',gv('dN'));
+  addHidden(form,'Bank',gv('bk'));
+  addHidden(form,'Account Number',gv('aN'));
+  addHidden(form,'Branch Code',gv('brc'));
+  addHidden(form,'Reference',ref);
+
+  try{
+    form.removeAttribute('target');
+    form.submit();
+  }catch(err){
+    console.error('Submission error:',err);
+    S.done=false;
+    btn.disabled=false;
+    btn.innerHTML='Submit Application <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg>';
+    showError();
+  }
+}
+
+function addHidden(form,name,value){
+  var input=document.createElement('input');
+  input.type='hidden';
+  input.name=name;
+  input.value=value||'';
+  form.appendChild(input);
+}
+
+function generateRef(){
+  return 'FCG-'+Date.now().toString(36).toUpperCase().slice(-6);
+}
+
+function showSuccess(ref){
+  ref=ref||generateRef();
+  var r=document.getElementById('ref');
+  if(r) r.textContent=ref;
+  document.getElementById('hero').style.display='none';
+  document.getElementById('fw').style.display='none';
+  var s=document.getElementById('suc');
+  s.style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function showError(){
+  // Keep the hero and form visible — only show inline error state
+  // scroll smoothly to the error section
+  document.getElementById('errstate').style.display='block';
+  var el=document.getElementById('errstate');
+  if(el) el.scrollIntoView({behavior:'smooth',block:'center'});
+}
+
+function handleSubmissionReturn(){
+  var params=new URLSearchParams(window.location.search);
+  var ref=params.get('submitted');
+  if(!ref) return;
+  S.done=true;
+  showSuccess(ref);
+  params.delete('submitted');
+  var clean=location.pathname+(params.toString()?'?'+params.toString():'')+location.hash;
+  history.replaceState(null,'',clean);
+}
+
+function resetErr(){
+  S.done=false;
+  document.getElementById('errstate').style.display='none';
+  document.getElementById('hero').style.display='block';
+  document.getElementById('fw').style.display='block';
+  var btn=document.getElementById('sub');
+  btn.disabled=false;
+  btn.innerHTML='Submit Application <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg>';
+  goto(6);
+}
+
+/* ══ INIT ══ */
+handleSubmissionReturn();
+updProg();
+</script>
+<script src="/assets/site-polish.js?v=20260721-widget" defer></script>
+</body>
+</html>

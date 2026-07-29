@@ -2,6 +2,7 @@
 fcgportal/data/login-attempts.json
 fcgportal/data/portal.log
 fcgportal/data/portal.sqlite3
+fcgportal/data/*.json
 fcgportal/data/uploads/
 fcgportal/data/payment-proofs/
 fcgportal/data/ticket-attachments/
@@ -12,6 +13,23 @@ fcgportal/data/job-photos/
 .env
 .env.*
 !.env.example
+
+# Local generated dependencies
+fcgportal/vendor/
+
+# Local editor/system files
+.DS_Store
+*.py[cod]
+__pycache__/
+.venv/
+venv/
+
+# Local backup snapshots
+*.bak
+*.backup-*
+
+# Local one-off page generator transcript
+voip.py
 
 # Verification artifacts generated during local QA
 verification/*.png

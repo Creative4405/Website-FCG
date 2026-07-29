@@ -1,0 +1,8 @@
+{
+    "name": "future-creative-group/client-portal",
+    "description": "Production dependencies for the Future Creative Group client portal.",
+    "license": "proprietary",
+    "require": {
+        "phpmailer/phpmailer": "^6.12"
+    }
+}
