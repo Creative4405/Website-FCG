@@ -2965,6 +2965,1470 @@
         top: 4.5rem;
       }
     }
+
+    /* Premium authenticated portal dashboard */
+    body.is-authenticated {
+      --dash-panel: rgba(10, 28, 45, .78);
+      --dash-panel-strong: rgba(13, 35, 55, .92);
+      --dash-muted: #abc3d2;
+      --dash-text: #f5fbff;
+      --dash-line: rgba(139, 203, 235, .2);
+      --dash-cyan: #28c3f4;
+      color: var(--dash-text);
+      background:
+        linear-gradient(rgba(40, 195, 244, .045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(40, 195, 244, .045) 1px, transparent 1px),
+        linear-gradient(135deg, #062238 0%, #061523 44%, #04101d 100%);
+      background-size: 72px 72px, 72px 72px, auto;
+    }
+
+    body.is-authenticated .portal-shell,
+    body.is-authenticated .workspace {
+      width: 100%;
+      max-width: none;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+
+    body.is-authenticated .portal-app,
+    body.is-authenticated.sidebar-collapsed .portal-app {
+      display: block;
+      width: 100%;
+      min-height: 100vh;
+    }
+
+    body.is-authenticated .sidebar {
+      position: fixed;
+      inset: 0 auto 0 0;
+      z-index: 40;
+      width: 280px;
+      height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      gap: .72rem;
+      padding: 1rem;
+      overflow: hidden;
+      color: var(--dash-text);
+      background: linear-gradient(180deg, rgba(255, 255, 255, .075), rgba(255, 255, 255, .018)), rgba(3, 13, 24, .96);
+      border: 0;
+      border-right: 1px solid var(--dash-line);
+      border-radius: 0;
+      box-shadow: 24px 0 70px rgba(0, 0, 0, .28);
+      backdrop-filter: blur(22px);
+      transition: width .22s ease, transform .24s ease, padding .22s ease;
+    }
+
+    body.is-authenticated.sidebar-collapsed .sidebar {
+      width: 76px;
+      padding: .8rem .58rem;
+    }
+
+    body.is-authenticated .main-panel {
+      width: calc(100% - 280px);
+      min-height: 100vh;
+      margin-left: 280px;
+      padding: 1.15rem 1.25rem 1.35rem;
+      display: grid;
+      gap: 1rem;
+      transition: margin-left .22s ease, width .22s ease;
+    }
+
+    body.is-authenticated.sidebar-collapsed .main-panel {
+      width: calc(100% - 76px);
+      margin-left: 76px;
+    }
+
+    body.is-authenticated .sidebar-head {
+      min-height: 58px;
+      display: flex;
+      align-items: center;
+      gap: .65rem;
+    }
+
+    body.is-authenticated .sidebar-brand {
+      min-width: 0;
+      display: flex;
+      align-items: center;
+      gap: .72rem;
+      color: var(--dash-text);
+      text-decoration: none;
+    }
+
+    body.is-authenticated .sidebar-brand img {
+      width: 48px;
+      height: 48px;
+      flex: 0 0 48px;
+      object-fit: contain;
+      border: 1px solid rgba(40, 195, 244, .24);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .055);
+    }
+
+    body.is-authenticated .sidebar-brand span {
+      min-width: 0;
+      display: grid;
+      gap: .12rem;
+    }
+
+    body.is-authenticated .sidebar-brand strong,
+    body.is-authenticated .sidebar-brand small,
+    body.is-authenticated .side-profile-copy strong,
+    body.is-authenticated .side-profile-copy span,
+    body.is-authenticated .user-menu-meta strong,
+    body.is-authenticated .user-menu-meta small {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    body.is-authenticated .sidebar-brand strong {
+      font-size: .95rem;
+      line-height: 1.05;
+    }
+
+    body.is-authenticated .sidebar-brand small,
+    #side-role-badge,
+    body.is-authenticated .user-menu-meta small {
+      color: var(--dash-cyan);
+      font-size: .66rem;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    body.is-authenticated.sidebar-collapsed .sidebar-brand {
+      justify-content: center;
+    }
+
+    body.is-authenticated.sidebar-collapsed .sidebar-brand span {
+      display: none !important;
+    }
+
+    body.is-authenticated.sidebar-collapsed .sidebar-brand img {
+      width: 42px;
+      height: 42px;
+      flex-basis: 42px;
+    }
+
+    body.is-authenticated .side-profile {
+      display: grid;
+      grid-template-columns: 46px minmax(0, 1fr);
+      align-items: center;
+      gap: .72rem;
+      min-height: 84px;
+      margin: 0;
+      padding: .78rem;
+      border: 1px solid rgba(139, 203, 235, .16);
+      border-radius: 8px;
+      background: linear-gradient(145deg, rgba(255, 255, 255, .07), rgba(255, 255, 255, .025));
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08);
+    }
+
+    .side-avatar,
+    #top-avatar {
+      display: grid;
+      place-items: center;
+      color: #dff6ff;
+      background: linear-gradient(135deg, #103b75, #0b2751);
+      border: 1px solid rgba(40, 195, 244, .38);
+      border-radius: 50%;
+      font-weight: 900;
+    }
+
+    .side-avatar {
+      width: 46px;
+      height: 46px;
+      font-size: 1rem;
+    }
+
+    .side-profile-copy {
+      min-width: 0;
+      display: grid;
+      gap: .16rem;
+    }
+
+    body.is-authenticated .side-profile-copy strong {
+      margin: 0;
+      color: var(--dash-text);
+      font-size: .82rem;
+      line-height: 1.2;
+    }
+
+    body.is-authenticated .side-profile-copy span {
+      color: var(--dash-muted);
+      font-size: .72rem;
+      font-weight: 700;
+    }
+
+    #side-role-badge {
+      width: fit-content;
+      margin-top: .16rem;
+      padding: .16rem .52rem;
+      background: rgba(40, 195, 244, .1);
+      border: 1px solid rgba(40, 195, 244, .28);
+      border-radius: 999px;
+      line-height: 1;
+    }
+
+    body.is-authenticated.sidebar-collapsed .side-profile {
+      display: grid !important;
+      grid-template-columns: 1fr;
+      min-height: 50px;
+      padding: .35rem;
+      place-items: center;
+    }
+
+    body.is-authenticated.sidebar-collapsed .side-profile-copy {
+      display: none !important;
+    }
+
+    body.is-authenticated.sidebar-collapsed .side-avatar {
+      width: 42px;
+      height: 42px;
+    }
+
+    body.is-authenticated .workspace-controls {
+      display: grid;
+      gap: .58rem;
+      padding: .62rem;
+      border: 1px solid rgba(139, 203, 235, .14);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .035);
+    }
+
+    body.is-authenticated.sidebar-collapsed .workspace-controls {
+      display: none !important;
+    }
+
+    body.is-authenticated .side-nav {
+      flex: 1 1 auto;
+      min-height: 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      align-content: start;
+      gap: .28rem;
+      padding: .35rem 0 .55rem;
+      overflow: auto;
+      border: 0;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(40, 195, 244, .35) transparent;
+    }
+
+    .nav-group {
+      order: 0;
+      margin: .55rem .78rem .16rem;
+      color: var(--dash-cyan);
+      font-size: .64rem;
+      font-weight: 900;
+      letter-spacing: .16em;
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
+
+    .nav-group-more {
+      order: 30;
+      margin-top: .78rem;
+      padding-top: .82rem;
+      border-top: 1px solid rgba(139, 203, 235, .15);
+    }
+
+    body.is-authenticated .nav-tab {
+      order: 10;
+      width: 100%;
+      min-height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: .64rem;
+      padding: 0 .76rem;
+      color: #dbeaf4;
+      background: transparent;
+      border: 1px solid transparent;
+      border-radius: 8px;
+      box-shadow: none;
+      font-size: .81rem;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    body.is-authenticated .nav-tab[data-view="privacy"],
+    body.is-authenticated .nav-tab[data-view="terms"] {
+      order: 31;
+    }
+
+    body.is-authenticated .nav-tab svg {
+      width: 18px;
+      height: 18px;
+      flex: 0 0 18px;
+    }
+
+    body.is-authenticated .nav-tab:hover,
+    body.is-authenticated .nav-tab.active {
+      color: #ffffff;
+      background: linear-gradient(135deg, #0b63f6, #168cff);
+      border-color: rgba(64, 207, 255, .42);
+      box-shadow: 0 12px 30px rgba(11, 99, 246, .22);
+    }
+
+    body.is-authenticated .side-nav > .nav-tab.nav-legacy {
+      display: none !important;
+    }
+
+    body.is-authenticated.is-admin-user .side-nav > .nav-tab:not([data-view="admin"]):not([data-view="privacy"]):not([data-view="terms"]) {
+      display: none !important;
+    }
+
+    body.is-authenticated.is-admin-user .side-nav > .nav-tab[data-view="privacy"],
+    body.is-authenticated.is-admin-user .side-nav > .nav-tab[data-view="terms"] {
+      display: flex !important;
+    }
+
+    body.is-authenticated.sidebar-collapsed .nav-group {
+      width: 100%;
+      height: 1px;
+      margin: .44rem 0;
+      padding: 0;
+      overflow: hidden;
+      color: transparent;
+      background: rgba(139, 203, 235, .14);
+    }
+
+    body.is-authenticated.sidebar-collapsed .nav-tab {
+      justify-content: center;
+      gap: 0;
+      padding: 0;
+      font-size: 0;
+    }
+
+    body.is-authenticated.sidebar-collapsed .nav-tab svg {
+      flex-basis: 20px;
+      width: 20px;
+      height: 20px;
+    }
+
+    body.is-authenticated .sidebar-footer {
+      margin-top: auto;
+      display: grid;
+      gap: .55rem;
+      padding-top: .64rem;
+      border-top: 1px solid rgba(139, 203, 235, .14);
+    }
+
+    body.is-authenticated .sidebar-logout,
+    body.is-authenticated .sidebar-collapse-control {
+      width: 100%;
+      min-height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: .6rem;
+      padding: 0 .76rem;
+      border-radius: 8px;
+      font-size: .8rem;
+      font-weight: 900;
+    }
+
+    body.is-authenticated .sidebar-logout {
+      color: #ffe4e4;
+      background: rgba(244, 113, 113, .08);
+      border: 1px solid rgba(244, 113, 113, .22);
+    }
+
+    body.is-authenticated .sidebar-collapse-control {
+      color: var(--dash-muted);
+      background: rgba(255, 255, 255, .045);
+      border: 1px solid rgba(139, 203, 235, .14);
+    }
+
+    body.is-authenticated.sidebar-collapsed .sidebar-logout,
+    body.is-authenticated.sidebar-collapsed .sidebar-collapse-control {
+      justify-content: center;
+      padding: 0;
+      font-size: 0;
+    }
+
+    body.is-authenticated.sidebar-collapsed .sidebar-collapse-control span {
+      display: none;
+    }
+
+    body.is-authenticated.sidebar-collapsed .sidebar-collapse-control svg {
+      transform: rotate(180deg);
+    }
+
+    body.is-authenticated .portal-header {
+      position: sticky;
+      top: 0;
+      z-index: 25;
+      display: grid;
+      grid-template-columns: auto minmax(210px, .85fr) minmax(260px, 1.1fr) auto;
+      align-items: center;
+      gap: .9rem;
+      min-height: 76px;
+      padding: .72rem 1rem;
+      background: rgba(4, 16, 29, .72);
+      border: 1px solid rgba(139, 203, 235, .18);
+      border-radius: 8px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, .2);
+      backdrop-filter: blur(22px);
+    }
+
+    body.is-authenticated .mobile-sidebar-button {
+      display: inline-grid;
+      border-radius: 8px;
+      background: transparent;
+      border: 1px solid transparent;
+    }
+
+    body.is-authenticated .portal-title-block h2 {
+      margin: 0 0 .14rem;
+      color: var(--dash-text);
+      font-size: clamp(1.05rem, 1.6vw, 1.45rem);
+      line-height: 1.1;
+    }
+
+    body.is-authenticated .portal-title-block p {
+      max-width: 760px;
+      color: var(--dash-muted);
+      font-size: .79rem;
+      line-height: 1.38;
+    }
+
+    body.is-authenticated .portal-search {
+      min-width: 0;
+      min-height: 44px;
+      padding: 0 .82rem;
+      color: var(--dash-muted);
+      background: rgba(255, 255, 255, .045);
+      border: 1px solid rgba(139, 203, 235, .18);
+      border-radius: 8px;
+    }
+
+    body.is-authenticated .portal-search:focus-within,
+    body.is-authenticated .portal-search.is-filtering {
+      border-color: rgba(40, 195, 244, .5);
+      box-shadow: 0 0 0 3px rgba(40, 195, 244, .12);
+    }
+
+    body.is-authenticated .portal-search input {
+      color: var(--dash-text);
+      font-size: .82rem;
+    }
+
+    body.is-authenticated .portal-search input::placeholder {
+      color: rgba(210, 230, 242, .62);
+    }
+
+    body.is-authenticated .top-actions {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: .55rem;
+      flex-wrap: nowrap;
+      width: auto;
+    }
+
+    body.is-authenticated .notification-bell,
+    body.is-authenticated .top-actions .theme-toggle,
+    body.is-authenticated .command-icon,
+    body.is-authenticated .user-menu-button {
+      width: 42px;
+      height: 42px;
+      min-width: 42px;
+      padding: 0;
+      display: inline-grid;
+      place-items: center;
+      color: #e7f7ff;
+      background: rgba(255, 255, 255, .055);
+      border: 1px solid rgba(139, 203, 235, .18);
+      border-radius: 8px;
+    }
+
+    body.is-authenticated .notification-bell span {
+      top: -6px;
+      right: -6px;
+      width: 18px;
+      height: 18px;
+      color: white;
+      background: #168cff;
+      border: 1px solid rgba(255, 255, 255, .32);
+      font-size: .62rem;
+    }
+
+    body.is-authenticated .top-actions .theme-toggle {
+      grid-template-columns: 1fr 1fr;
+      width: 78px;
+      padding: .28rem;
+      background: rgba(11, 44, 77, .7);
+    }
+
+    body.is-authenticated .top-actions .theme-toggle svg {
+      width: 17px;
+      height: 17px;
+      padding: .22rem;
+      border-radius: 999px;
+    }
+
+    body.is-authenticated .top-actions .theme-toggle .theme-label {
+      display: none;
+    }
+
+    body.is-authenticated .command-icon.whatsapp-command {
+      color: #ffffff;
+      background: linear-gradient(135deg, #128c2e, #18b64a);
+      border-color: rgba(97, 255, 157, .28);
+    }
+
+    body.is-authenticated .request-quote-btn {
+      min-height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 1.08rem;
+      color: #ffffff;
+      background: linear-gradient(135deg, #0b63f6, #168cff);
+      border: 1px solid rgba(40, 195, 244, .38);
+      border-radius: 8px;
+      box-shadow: 0 14px 34px rgba(11, 99, 246, .28);
+      font-size: .78rem;
+      font-weight: 900;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    body.is-authenticated .user-menu-button {
+      grid-template-columns: 32px minmax(88px, auto) 12px;
+      width: auto;
+      min-width: 154px;
+      gap: .5rem;
+      padding: 0 .62rem 0 .34rem;
+      background: transparent;
+      border-color: transparent;
+    }
+
+    body.is-authenticated #top-avatar {
+      width: 32px;
+      height: 32px;
+      font-size: .72rem;
+    }
+
+    body.is-authenticated .user-menu-meta {
+      min-width: 0;
+      display: grid;
+      gap: .08rem;
+      text-align: left;
+    }
+
+    body.is-authenticated .user-menu-meta strong {
+      color: var(--dash-text);
+      font-size: .78rem;
+    }
+
+    body.is-authenticated .user-menu-popover,
+    body.is-authenticated .notification-popover {
+      color: var(--dash-text);
+      background: var(--dash-panel-strong);
+      border: 1px solid rgba(139, 203, 235, .22);
+      border-radius: 8px;
+      box-shadow: 0 28px 80px rgba(0, 0, 0, .36);
+      backdrop-filter: blur(20px);
+    }
+
+    body.is-authenticated .view,
+    body.is-authenticated .admin-command-dashboard {
+      gap: 1rem;
+    }
+
+    .dashboard-kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(156px, 1fr));
+      gap: .92rem;
+    }
+
+    .dashboard-kpi {
+      position: relative;
+      min-width: 0;
+      min-height: 112px;
+      display: grid;
+      grid-template-columns: 48px minmax(0, 1fr);
+      align-items: center;
+      gap: .86rem;
+      padding: .9rem;
+      color: var(--dash-text);
+      background: var(--dash-panel);
+      border: 1px solid rgba(139, 203, 235, .19);
+      border-radius: 8px;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .06), 0 18px 48px rgba(0, 0, 0, .18);
+      overflow: hidden;
+    }
+
+    .dashboard-kpi::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(145deg, rgba(255, 255, 255, .06), transparent 48%);
+    }
+
+    .dashboard-kpi > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .dashboard-kpi div {
+      min-width: 0;
+      display: grid;
+      gap: .18rem;
+    }
+
+    .dashboard-kpi span:not(.kpi-icon) {
+      color: #b8cad7;
+      font-size: .65rem;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .dashboard-kpi strong {
+      overflow-wrap: anywhere;
+      color: #ffffff;
+      font-size: clamp(1.34rem, 2vw, 1.7rem);
+      line-height: 1.08;
+    }
+
+    .dashboard-kpi small {
+      color: var(--dash-muted);
+      font-size: .68rem;
+      line-height: 1.35;
+    }
+
+    .dashboard-kpi em {
+      position: absolute;
+      right: .86rem;
+      bottom: .7rem;
+      z-index: 2;
+      color: #72f07e;
+      font-size: .66rem;
+      font-style: normal;
+      font-weight: 900;
+    }
+
+    .kpi-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 16px 34px rgba(0, 0, 0, .24);
+    }
+
+    .kpi-icon svg {
+      width: 23px;
+      height: 23px;
+    }
+
+    .kpi-blue .kpi-icon,
+    .kpi-icon.kpi-blue {
+      background: linear-gradient(135deg, #0b63f6, #168cff);
+    }
+
+    .kpi-purple .kpi-icon,
+    .kpi-icon.kpi-purple {
+      background: linear-gradient(135deg, #6335e8, #8b43ff);
+    }
+
+    .kpi-green .kpi-icon,
+    .kpi-icon.kpi-green {
+      background: linear-gradient(135deg, #31a72d, #73d94c);
+    }
+
+    .kpi-orange .kpi-icon,
+    .kpi-icon.kpi-orange {
+      background: linear-gradient(135deg, #f47a0b, #ffb12c);
+    }
+
+    .kpi-pink .kpi-icon,
+    .kpi-icon.kpi-pink {
+      background: linear-gradient(135deg, #df2d80, #ff4bae);
+    }
+
+    .kpi-cyan .kpi-icon,
+    .kpi-icon.kpi-cyan {
+      background: linear-gradient(135deg, #10a8e8, #39d8f6);
+    }
+
+    .dashboard-section,
+    body.is-authenticated .card,
+    body.is-authenticated .admin-form-card,
+    body.is-authenticated .admin-list-card {
+      min-width: 0;
+      color: var(--dash-text);
+      background: var(--dash-panel);
+      border: 1px solid rgba(139, 203, 235, .18);
+      border-radius: 8px;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .055), 0 20px 58px rgba(0, 0, 0, .16);
+      backdrop-filter: blur(18px);
+    }
+
+    .dashboard-section {
+      padding: 1rem;
+    }
+
+    body.is-authenticated .section-head {
+      gap: .8rem;
+      margin-bottom: .85rem;
+    }
+
+    body.is-authenticated .section-head h3,
+    body.is-authenticated .section-head h4,
+    body.is-authenticated .admin-form-card h4,
+    body.is-authenticated .admin-list-card h4 {
+      color: var(--dash-text);
+      letter-spacing: 0;
+    }
+
+    body.is-authenticated .section-head p,
+    body.is-authenticated .admin-form-card p,
+    body.is-authenticated .admin-list-card p {
+      color: var(--dash-muted);
+    }
+
+    .admin-overview-grid {
+      display: grid;
+      grid-template-columns: minmax(360px, 1.65fr) minmax(260px, 1fr) minmax(250px, .95fr);
+      gap: .72rem;
+    }
+
+    .revenue-card,
+    .activity-card,
+    .service-card {
+      min-width: 0;
+      padding: .95rem;
+      background: rgba(255, 255, 255, .035);
+      border: 1px solid rgba(139, 203, 235, .14);
+      border-radius: 8px;
+    }
+
+    .section-head.compact {
+      align-items: center;
+      margin-bottom: .35rem;
+    }
+
+    .revenue-chart {
+      min-height: 230px;
+      border-radius: 8px;
+      background:
+        linear-gradient(rgba(139, 203, 235, .08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(139, 203, 235, .08) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(40, 195, 244, .08), rgba(40, 195, 244, .01));
+      background-size: 100% 25%, 25% 100%, auto;
+      overflow: hidden;
+    }
+
+    .revenue-chart svg {
+      width: 100%;
+      height: 100%;
+      min-height: 230px;
+      display: block;
+    }
+
+    .chart-fill {
+      fill: url(#revenue-fill);
+    }
+
+    .chart-line {
+      fill: none;
+      stroke: #37b9ff;
+      stroke-width: 4;
+      stroke-linecap: round;
+      filter: drop-shadow(0 0 8px rgba(55, 185, 255, .55));
+    }
+
+    .activity-feed,
+    .premium-list {
+      display: grid;
+      gap: .58rem;
+    }
+
+    .activity-item,
+    .premium-list-row {
+      display: grid;
+      grid-template-columns: 36px minmax(0, 1fr) auto;
+      align-items: center;
+      gap: .72rem;
+      padding: .62rem;
+      border: 1px solid rgba(139, 203, 235, .12);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .035);
+    }
+
+    .activity-dot {
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #0b63f6, #168cff);
+      font-size: .72rem;
+      font-weight: 900;
+    }
+
+    .activity-item strong,
+    .premium-list-row strong {
+      display: block;
+      overflow: hidden;
+      color: var(--dash-text);
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: .82rem;
+    }
+
+    .activity-item span,
+    .premium-list-row span {
+      display: block;
+      overflow: hidden;
+      color: var(--dash-muted);
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: .72rem;
+    }
+
+    .activity-item time,
+    .premium-list-row time {
+      color: var(--dash-muted);
+      font-size: .7rem;
+      white-space: nowrap;
+    }
+
+    .service-donut-wrap {
+      display: grid;
+      grid-template-columns: 116px minmax(0, 1fr);
+      align-items: center;
+      gap: .9rem;
+    }
+
+    .service-donut {
+      position: relative;
+      width: 116px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      box-shadow: 0 20px 38px rgba(0, 0, 0, .22);
+    }
+
+    .service-donut::after {
+      content: "";
+      position: absolute;
+      inset: 27px;
+      border: 1px solid rgba(139, 203, 235, .12);
+      border-radius: 50%;
+      background: #092035;
+    }
+
+    .service-legend {
+      display: grid;
+      gap: .42rem;
+    }
+
+    .service-legend-row {
+      display: grid;
+      grid-template-columns: 10px minmax(0, 1fr) auto;
+      align-items: center;
+      gap: .48rem;
+      color: var(--dash-muted);
+      font-size: .72rem;
+    }
+
+    .legend-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+    }
+
+    .quick-action-grid {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(146px, 1fr));
+      gap: .72rem;
+    }
+
+    .quick-action-card {
+      min-width: 0;
+      min-height: 74px;
+      display: grid;
+      grid-template-columns: 40px minmax(0, 1fr);
+      grid-template-rows: auto auto;
+      align-items: center;
+      column-gap: .72rem;
+      row-gap: .12rem;
+      padding: .72rem;
+      color: var(--dash-text);
+      background: rgba(255, 255, 255, .045);
+      border: 1px solid rgba(139, 203, 235, .14);
+      border-radius: 8px;
+      text-align: left;
+      cursor: pointer;
+      transition: border-color .18s ease, transform .18s ease, background .18s ease;
+    }
+
+    .quick-action-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(40, 195, 244, .36);
+      background: rgba(40, 195, 244, .08);
+    }
+
+    .quick-action-card .kpi-icon {
+      grid-row: 1 / span 2;
+      width: 40px;
+      height: 40px;
+    }
+
+    .quick-action-card strong,
+    .quick-action-card small {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .quick-action-card strong {
+      font-size: .8rem;
+    }
+
+    .quick-action-card small {
+      color: var(--dash-muted);
+      font-size: .7rem;
+      line-height: 1.25;
+    }
+
+    .dashboard-overview-grid,
+    .dashboard-lower-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .dashboard-lower-grid .recent-invoices-card {
+      grid-column: span 2;
+    }
+
+    .premium-table {
+      display: grid;
+      gap: .42rem;
+      overflow-x: auto;
+      padding-bottom: .1rem;
+    }
+
+    .premium-row {
+      display: grid;
+      grid-template-columns: 1.1fr 1.4fr .9fr .9fr .9fr .8fr auto;
+      gap: .62rem;
+      align-items: center;
+      min-width: 820px;
+      padding: .64rem .7rem;
+      border: 1px solid rgba(139, 203, 235, .12);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .035);
+      color: var(--dash-muted);
+      font-size: .72rem;
+    }
+
+    .premium-row.header {
+      color: #d6e9f5;
+      background: transparent;
+      border-color: transparent;
+      font-size: .66rem;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .premium-row strong {
+      color: var(--dash-text);
+      font-size: .76rem;
+    }
+
+    .support-metric-strip {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(120px, 1fr));
+      gap: .72rem;
+    }
+
+    .support-metric {
+      min-height: 76px;
+      display: grid;
+      grid-template-columns: 42px minmax(0, 1fr);
+      align-items: center;
+      gap: .72rem;
+      padding: .72rem;
+      border: 1px solid rgba(139, 203, 235, .12);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .035);
+    }
+
+    .support-metric strong {
+      display: block;
+      color: var(--dash-text);
+      font-size: 1.28rem;
+      line-height: 1;
+    }
+
+    .support-metric span {
+      display: block;
+      margin-top: .2rem;
+      color: var(--dash-muted);
+      font-size: .72rem;
+    }
+
+    .premium-empty {
+      padding: .8rem;
+      color: var(--dash-muted);
+      border: 1px dashed rgba(139, 203, 235, .2);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .025);
+      font-size: .78rem;
+      line-height: 1.45;
+    }
+
+    body.is-authenticated .admin-control-panel .admin-stats {
+      display: none !important;
+    }
+
+    body.is-authenticated .admin-control-panel {
+      padding: .92rem;
+    }
+
+    body.is-authenticated .admin-workspace-switcher {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: .44rem;
+      margin: 0;
+      padding: .52rem;
+      overflow-x: auto;
+      border: 1px solid rgba(139, 203, 235, .14);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .035);
+    }
+
+    body.is-authenticated .admin-module-tab {
+      flex: 0 0 auto;
+      min-height: 36px;
+      color: var(--dash-muted);
+      background: transparent;
+      border: 1px solid transparent;
+      border-radius: 8px;
+      font-size: .76rem;
+      font-weight: 900;
+    }
+
+    body.is-authenticated .admin-module-tab:hover,
+    body.is-authenticated .admin-module-tab.active {
+      color: #ffffff;
+      background: rgba(40, 195, 244, .12);
+      border-color: rgba(40, 195, 244, .28);
+    }
+
+    body.is-authenticated .admin-tools-grid,
+    body.is-authenticated .admin-resource-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    body.is-authenticated .admin-tools-grid.single-active,
+    body.is-authenticated .admin-resource-grid.single-active {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    body.is-authenticated .data-row,
+    body.is-authenticated .ticket-item,
+    body.is-authenticated .download-card,
+    body.is-authenticated .client-row,
+    body.is-authenticated .admin-resource-row,
+    body.is-authenticated .payment-entry {
+      border: 1px solid rgba(139, 203, 235, .14);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .035);
+    }
+
+    body.is-authenticated .field label {
+      color: #d7eaf6;
+      font-size: .7rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    body.is-authenticated input,
+    body.is-authenticated select,
+    body.is-authenticated textarea {
+      color: var(--dash-text);
+      background: rgba(255, 255, 255, .052);
+      border: 1px solid rgba(139, 203, 235, .18);
+      border-radius: 8px;
+    }
+
+    body.is-authenticated input:focus,
+    body.is-authenticated select:focus,
+    body.is-authenticated textarea:focus {
+      border-color: rgba(40, 195, 244, .55);
+      box-shadow: 0 0 0 3px rgba(40, 195, 244, .12);
+    }
+
+    body.is-authenticated .form-grid,
+    body.is-authenticated .inline-grid {
+      gap: .95rem;
+    }
+
+    body.is-authenticated .btn,
+    body.is-authenticated .mini-action,
+    body.is-authenticated .pill {
+      border-radius: 8px;
+    }
+
+    body.is-authenticated .btn-primary {
+      background: linear-gradient(135deg, #0b63f6, #26c7f7);
+      box-shadow: 0 14px 34px rgba(11, 99, 246, .22);
+    }
+
+    body.is-authenticated .pill {
+      border-color: rgba(139, 203, 235, .18);
+      background: rgba(255, 255, 255, .045);
+    }
+
+    body.is-authenticated .pill.success {
+      color: #a7f8a5;
+      background: rgba(89, 214, 83, .1);
+      border-color: rgba(89, 214, 83, .24);
+    }
+
+    body.is-authenticated .pill.warning {
+      color: #ffd28e;
+      background: rgba(255, 153, 20, .11);
+      border-color: rgba(255, 153, 20, .28);
+    }
+
+    html[data-theme="light"] body.is-authenticated {
+      --dash-panel: rgba(255, 255, 255, .9);
+      --dash-panel-strong: rgba(255, 255, 255, .98);
+      --dash-muted: #547085;
+      --dash-text: #0c2437;
+      --dash-line: rgba(44, 103, 143, .18);
+      color: var(--dash-text);
+      background:
+        linear-gradient(rgba(11, 99, 246, .04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(11, 99, 246, .04) 1px, transparent 1px),
+        linear-gradient(135deg, #f4f9fc 0%, #e9f3f8 100%);
+      background-size: 72px 72px, 72px 72px, auto;
+    }
+
+    html[data-theme="light"] body.is-authenticated .sidebar {
+      background: linear-gradient(180deg, rgba(255, 255, 255, .96), rgba(239, 247, 252, .94)), #ffffff;
+      border-right-color: rgba(44, 103, 143, .18);
+      box-shadow: 20px 0 58px rgba(21, 64, 98, .1);
+    }
+
+    html[data-theme="light"] body.is-authenticated .sidebar-brand,
+    html[data-theme="light"] body.is-authenticated .nav-tab,
+    html[data-theme="light"] body.is-authenticated .sidebar-collapse-control,
+    html[data-theme="light"] body.is-authenticated .portal-search input,
+    html[data-theme="light"] body.is-authenticated .field label,
+    html[data-theme="light"] body.is-authenticated input,
+    html[data-theme="light"] body.is-authenticated select,
+    html[data-theme="light"] body.is-authenticated textarea {
+      color: var(--dash-text);
+    }
+
+    html[data-theme="light"] body.is-authenticated .dashboard-kpi,
+    html[data-theme="light"] body.is-authenticated .dashboard-section,
+    html[data-theme="light"] body.is-authenticated .card,
+    html[data-theme="light"] body.is-authenticated .admin-form-card,
+    html[data-theme="light"] body.is-authenticated .admin-list-card,
+    html[data-theme="light"] body.is-authenticated .portal-header,
+    html[data-theme="light"] body.is-authenticated .portal-search,
+    html[data-theme="light"] body.is-authenticated .data-row,
+    html[data-theme="light"] body.is-authenticated .ticket-item,
+    html[data-theme="light"] body.is-authenticated .download-card,
+    html[data-theme="light"] body.is-authenticated .client-row,
+    html[data-theme="light"] body.is-authenticated .admin-resource-row,
+    html[data-theme="light"] body.is-authenticated .payment-entry,
+    html[data-theme="light"] body.is-authenticated .revenue-card,
+    html[data-theme="light"] body.is-authenticated .activity-card,
+    html[data-theme="light"] body.is-authenticated .service-card,
+    html[data-theme="light"] body.is-authenticated .quick-action-card,
+    html[data-theme="light"] body.is-authenticated .premium-list-row,
+    html[data-theme="light"] body.is-authenticated .support-metric {
+      background: rgba(255, 255, 255, .88);
+      border-color: rgba(44, 103, 143, .16);
+      box-shadow: 0 18px 44px rgba(21, 64, 98, .08);
+    }
+
+    html[data-theme="light"] body.is-authenticated .dashboard-kpi strong,
+    html[data-theme="light"] body.is-authenticated .section-head h3,
+    html[data-theme="light"] body.is-authenticated .section-head h4,
+    html[data-theme="light"] body.is-authenticated .activity-item strong,
+    html[data-theme="light"] body.is-authenticated .premium-list-row strong,
+    html[data-theme="light"] body.is-authenticated .premium-row strong,
+    html[data-theme="light"] body.is-authenticated .support-metric strong,
+    html[data-theme="light"] body.is-authenticated .user-menu-meta strong,
+    html[data-theme="light"] body.is-authenticated .quick-action-card strong {
+      color: var(--dash-text);
+    }
+
+    html[data-theme="light"] body.is-authenticated .dashboard-kpi span:not(.kpi-icon),
+    html[data-theme="light"] body.is-authenticated .dashboard-kpi small,
+    html[data-theme="light"] body.is-authenticated .section-head p,
+    html[data-theme="light"] body.is-authenticated .activity-item span,
+    html[data-theme="light"] body.is-authenticated .premium-list-row span,
+    html[data-theme="light"] body.is-authenticated .quick-action-card small,
+    html[data-theme="light"] body.is-authenticated .support-metric span {
+      color: var(--dash-muted);
+    }
+
+    html[data-theme="light"] .service-donut::after {
+      background: #f5fbff;
+    }
+
+    @media (max-width: 1450px) {
+      .dashboard-kpi-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .quick-action-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .admin-overview-grid {
+        grid-template-columns: minmax(0, 1.4fr) minmax(250px, .9fr);
+      }
+
+      .admin-overview-grid .service-card {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 1180px) {
+      body.is-authenticated .portal-header {
+        grid-template-columns: auto minmax(0, .8fr) minmax(220px, 1fr) auto;
+      }
+
+      body.is-authenticated .user-menu-button {
+        min-width: 42px;
+        grid-template-columns: 32px;
+      }
+
+      body.is-authenticated .user-menu-meta,
+      body.is-authenticated .user-menu-button > svg {
+        display: none;
+      }
+
+      .dashboard-overview-grid,
+      .dashboard-lower-grid,
+      body.is-authenticated .admin-tools-grid,
+      body.is-authenticated .admin-resource-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .dashboard-lower-grid .recent-invoices-card {
+        grid-column: auto;
+      }
+    }
+
+    @media (max-width: 900px) {
+      body.is-authenticated .sidebar,
+      body.is-authenticated.sidebar-collapsed .sidebar {
+        width: min(86vw, 304px);
+        padding: 1rem;
+        transform: translateX(-105%);
+      }
+
+      body.is-authenticated.sidebar-open .sidebar {
+        transform: translateX(0);
+      }
+
+      body.is-authenticated .main-panel,
+      body.is-authenticated.sidebar-collapsed .main-panel {
+        width: 100%;
+        margin-left: 0;
+        padding: .86rem;
+      }
+
+      body.is-authenticated.sidebar-collapsed .sidebar-brand span,
+      body.is-authenticated.sidebar-collapsed .side-profile-copy,
+      body.is-authenticated.sidebar-collapsed .workspace-controls {
+        display: grid !important;
+      }
+
+      body.is-authenticated.sidebar-collapsed .side-profile {
+        grid-template-columns: 46px minmax(0, 1fr);
+        min-height: 84px;
+        padding: .78rem;
+      }
+
+      body.is-authenticated.sidebar-collapsed .nav-tab,
+      body.is-authenticated.sidebar-collapsed .sidebar-logout,
+      body.is-authenticated.sidebar-collapsed .sidebar-collapse-control {
+        justify-content: flex-start;
+        gap: .64rem;
+        padding: 0 .76rem;
+        font-size: .81rem;
+      }
+
+      body.is-authenticated.sidebar-collapsed .nav-group {
+        height: auto;
+        margin: .55rem .78rem .16rem;
+        color: var(--dash-cyan);
+        background: transparent;
+      }
+
+      body.is-authenticated.sidebar-collapsed .sidebar-collapse-control span {
+        display: inline;
+      }
+
+      body.is-authenticated .portal-header {
+        position: relative;
+        grid-template-columns: auto minmax(0, 1fr) auto;
+      }
+
+      body.is-authenticated .portal-search {
+        grid-column: 1 / -1;
+        order: 3;
+      }
+
+      .dashboard-kpi-grid,
+      .quick-action-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .admin-overview-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      body.is-authenticated .main-panel {
+        padding: .68rem;
+      }
+
+      body.is-authenticated .portal-header {
+        min-height: 62px;
+        gap: .58rem;
+        padding: .62rem;
+      }
+
+      body.is-authenticated .portal-title-block h2 {
+        font-size: 1rem;
+      }
+
+      body.is-authenticated .portal-title-block p,
+      body.is-authenticated .request-quote-btn,
+      body.is-authenticated .command-icon.whatsapp-command,
+      body.is-authenticated .top-actions .theme-toggle {
+        display: none;
+      }
+
+      .dashboard-kpi-grid,
+      .quick-action-grid,
+      .support-metric-strip,
+      .service-donut-wrap {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .dashboard-kpi,
+      .quick-action-card {
+        min-height: 92px;
+      }
+
+      .activity-item,
+      .premium-list-row {
+        grid-template-columns: 34px minmax(0, 1fr);
+      }
+
+      .activity-item time,
+      .premium-list-row time {
+        grid-column: 2;
+      }
+
+      .premium-row {
+        min-width: 0;
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .premium-row.header {
+        display: none;
+      }
+    }
+
+    body.is-authenticated .sidebar-brand strong {
+      max-width: 165px;
+      font-size: .82rem;
+      line-height: 1.05;
+      white-space: normal;
+    }
+
+    body.is-authenticated .sidebar-brand small {
+      font-size: .62rem;
+    }
+
+    body.is-authenticated .side-profile {
+      min-height: 72px;
+      padding: .64rem;
+    }
+
+    body.is-authenticated .side-avatar {
+      width: 42px;
+      height: 42px;
+      font-size: .92rem;
+    }
+
+    body.is-authenticated .workspace-controls {
+      gap: .38rem;
+      padding: .48rem;
+    }
+
+    body.is-authenticated.is-admin-user .workspace-controls {
+      display: none !important;
+    }
+
+    body.is-authenticated .business-switcher label {
+      font-size: .58rem;
+    }
+
+    body.is-authenticated .business-switcher select {
+      min-height: 34px;
+      padding: 0 .58rem;
+      font-size: .72rem;
+    }
+
+    body.is-authenticated .nav-tab {
+      min-height: 36px;
+      font-size: .78rem;
+    }
+
+    body.is-authenticated .sidebar-logout,
+    body.is-authenticated .sidebar-collapse-control {
+      min-height: 38px;
+    }
+
+    body.is-authenticated .user-menu-button {
+      max-width: 190px;
+      overflow: hidden;
+    }
+
+    body.is-authenticated .user-menu-meta {
+      max-width: 112px;
+    }
+
+    @media (max-width: 1450px) {
+      body.is-authenticated .request-quote-btn {
+        padding: 0 .85rem;
+      }
+
+      body.is-authenticated .user-menu-button {
+        max-width: 158px;
+      }
+
+      body.is-authenticated .user-menu-meta {
+        max-width: 82px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -3088,13 +4552,14 @@
                 <small id="portal-mode-label">Client Portal</small>
               </span>
             </a>
-            <button class="sidebar-icon-button" type="button" id="sidebar-collapse" aria-label="Collapse sidebar" title="Collapse sidebar">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg>
-            </button>
           </div>
           <div class="side-profile">
-            <strong id="profile-name">Client Workspace</strong>
-            <span id="profile-role">Active client</span>
+            <span class="side-avatar" id="side-avatar">FC</span>
+            <span class="side-profile-copy">
+              <strong id="profile-name">Client Workspace</strong>
+              <span id="profile-role">Active client</span>
+              <small id="side-role-badge">Client</small>
+            </span>
           </div>
           <div class="workspace-controls">
             <div class="business-switcher hidden" id="business-switcher-wrap">
@@ -3107,6 +4572,7 @@
             </div>
           </div>
           <nav class="side-nav" aria-label="Portal navigation">
+            <span class="nav-group">Main</span>
             <button class="nav-tab active" type="button" data-view="dashboard">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
               Dashboard
@@ -3123,7 +4589,7 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2h8l4 4v16H4V2h4Z"></path><path d="M16 2v5h5"></path><path d="M8 12h8"></path><path d="M8 16h8"></path></svg>
               Invoices
             </button>
-            <button class="nav-tab" type="button" data-view="financial-documents">
+            <button class="nav-tab nav-legacy" type="button" data-view="financial-documents">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 3h16v18H4z"></path><path d="M8 7h8M8 11h8M8 15h5"></path></svg>
               Statements & Credits
             </button>
@@ -3135,13 +4601,13 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4z"></path><path d="M4 9h16"></path><path d="M9 9v11"></path></svg>
               Managed Services
             </button>
-            <button class="nav-tab" type="button" data-view="onboarding">
+            <button class="nav-tab nav-legacy" type="button" data-view="onboarding">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"></path><path d="M5 12h14"></path><circle cx="12" cy="12" r="9"></circle></svg>
               Onboarding
             </button>
             <button class="nav-tab" type="button" data-view="support">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a4 4 0 0 1-4 4H7l-4 4V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"></path></svg>
-              Support
+              Support Tickets
             </button>
             <button class="nav-tab" type="button" data-view="documents">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
@@ -3155,6 +4621,7 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21a8 8 0 0 0-16 0"></path><circle cx="12" cy="7" r="4"></circle></svg>
               Profile
             </button>
+            <span class="nav-group nav-group-more">More</span>
             <button class="nav-tab" type="button" data-view="privacy">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"></path><path d="m9 12 2 2 4-4"></path></svg>
               Privacy
@@ -3188,6 +4655,14 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"></rect><path d="M2 10h20"></path><path d="M6 15h4"></path></svg>
               Payments
             </button>
+            <button class="nav-tab" type="button" data-view="admin" data-admin-nav-module="services" title="Managed Services">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4z"></path><path d="M4 9h16"></path><path d="M9 9v11"></path></svg>
+              Managed Services
+            </button>
+            <button class="nav-tab" type="button" data-view="admin" data-admin-nav-module="guests" title="Quote Requests">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"></path><path d="M8 9h8"></path><path d="M8 13h5"></path></svg>
+              Quote Requests
+            </button>
             <button class="nav-tab" type="button" data-view="admin" data-admin-nav-module="support" title="Support Tickets">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a4 4 0 0 1-4 4H7l-4 4V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"></path></svg>
               Support Tickets
@@ -3211,6 +4686,10 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><path d="M10 17l5-5-5-5"></path><path d="M15 12H3"></path></svg>
               Logout
             </button>
+            <button class="sidebar-icon-button sidebar-collapse-control" type="button" id="sidebar-collapse" aria-label="Collapse sidebar" title="Collapse sidebar">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg>
+              <span>Collapse Sidebar</span>
+            </button>
           </div>
         </aside>
 
@@ -3225,7 +4704,7 @@
             </div>
             <label class="portal-search" for="portal-search">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m21 21-4.3-4.3"></path></svg>
-              <input id="portal-search" type="search" placeholder="Search portal">
+              <input id="portal-search" type="search" placeholder="Search clients, invoices, quotes...">
             </label>
             <div class="top-actions">
               <button class="notification-bell" type="button" id="notification-bell" aria-label="Open notifications" aria-expanded="false">
@@ -3237,9 +4716,14 @@
                 <svg class="theme-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"></path></svg>
                 <span class="theme-label">Dark mode</span>
               </button>
+              <a class="command-icon whatsapp-command" href="https://wa.me/27115680279?text=Hi%20Future%20Creative%20Group%2C%20I%20need%20assistance%20with%20Client%20Portal%20access." target="_blank" rel="noopener" aria-label="WhatsApp Support">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.1 4.9A9.8 9.8 0 0 0 3.7 16.7L2.5 21.5l4.9-1.2A9.8 9.8 0 0 0 21.5 12a9.7 9.7 0 0 0-2.4-7.1Zm-7.4 14.4a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.7.8-2.8-.2-.3A8 8 0 1 1 19.5 12a7.9 7.9 0 0 1-7.8 7.3Zm4.5-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1-.2.3-.7.8-.8 1-.2.2-.3.2-.6.1a6.5 6.5 0 0 1-1.9-1.2 7.2 7.2 0 0 1-1.3-1.6c-.1-.3 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.7-1.6c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.1 0 1.3.9 2.5 1.1 2.7.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.5.6.2 1.2.1 1.6.1.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1-.1-.2-.3-.2-.5-.3Z"></path></svg>
+              </a>
+              <a class="request-quote-btn" href="/#quote-form">Request Quote</a>
               <div class="user-menu">
                 <button class="user-menu-button" type="button" id="user-menu-button" aria-label="Open user menu" aria-expanded="false">
                   <span id="top-avatar">FC</span>
+                  <span class="user-menu-meta"><strong id="top-user-name">User</strong><small id="top-user-role">Client</small></span>
                 </button>
                 <div class="user-menu-popover" id="user-menu-popover">
                   <button type="button" data-profile-view="profile">My Profile</button>
@@ -3256,37 +4740,56 @@
           </header>
 
           <section class="view active" id="view-dashboard">
-            <div class="grid grid-3">
-              <article class="card stat">
-                <div class="stat-top"><span id="stat-primary-label">Active projects</span><span id="stat-primary-kicker">Live</span></div>
-                <strong id="active-project-count">0</strong>
-                <span id="stat-primary-copy">Assigned technology projects currently in progress.</span>
+            <div class="dashboard-kpi-grid client-kpi-grid">
+              <article class="dashboard-kpi kpi-blue">
+                <span class="kpi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M7 9h10M7 13h7"></path></svg></span>
+                <div><span id="stat-primary-label">Active projects</span><strong id="active-project-count">0</strong><small id="stat-primary-copy">Assigned technology projects currently in progress.</small></div>
+                <em id="stat-primary-kicker">Live</em>
               </article>
-              <article class="card stat">
-                <div class="stat-top"><span id="stat-ticket-label">Open tickets</span><span>Support</span></div>
-                <strong id="ticket-count">0</strong>
-                <span id="stat-ticket-copy">Support requests awaiting action, verification, or closure.</span>
+              <article class="dashboard-kpi kpi-purple">
+                <span class="kpi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16h16V8z"></path><path d="M14 2v6h6"></path></svg></span>
+                <div><span id="stat-secondary-label">Pending quotes</span><strong id="pending-quote-count">0</strong><small id="stat-secondary-copy">Quotations waiting for review, approval or changes.</small></div>
+                <em id="stat-secondary-kicker">Action</em>
               </article>
-              <article class="card stat">
-                <div class="stat-top"><span id="stat-document-label">Documents</span><span>Hub</span></div>
-                <strong id="document-count">0</strong>
-                <span id="stat-document-copy">Secure files and business records assigned to your account.</span>
+              <article class="dashboard-kpi kpi-orange">
+                <span class="kpi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2h8l4 4v16H4V2h4Z"></path><path d="M8 13h8M8 17h6"></path></svg></span>
+                <div><span>Outstanding invoices</span><strong id="outstanding-invoice-count">0</strong><small>Invoices awaiting payment or proof of payment upload.</small></div>
+                <em>Finance</em>
               </article>
-              <article class="card stat">
-                <div class="stat-top"><span id="stat-secondary-label">Pending quotes</span><span id="stat-secondary-kicker">Action</span></div>
-                <strong id="pending-quote-count">0</strong>
-                <span id="stat-secondary-copy">Quotations waiting for review, approval or changes.</span>
+              <article class="dashboard-kpi kpi-pink">
+                <span class="kpi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a4 4 0 0 1-4 4H7l-4 4V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"></path></svg></span>
+                <div><span id="stat-ticket-label">Open tickets</span><strong id="ticket-count">0</strong><small id="stat-ticket-copy">Support requests awaiting action, verification, or closure.</small></div>
+                <em>Support</em>
               </article>
-              <article class="card stat">
-                <div class="stat-top"><span>Outstanding invoices</span><span>Finance</span></div>
-                <strong id="outstanding-invoice-count">0</strong>
-                <span>Invoices awaiting payment or proof of payment upload.</span>
+              <article class="dashboard-kpi kpi-cyan">
+                <span class="kpi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg></span>
+                <div><span id="stat-document-label">Documents</span><strong id="document-count">0</strong><small id="stat-document-copy">Secure files and business records assigned to your account.</small></div>
+                <em>Hub</em>
               </article>
-              <article class="card stat">
-                <div class="stat-top"><span>Paid invoices</span><span>Records</span></div>
-                <strong id="paid-invoice-count">0</strong>
-                <span>Completed payment records and receipts.</span>
+              <article class="dashboard-kpi kpi-green">
+                <span class="kpi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20V10"></path><path d="M18 20V4"></path><path d="M6 20v-4"></path></svg></span>
+                <div><span>Notifications</span><strong id="paid-invoice-count">0</strong><small>Important billing, project, document and support updates.</small></div>
+                <em>Alerts</em>
               </article>
+            </div>
+
+            <article class="dashboard-section quick-actions-panel">
+              <div class="section-head"><div><h3>Quick Actions</h3><p>Fast access to the portal tasks clients use most often.</p></div></div>
+              <div class="quick-action-grid">
+                <button class="quick-action-card" type="button" data-client-quick="support"><span class="kpi-icon kpi-pink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a4 4 0 0 1-4 4H7l-4 4V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"></path></svg></span><strong>Request Support</strong><small>Create a support ticket</small></button>
+                <button class="quick-action-card" type="button" data-client-quick="invoices"><span class="kpi-icon kpi-orange"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2h8l4 4v16H4V2h4Z"></path></svg></span><strong>View Invoices</strong><small>Review billing records</small></button>
+                <button class="quick-action-card" type="button" data-client-quick="quotes"><span class="kpi-icon kpi-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16h16V8z"></path><path d="M14 2v6h6"></path></svg></span><strong>View Quotations</strong><small>Approve or request changes</small></button>
+                <button class="quick-action-card" type="button" data-client-quick="payments"><span class="kpi-icon kpi-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"></rect><path d="M2 10h20"></path></svg></span><strong>Upload Proof</strong><small>Submit payment proof</small></button>
+                <button class="quick-action-card" type="button" data-client-quick="managed"><span class="kpi-icon kpi-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4z"></path><path d="M4 9h16"></path></svg></span><strong>Request New Service</strong><small>View managed services</small></button>
+                <button class="quick-action-card" type="button" data-client-quick="documents"><span class="kpi-icon kpi-cyan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg></span><strong>View Documents</strong><small>Open secure files</small></button>
+              </div>
+            </article>
+
+            <div class="dashboard-overview-grid client-overview-grid">
+              <article class="dashboard-section"><div class="section-head"><div><h3>Recent Project Updates</h3><p>Latest project progress and next steps.</p></div></div><div class="premium-list" id="client-project-updates"></div></article>
+              <article class="dashboard-section"><div class="section-head"><div><h3>Recent Invoices</h3><p>Latest invoice and payment records.</p></div></div><div class="premium-list" id="client-recent-invoices"></div></article>
+              <article class="dashboard-section"><div class="section-head"><div><h3>Recent Documents</h3><p>Recently uploaded secure documents.</p></div></div><div class="premium-list" id="client-recent-documents"></div></article>
+              <article class="dashboard-section"><div class="section-head"><div><h3>Support Overview</h3><p>Current support ticket status.</p></div></div><div class="support-metric-strip" id="client-support-overview"></div></article>
             </div>
 
             <article class="card cloud-dashboard-card hidden" id="cloud-dashboard-card">
@@ -3609,7 +5112,56 @@
 
           <!-- FCG_ADMIN_VIEW_START -->
           <section class="view" id="view-admin">
-            <article class="card">
+            <div class="admin-command-dashboard">
+              <div class="dashboard-kpi-grid admin-kpi-grid">
+                <article class="dashboard-kpi kpi-blue"><span class="kpi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path></svg></span><div><span>Total Clients</span><strong id="admin-kpi-total-clients">0</strong><small id="admin-kpi-client-trend">Active portal accounts</small></div></article>
+                <article class="dashboard-kpi kpi-purple"><span class="kpi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M8 5V3h8v2"></path></svg></span><div><span>Active Projects</span><strong id="admin-kpi-active-projects">0</strong><small id="admin-kpi-project-trend">Live delivery records</small></div></article>
+                <article class="dashboard-kpi kpi-green"><span class="kpi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v10"></path><path d="M8 10h6a2 2 0 1 1 0 4H9"></path></svg></span><div><span>Total Revenue</span><strong id="admin-kpi-total-revenue">R0.00</strong><small>Approved and paid records</small></div></article>
+                <article class="dashboard-kpi kpi-orange"><span class="kpi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2h8l4 4v16H4V2h4Z"></path><path d="M8 13h8M8 17h6"></path></svg></span><div><span>Unpaid Invoices</span><strong id="admin-kpi-unpaid-invoices">0</strong><small id="admin-kpi-overdue-trend">Awaiting payment</small></div></article>
+                <article class="dashboard-kpi kpi-pink"><span class="kpi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a4 4 0 0 1-4 4H7l-4 4V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"></path></svg></span><div><span>Open Tickets</span><strong id="admin-kpi-open-tickets">0</strong><small id="admin-kpi-ticket-trend">Support queue</small></div></article>
+                <article class="dashboard-kpi kpi-cyan"><span class="kpi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16h16V8z"></path><path d="M14 2v6h6"></path></svg></span><div><span>Pending Quotes</span><strong id="admin-kpi-pending-quotes">0</strong><small id="admin-kpi-quote-trend">Awaiting decision</small></div></article>
+              </div>
+
+              <article class="dashboard-section overview-command-card">
+                <div class="section-head">
+                  <div><h3>Overview</h3><p>Key portal metrics and performance overview.</p></div>
+                </div>
+                <div class="admin-overview-grid">
+                  <div class="revenue-card">
+                    <div class="section-head compact"><div><h4>Revenue Overview</h4><p id="admin-revenue-caption">Revenue records update as invoices are paid.</p></div><span class="pill">Revenue Overview</span></div>
+                    <div class="revenue-chart" aria-hidden="true">
+                      <svg viewBox="0 0 640 260" preserveAspectRatio="none">
+                        <defs><linearGradient id="revenue-fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#28c3f4" stop-opacity=".45"></stop><stop offset="100%" stop-color="#168fca" stop-opacity="0"></stop></linearGradient></defs>
+                        <path class="chart-fill" d="M8 232 C70 210 80 124 138 126 C188 128 176 170 235 132 C292 94 304 118 352 112 C400 106 426 82 475 108 C526 137 544 72 632 38 L632 250 L8 250 Z"></path>
+                        <path class="chart-line" d="M8 232 C70 210 80 124 138 126 C188 128 176 170 235 132 C292 94 304 118 352 112 C400 106 426 82 475 108 C526 137 544 72 632 38"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="activity-card"><h4>Recent Activity</h4><div class="activity-feed" id="admin-activity-feed"></div></div>
+                  <div class="service-card"><h4>Top Services</h4><div id="admin-service-breakdown"></div></div>
+                </div>
+              </article>
+
+              <article class="dashboard-section quick-actions-panel">
+                <div class="section-head"><div><h3>Quick Actions</h3><p>Common admin workflows linked to existing portal tools.</p></div></div>
+                <div class="quick-action-grid">
+                  <button class="quick-action-card" type="button" data-admin-quick-module="sales"><span class="kpi-icon kpi-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16h16V8z"></path><path d="M14 2v6h6"></path></svg></span><strong>Create Quote</strong><small>Create a new quotation</small></button>
+                  <button class="quick-action-card" type="button" data-admin-quick-module="billing"><span class="kpi-icon kpi-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2h8l4 4v16H4V2h4Z"></path></svg></span><strong>Create Invoice</strong><small>Generate a new invoice</small></button>
+                  <button class="quick-action-card" type="button" data-admin-quick-module="clients"><span class="kpi-icon kpi-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><path d="M20 8v6M23 11h-6"></path></svg></span><strong>Add Client</strong><small>Add a new client</small></button>
+                  <button class="quick-action-card" type="button" data-admin-quick-module="billing"><span class="kpi-icon kpi-orange"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"></rect><path d="M2 10h20"></path></svg></span><strong>Record Payment</strong><small>Record a client payment</small></button>
+                  <button class="quick-action-card" type="button" data-admin-quick-module="documents"><span class="kpi-icon kpi-cyan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"></path><path d="m7 8 5-5 5 5"></path><path d="M5 21h14"></path></svg></span><strong>Upload Document</strong><small>Upload document</small></button>
+                  <button class="quick-action-card" type="button" data-admin-quick-module="guests"><span class="kpi-icon kpi-pink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"></path></svg></span><strong>View Quote Requests</strong><small>View guest/customer leads</small></button>
+                </div>
+              </article>
+
+              <div class="dashboard-lower-grid">
+                <article class="dashboard-section recent-invoices-card"><div class="section-head"><div><h3>Recent Invoices</h3><p>Latest invoice records and payment states.</p></div><button class="mini-action" type="button" data-admin-quick-module="billing">View All Invoices</button></div><div class="premium-table" id="admin-recent-invoices-dashboard"></div></article>
+                <article class="dashboard-section support-overview-card"><div class="section-head"><div><h3>Support Overview</h3><p>Ticket volume and response priority.</p></div><button class="mini-action" type="button" data-admin-quick-module="support">View All Tickets</button></div><div class="support-metric-strip" id="admin-support-overview-dashboard"></div></article>
+                <article class="dashboard-section quote-requests-card"><div class="section-head"><div><h3>Recent Quote Requests</h3><p>Recent leads, guests and pending quotations.</p></div><button class="mini-action" type="button" data-admin-quick-module="guests">View Quote Requests</button></div><div class="premium-list" id="admin-recent-quotes-dashboard"></div></article>
+              </div>
+            </div>
+
+            <article class="card admin-control-panel">
               <div class="section-head">
                 <div>
                   <h3>Overview</h3>
@@ -4645,6 +6197,14 @@
     const userMenuButton = document.getElementById('user-menu-button');
     const userMenuPopover = document.getElementById('user-menu-popover');
     const topAvatar = document.getElementById('top-avatar');
+    const sideAvatar = document.getElementById('side-avatar');
+    const sideRoleBadge = document.getElementById('side-role-badge');
+    const topUserName = document.getElementById('top-user-name');
+    const topUserRole = document.getElementById('top-user-role');
+    const clientProjectUpdates = document.getElementById('client-project-updates');
+    const clientRecentInvoices = document.getElementById('client-recent-invoices');
+    const clientRecentDocuments = document.getElementById('client-recent-documents');
+    const clientSupportOverview = document.getElementById('client-support-overview');
     const portalModeLabel = document.getElementById('portal-mode-label');
     /* FCG_ADMIN_CONST_START */
     const adminTab = document.querySelector('[data-view="admin"]');
@@ -4674,6 +6234,23 @@
     const adminTotalInvoices = document.getElementById('admin-total-invoices');
     const adminPaymentReviewCount = document.getElementById('admin-payment-review-count');
     const adminOutstandingBalance = document.getElementById('admin-outstanding-balance');
+    const adminKpiTotalClients = document.getElementById('admin-kpi-total-clients');
+    const adminKpiClientTrend = document.getElementById('admin-kpi-client-trend');
+    const adminKpiActiveProjects = document.getElementById('admin-kpi-active-projects');
+    const adminKpiProjectTrend = document.getElementById('admin-kpi-project-trend');
+    const adminKpiTotalRevenue = document.getElementById('admin-kpi-total-revenue');
+    const adminKpiUnpaidInvoices = document.getElementById('admin-kpi-unpaid-invoices');
+    const adminKpiOverdueTrend = document.getElementById('admin-kpi-overdue-trend');
+    const adminKpiOpenTickets = document.getElementById('admin-kpi-open-tickets');
+    const adminKpiTicketTrend = document.getElementById('admin-kpi-ticket-trend');
+    const adminKpiPendingQuotes = document.getElementById('admin-kpi-pending-quotes');
+    const adminKpiQuoteTrend = document.getElementById('admin-kpi-quote-trend');
+    const adminRevenueCaption = document.getElementById('admin-revenue-caption');
+    const adminActivityFeed = document.getElementById('admin-activity-feed');
+    const adminServiceBreakdown = document.getElementById('admin-service-breakdown');
+    const adminRecentInvoicesDashboard = document.getElementById('admin-recent-invoices-dashboard');
+    const adminSupportOverviewDashboard = document.getElementById('admin-support-overview-dashboard');
+    const adminRecentQuotesDashboard = document.getElementById('admin-recent-quotes-dashboard');
     const adminSearch = document.getElementById('admin-search');
     const adminQuoteFilter = document.getElementById('admin-quote-filter');
     const adminInvoiceFilter = document.getElementById('admin-invoice-filter');
@@ -4795,9 +6372,9 @@
     }));
 
     try {
-      if (localStorage.getItem('fcg_sidebar_collapsed') === '1') body.classList.add('sidebar-collapsed');
+      setSidebarCollapsed(localStorage.getItem('fcg_sidebar_collapsed') === '1', false);
     } catch (error) {
-      body.classList.remove('sidebar-collapsed');
+      setSidebarCollapsed(false, false);
     }
 
     bootPortal();
@@ -4881,19 +6458,33 @@
 
     if (sidebarCollapse) {
       sidebarCollapse.addEventListener('click', () => {
-        body.classList.toggle('sidebar-collapsed');
-        const collapsed = body.classList.contains('sidebar-collapsed');
-        sidebarCollapse.setAttribute('aria-label', collapsed ? 'Expand sidebar' : 'Collapse sidebar');
-        sidebarCollapse.title = collapsed ? 'Expand sidebar' : 'Collapse sidebar';
-        try {
-          localStorage.setItem('fcg_sidebar_collapsed', collapsed ? '1' : '0');
-        } catch (error) {
-          // Sidebar state can remain session-only when storage is unavailable.
-        }
+        setSidebarCollapsed(!body.classList.contains('sidebar-collapsed'));
       });
     }
-    if (mobileSidebarToggle) mobileSidebarToggle.addEventListener('click', () => body.classList.add('sidebar-open'));
+    if (mobileSidebarToggle) {
+      mobileSidebarToggle.addEventListener('click', () => {
+        if (window.matchMedia('(max-width: 900px)').matches) {
+          body.classList.add('sidebar-open');
+          return;
+        }
+        setSidebarCollapsed(!body.classList.contains('sidebar-collapsed'));
+      });
+    }
     if (sidebarOverlay) sidebarOverlay.addEventListener('click', closeSidebarDrawer);
+
+    document.querySelectorAll('[data-client-quick]').forEach((button) => {
+      button.addEventListener('click', () => {
+        switchView(button.dataset.clientQuick || 'dashboard');
+        closeSidebarDrawer();
+      });
+    });
+
+    document.querySelectorAll('[data-admin-quick-module]').forEach((button) => {
+      button.addEventListener('click', () => {
+        switchView('admin', button.dataset.adminQuickModule || 'clients');
+        closeSidebarDrawer();
+      });
+    });
 
     if (userMenuButton && userMenuPopover) {
       userMenuButton.addEventListener('click', () => {
@@ -5950,6 +7541,20 @@
       body.classList.remove('sidebar-open');
     }
 
+    function setSidebarCollapsed(collapsed, persist = true) {
+      body.classList.toggle('sidebar-collapsed', Boolean(collapsed));
+      if (sidebarCollapse) {
+        sidebarCollapse.setAttribute('aria-label', collapsed ? 'Expand sidebar' : 'Collapse sidebar');
+        sidebarCollapse.title = collapsed ? 'Expand sidebar' : 'Collapse sidebar';
+      }
+      if (!persist) return;
+      try {
+        localStorage.setItem('fcg_sidebar_collapsed', collapsed ? '1' : '0');
+      } catch (error) {
+        // Sidebar state can remain session-only when storage is unavailable.
+      }
+    }
+
     function initialsFor(value) {
       const parts = String(value || '').trim().split(/\s+/).filter(Boolean);
       if (!parts.length) return 'FC';
@@ -5972,9 +7577,16 @@
 
     function openPortal(user, dashboard) {
       currentUser = user;
-      profileName.textContent = user.name;
-      profileRole.textContent = user.role === 'admin' ? 'Internal team' : 'Active client';
-      if (topAvatar) topAvatar.textContent = initialsFor(user.name || user.email);
+      const displayName = user.name || user.email || 'Portal User';
+      const displayRole = user.role === 'admin' ? 'Admin' : 'Client';
+      const displayInitials = initialsFor(displayName);
+      profileName.textContent = displayName;
+      profileRole.textContent = user.role === 'admin' ? 'Internal Team' : 'Client Workspace';
+      if (topAvatar) topAvatar.textContent = displayInitials;
+      if (sideAvatar) sideAvatar.textContent = displayInitials;
+      if (sideRoleBadge) sideRoleBadge.textContent = displayRole;
+      if (topUserName) topUserName.textContent = displayName;
+      if (topUserRole) topUserRole.textContent = displayRole;
       if (portalModeLabel) portalModeLabel.textContent = user.role === 'admin' ? 'Admin Portal' : 'Client Portal';
       body.classList.toggle('is-admin-user', user.role === 'admin');
       body.classList.toggle('is-client-user', user.role !== 'admin');
@@ -6037,7 +7649,7 @@
       documentCount.textContent = String(isCloud ? (cloudSummary.recent_documents || dashboard.documents.length) : dashboard.documents.length);
       pendingQuoteCount.textContent = String(isCloud ? (cloudSummary.email_accounts || 0) : (stats.pending_quotations || 0));
       outstandingInvoiceCount.textContent = String(stats.outstanding_invoices || 0);
-      paidInvoiceCount.textContent = String(stats.paid_invoices || 0);
+      paidInvoiceCount.textContent = String((dashboard.notifications || []).filter((item) => !item.read_at).length || (dashboard.notifications || []).length || 0);
       renderProjects(dashboard.projects);
       renderQuotes(dashboard.quotes);
       renderInvoices(dashboard.invoices || []);
@@ -6046,6 +7658,7 @@
       renderFinancialDocuments(dashboard.proformas || [], dashboard.credit_notes || [], dashboard.statements || []);
       renderNotifications(dashboard.notifications || []);
       renderPayments(dashboard.invoices || []);
+      renderClientCommandDashboard(dashboard);
       renderDashboardSummary(dashboard);
       renderManagedServices(dashboard);
       renderOnboarding(dashboard.onboarding || []);
@@ -6060,6 +7673,44 @@
           <div><span class="pill ${project.progress >= 65 ? 'success' : ''}">${Number(project.progress)}%</span><span class="pill">${escapeHtml(project.stage || project.status)}</span></div>
         </div>
       `).join('') || emptyRow('No active projects yet.');
+    }
+
+    function renderClientCommandDashboard(dashboard) {
+      if (!clientProjectUpdates || !clientRecentInvoices || !clientRecentDocuments || !clientSupportOverview) return;
+      const projects = dashboard.projects || [];
+      const invoices = dashboard.invoices || [];
+      const documents = dashboard.documents || [];
+      const tickets = dashboard.tickets || [];
+      const openTickets = tickets.filter((ticket) => !['Resolved', 'Closed', 'Completed'].includes(ticket.status));
+      const highPriority = openTickets.filter((ticket) => ['High', 'Urgent', 'Critical'].includes(ticket.priority));
+      const waitingReply = openTickets.filter((ticket) => ['Waiting Reply', 'Waiting for Client', 'Pending'].includes(ticket.status));
+
+      clientProjectUpdates.innerHTML = projects.slice(0, 4).map((project) => premiumListRow(
+        `${Number(project.progress || 0)}%`,
+        project.title || 'Project update',
+        project.client_update || project.next_step || project.description || 'Project progress is being maintained by the delivery team.',
+        project.expected_completion_date ? `Due ${formatDate(project.expected_completion_date)}` : (project.stage || project.status || 'In progress')
+      )).join('') || premiumEmpty('No project updates yet. New project progress will appear here once Future Creative Group publishes it.');
+
+      clientRecentInvoices.innerHTML = invoices.slice(0, 4).map((invoice) => premiumListRow(
+        invoice.payment_status && isPaidStatus(invoice.payment_status) ? 'PD' : 'IN',
+        invoice.invoice_no || 'Invoice',
+        `${invoice.title || 'Client invoice'} | ${moneyText(invoice.balance_due || invoice.total)}`,
+        invoice.invoice_date ? formatDate(invoice.invoice_date) : (invoice.payment_status || 'Invoice')
+      )).join('') || premiumEmpty('No invoices are available yet. New invoices will appear here once issued by Future Creative Group.');
+
+      clientRecentDocuments.innerHTML = documents.slice(0, 4).map((document) => premiumListRow(
+        'DO',
+        document.title || document.name || document.file_name || 'Document',
+        document.description || document.category || 'Secure client document',
+        document.uploaded_at ? formatDate(document.uploaded_at) : (document.created_at ? formatDate(document.created_at) : 'Document')
+      )).join('') || premiumEmpty('No documents have been uploaded yet.');
+
+      clientSupportOverview.innerHTML = supportMetricRows([
+        ['Open Tickets', openTickets.length, 'OP', 'kpi-pink'],
+        ['High Priority', highPriority.length, 'HP', 'kpi-orange'],
+        ['Waiting Reply', waitingReply.length, 'WR', 'kpi-cyan']
+      ]);
     }
 
     function renderDashboardSummary(dashboard) {
@@ -6398,6 +8049,105 @@
       }
     }
 
+    function renderAdminCommandDashboard(admin, context) {
+      if (!adminKpiTotalClients) return;
+      const clients = context.clients || [];
+      const guests = context.guests || [];
+      const projects = context.projects || [];
+      const quotes = context.quotes || [];
+      const invoices = context.invoices || [];
+      const tickets = context.tickets || [];
+      const documents = context.documents || [];
+      const services = context.services || [];
+      const activity = context.activity || [];
+      const stats = context.stats || {};
+      const clientMap = context.clientMap || new Map();
+      const openTickets = tickets.filter((ticket) => !['Resolved', 'Closed', 'Completed'].includes(ticket.status));
+      const highPriority = openTickets.filter((ticket) => ['High', 'Urgent', 'Critical'].includes(ticket.priority));
+      const waitingReply = openTickets.filter((ticket) => ['Waiting Reply', 'Waiting for Client', 'Pending'].includes(ticket.status));
+      const unpaidInvoices = invoices.filter((invoice) => !isPaidStatus(invoice.payment_status) && invoice.payment_status !== 'Cancelled');
+      const overdueInvoices = unpaidInvoices.filter((invoice) => invoice.payment_status === 'Overdue');
+      const pendingQuotes = quotes.filter((quote) => !['Approved', 'Declined', 'Expired', 'Converted'].includes(quote.status));
+      const activeProjects = projects.filter((project) => !['Completed', 'Cancelled', 'Archived'].includes(project.status));
+
+      setText(adminKpiTotalClients, stats.total_clients || clients.length || 0);
+      setText(adminKpiClientTrend, `${stats.active_clients || clients.filter((client) => client.active).length || 0} active accounts`);
+      setText(adminKpiActiveProjects, stats.active_projects || activeProjects.length || projects.length || 0);
+      setText(adminKpiProjectTrend, `${activeProjects.length || projects.length || 0} live delivery records`);
+      setText(adminKpiTotalRevenue, stats.total_revenue || moneyText(invoices.filter((invoice) => isPaidStatus(invoice.payment_status)).reduce((sum, invoice) => sum + amountNumber(invoice.total || invoice.amount), 0)));
+      setText(adminKpiUnpaidInvoices, stats.unpaid_invoices || unpaidInvoices.length || 0);
+      setText(adminKpiOverdueTrend, overdueInvoices.length ? `${overdueInvoices.length} overdue` : 'Awaiting payment');
+      setText(adminKpiOpenTickets, stats.open_tickets || openTickets.length || 0);
+      setText(adminKpiTicketTrend, highPriority.length ? `${highPriority.length} high priority` : 'Support queue clear');
+      setText(adminKpiPendingQuotes, stats.pending_quotations || pendingQuotes.length || 0);
+      setText(adminKpiQuoteTrend, guests.filter((guest) => guest.status !== 'Archived').length ? `${guests.filter((guest) => guest.status !== 'Archived').length} guest leads` : 'Awaiting decision');
+      if (adminRevenueCaption) {
+        const outstanding = stats.outstanding_balance || moneyText(unpaidInvoices.reduce((sum, invoice) => sum + amountNumber(invoice.balance_due || invoice.total), 0));
+        adminRevenueCaption.textContent = `Revenue ${stats.total_revenue || 'R0.00'} | Outstanding ${outstanding}`;
+      }
+
+      if (adminActivityFeed) {
+        const feed = activity.slice(0, 5).map((item) => ({
+          icon: initialsFor(item.type || item.action || item.title || 'Activity'),
+          title: item.title || item.action || 'Portal activity',
+          detail: item.description || item.message || item.detail || item.customer || 'Workspace activity recorded',
+          time: item.created_at || item.updated_at || item.date || ''
+        }));
+        if (!feed.length && clients[0]) feed.push({ icon: 'CL', title: 'Client account ready', detail: clients[0].company || clients[0].name || 'Client workspace', time: clients[0].created_at || '' });
+        const paidInvoice = invoices.find((invoice) => isPaidStatus(invoice.payment_status));
+        if (paidInvoice) feed.push({ icon: 'PA', title: 'Payment received', detail: `${paidInvoice.invoice_no || 'Invoice'} | ${moneyText(paidInvoice.total || paidInvoice.amount)}`, time: paidInvoice.updated_at || paidInvoice.invoice_date || '' });
+        if (quotes[0]) feed.push({ icon: 'QU', title: 'New quote request', detail: quotes[0].title || quotes[0].quote_no || 'Quotation record', time: quotes[0].quote_date || quotes[0].created_at || '' });
+        if (tickets[0]) feed.push({ icon: 'SU', title: 'Support ticket created', detail: tickets[0].request_type || tickets[0].subject || tickets[0].ticket_no || 'Support request', time: tickets[0].created_at || '' });
+        if (documents[0]) feed.push({ icon: 'DO', title: 'Document uploaded', detail: documents[0].title || documents[0].file_name || 'Client document', time: documents[0].uploaded_at || documents[0].created_at || '' });
+        adminActivityFeed.innerHTML = feed.slice(0, 5).map((item) => activityRow(item.icon, item.title, item.detail, item.time)).join('') || premiumEmpty('No recent activity has been recorded yet.');
+      }
+
+      if (adminServiceBreakdown) {
+        adminServiceBreakdown.innerHTML = renderServiceBreakdown(services, quotes, invoices);
+      }
+
+      if (adminRecentInvoicesDashboard) {
+        adminRecentInvoicesDashboard.innerHTML = invoices.length ? [
+          '<div class="premium-row header"><span>Invoice #</span><span>Client</span><span>Issue Date</span><span>Due Date</span><span>Amount</span><span>Status</span><span>Actions</span></div>',
+          ...invoices.slice(0, 5).map((invoice) => `
+            <div class="premium-row">
+              <strong>${escapeHtml(invoice.invoice_no || 'Invoice')}</strong>
+              <span>${escapeHtml(documentCustomerLabel(invoice, clientMap))}</span>
+              <span>${escapeHtml(formatDate(invoice.invoice_date || invoice.created_at))}</span>
+              <span>${escapeHtml(formatDate(invoice.due_date))}</span>
+              <strong>${moneyText(invoice.total || invoice.amount)}</strong>
+              <span class="pill ${isPaidStatus(invoice.payment_status) ? 'success' : invoice.payment_status === 'Overdue' || invoice.payment_status === 'Partially Paid' ? 'warning' : ''}">${escapeHtml(invoice.payment_status || 'Unpaid')}</span>
+              <span class="admin-actions"><a class="mini-action" href="${apiUrl(`invoices/pdf?id=${Number(invoice.id)}`)}" target="_blank" rel="noopener">View</a><a class="mini-action" href="${apiUrl(`invoices/pdf?id=${Number(invoice.id)}`)}" download="${escapeAttribute(invoice.invoice_no || 'invoice')}.pdf">Download</a></span>
+            </div>
+          `)
+        ].join('') : premiumEmpty('No invoices are available yet. New invoices will appear here once issued.');
+      }
+
+      if (adminSupportOverviewDashboard) {
+        adminSupportOverviewDashboard.innerHTML = supportMetricRows([
+          ['Open Tickets', openTickets.length, 'OP', 'kpi-pink'],
+          ['High Priority', highPriority.length, 'HP', 'kpi-orange'],
+          ['Waiting Reply', waitingReply.length, 'WR', 'kpi-cyan']
+        ]);
+      }
+
+      if (adminRecentQuotesDashboard) {
+        const quoteRows = pendingQuotes.slice(0, 4).map((quote) => premiumListRow(
+          'QU',
+          quote.quote_no || 'Quotation',
+          `${documentCustomerLabel(quote, clientMap)} | ${quote.title || 'Quotation request'}`,
+          quote.quote_date ? formatDate(quote.quote_date) : (quote.status || 'Pending')
+        ));
+        const guestRows = guests.filter((guest) => guest.status !== 'Archived').slice(0, 2).map((guest) => premiumListRow(
+          'LE',
+          guest.company || guest.name || 'Guest customer',
+          guest.service_required || guest.pipeline_stage || guest.email || 'Quote request lead',
+          guest.created_at ? formatDate(guest.created_at) : (guest.status || 'Lead')
+        ));
+        adminRecentQuotesDashboard.innerHTML = [...quoteRows, ...guestRows].slice(0, 5).join('') || premiumEmpty('No pending quote requests yet.');
+      }
+    }
+
     function renderAdmin(admin) {
       if (!admin) return;
       currentAdminData = admin;
@@ -6463,6 +8213,7 @@
       adminTotalInvoices.textContent = String(stats.total_invoices || (admin.invoices || []).length || 0);
       adminPaymentReviewCount.textContent = String(stats.payment_pending_review || 0);
       adminOutstandingBalance.textContent = stats.outstanding_balance || 'R0.00';
+      renderAdminCommandDashboard(admin, { clients, guests, projects, quotes, invoices, tickets, documents, services, activity, stats, clientMap });
 
       const clientOptions = [
         '<option value="">Select client</option>',
@@ -7537,11 +9288,84 @@
       return `R${(Number.isFinite(number) ? number : 0).toLocaleString('en-ZA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
     }
 
+    function amountNumber(value) {
+      const number = Number(String(value || 0).replace(/[^0-9.-]/g, ''));
+      return Number.isFinite(number) ? number : 0;
+    }
+
     function formatDate(value) {
       if (!value) return '';
       const date = new Date(value);
       if (Number.isNaN(date.getTime())) return value;
       return date.toLocaleDateString('en-ZA', { year: 'numeric', month: 'short', day: 'numeric' });
+    }
+
+    function setText(element, value) {
+      if (element) element.textContent = String(value == null ? '' : value);
+    }
+
+    function formatTimeAgo(value) {
+      if (!value) return 'Recently';
+      const date = new Date(value);
+      if (Number.isNaN(date.getTime())) return formatDate(value);
+      const seconds = Math.max(0, Math.floor((Date.now() - date.getTime()) / 1000));
+      if (seconds < 90) return 'Just now';
+      const minutes = Math.floor(seconds / 60);
+      if (minutes < 60) return `${minutes} min ago`;
+      const hours = Math.floor(minutes / 60);
+      if (hours < 24) return `${hours} hr ago`;
+      return formatDate(value);
+    }
+
+    function activityRow(icon, title, detail, time) {
+      return `<div class="activity-item"><span class="activity-dot">${escapeHtml(String(icon || 'AC').slice(0, 2).toUpperCase())}</span><div><strong>${escapeHtml(title)}</strong><span>${escapeHtml(detail)}</span></div><time>${escapeHtml(formatTimeAgo(time))}</time></div>`;
+    }
+
+    function premiumListRow(icon, title, detail, meta) {
+      return `<div class="premium-list-row"><span class="activity-dot">${escapeHtml(String(icon || 'FC').slice(0, 3).toUpperCase())}</span><div><strong>${escapeHtml(title)}</strong><span>${escapeHtml(detail)}</span></div><time>${escapeHtml(meta || 'Updated')}</time></div>`;
+    }
+
+    function supportMetricRows(items) {
+      return items.map(([label, value, icon, className]) => `<div class="support-metric"><span class="kpi-icon ${escapeAttribute(className || 'kpi-blue')}">${escapeHtml(icon)}</span><div><strong>${escapeHtml(String(value == null ? '0' : value))}</strong><span>${escapeHtml(label)}</span></div></div>`).join('');
+    }
+
+    function premiumEmpty(message) {
+      return `<div class="premium-empty">${escapeHtml(message)}</div>`;
+    }
+
+    function renderServiceBreakdown(services, quotes, invoices) {
+      const buckets = [
+        { name: 'Web Development', color: '#168cff', keys: ['web', 'website', 'development', 'design', 'ecommerce'] },
+        { name: 'Managed Hosting', color: '#2aa9df', keys: ['hosting', 'domain', 'email', 'cloud', 'server'] },
+        { name: 'Digital Marketing', color: '#ffaf35', keys: ['marketing', 'seo', 'social', 'campaign'] },
+        { name: 'IT Support', color: '#ec3c93', keys: ['support', 'network', 'cctv', 'security', 'voip', 'it'] },
+        { name: 'Other Services', color: '#58a6ff', keys: [] }
+      ].map((bucket) => ({ ...bucket, count: 0 }));
+      const records = [
+        ...(services || []).map((item) => item.name || item.service_name || item.title || ''),
+        ...(quotes || []).map((item) => item.title || item.service || ''),
+        ...(invoices || []).map((item) => item.title || item.service || '')
+      ].filter(Boolean);
+      records.forEach((record) => {
+        const lower = String(record).toLowerCase();
+        const bucket = buckets.find((item) => item.keys.some((key) => lower.includes(key))) || buckets[buckets.length - 1];
+        bucket.count += 1;
+      });
+      const total = buckets.reduce((sum, bucket) => sum + bucket.count, 0);
+      if (!total) return premiumEmpty('Service performance will appear once services, quotations or invoices are recorded.');
+      let start = 0;
+      const gradientStops = buckets.map((bucket) => {
+        const percentage = Math.round((bucket.count / total) * 100);
+        const end = start + percentage;
+        const stop = `${bucket.color} ${start}% ${end}%`;
+        start = end;
+        return stop;
+      }).join(', ');
+      const rows = buckets.map((bucket) => {
+        const percentage = Math.round((bucket.count / total) * 100);
+        return `<div class="service-legend-row"><span class="legend-dot" style="background:${escapeAttribute(bucket.color)}"></span><span>${escapeHtml(bucket.name)}</span><strong>${percentage}%</strong></div>`;
+      }).join('');
+      return `<div class="service-donut-wrap"><div class="service-donut" style="background:conic-gradient(${escapeAttribute(gradientStops)})"></div><div class="service-legend">${rows}</div></div>`;
     }
 
     function emptyRow(message) {
